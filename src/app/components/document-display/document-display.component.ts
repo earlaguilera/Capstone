@@ -4,8 +4,7 @@ import { ChallengeService } from '../../services/challenge.service';
 import { Challenge } from '../../models';
 
 @Component({
-  moduleId: module.id,
-  selector: 'document-display-component',
+  selector: 'app-document-display',
   templateUrl: 'document-display.component.html',
   styleUrls: ['document-display.component.css']
 })

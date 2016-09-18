@@ -51,6 +51,12 @@ export class ChallengeService {
     // Configure service
     this.currentChallengeSubject.subscribe((challenge: Challenge) => {
       this.currentChallenge = challenge;
+      if (this.currentChallenge) {
+        this.currentQuestionSubject.next(
+          this.currentChallenge.challengeItems[0]
+        );
+      }
+      this.currentQuestionId = 0;
     });
    }
 
@@ -60,12 +66,8 @@ export class ChallengeService {
    * @param challengeId the ID of the challenge
    */
   public setChallenge(challengeId: string): void {
-    this.currentQuestionId = 0;
     this.getChallengeById(challengeId).subscribe((challenge: any) => {
       this.currentChallengeSubject.next(challenge);
-      this.currentQuestionSubject.next(
-        this.currentChallenge.challengeItems[0]
-      );
     });
   }
 
@@ -74,7 +76,9 @@ export class ChallengeService {
    * Advance to the next question.
    */
   public nextQuestion(): void {
-    if (this.currentQuestionId !== this.currentChallenge.challengeItems.length - 1) {
+    if (this.currentChallenge && this.currentChallenge.challengeItems
+        && this.currentQuestionId !== this.currentChallenge.challengeItems.length - 1
+      ) {
       this.currentQuestionId++;
       this.currentQuestionSubject.next(
         this.currentChallenge.challengeItems[this.currentQuestionId]
@@ -87,7 +91,9 @@ export class ChallengeService {
    * Return to the previous question.
    */
   public previousQuestion(): void {
-    if (this.currentQuestionId !== 0) {
+    if (this.currentChallenge && this.currentChallenge.challengeItems
+        && this.currentQuestionId !== 0
+      ) {
       this.currentQuestionId--;
       this.currentQuestionSubject.next(
         this.currentChallenge.challengeItems[this.currentQuestionId]

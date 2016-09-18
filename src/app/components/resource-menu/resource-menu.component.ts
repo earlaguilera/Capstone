@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
-  selector: 'resource-menu-component',
+  selector: 'app-resource-menu',
   templateUrl: 'resource-menu.component.html',
   styleUrls: ['resource-menu.component.css']
 })

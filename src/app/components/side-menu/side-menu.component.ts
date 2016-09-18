@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
-  selector: 'side-menu-component',
+  selector: 'app-side-menu',
   templateUrl: 'side-menu.component.html',
   styleUrls: ['side-menu.component.css']
 })

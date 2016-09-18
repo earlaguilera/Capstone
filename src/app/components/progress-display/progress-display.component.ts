@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
-  selector: 'progress-display-component',
+  selector: 'app-progress-display',
   templateUrl: 'progress-display.component.html',
   styleUrls: ['progress-display.component.css']
 })

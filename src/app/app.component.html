@@ -1,6 +1,15 @@
-<header-component></header-component>
-<side-menu-component></side-menu-component>
-<document-display-component></document-display-component>
-<resource-menu-component></resource-menu-component>
-<progress-display-component></progress-display-component>
-<challenge-displa-componenty></challenge-display-component>
+<md-sidenav-layout>
+    <md-sidenav #sidenav mode="side" class="app-sidenav">
+        <app-side-menu></app-side-menu>
+    </md-sidenav>
+    <md-toolbar color="primary">
+        <button class="app-icon-button" (click)="sidenav.toggle()">
+            <i class="material-icons app-toolbar-menu">menu</i>
+        </button>
+        <span>&nbsp; {{title}}</span>
+    </md-toolbar>
+    <app-document-display></app-document-display>
+    <app-resource-menu></app-resource-menu>
+    <app-progress-display></app-progress-display>
+    <app-challenge-display></app-challenge-display>
+</md-sidenav-layout>
