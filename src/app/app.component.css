@@ -24,3 +24,31 @@
   text-align: left;
   text-decoration: none;
 }
+
+.chal-display-wrapper {
+    display: inline-block;
+    margin-right: 10px;
+    max-width: 400px;
+    max-height: 800px;
+    height: 100%;
+    width: auto;
+}
+
+div.inline {
+    float:left;
+}
+
+.doc-chal-row {
+  height: 80%;
+}
+
+.doc-display-wrapper {
+    display: inline-block;
+    margin-left: 10px;
+    width: 55%;
+    max-width: 600px;
+    max-height: 800px;
+    height: auto;
+    width: auto;
+}
+

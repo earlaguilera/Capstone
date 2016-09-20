@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
-import { Challenge } from '../models/challenge';
-import { ChallengeItem } from '../models/challenge-item';
+import { Challenge, ChallengeItem, ChallengeRecord, Selection } from '../models';
 
 @Injectable()
 export class ChallengeService {
@@ -13,18 +12,21 @@ export class ChallengeService {
     documentUrl: 'http://images.clipartpanda.com/document-clipart-9iRRbd7ET.png',
     challengeItems: [
       {
+        id: '0',
         correct: '0',
-        prompt: 'What is the answer?',
+        prompt: 'What is the answer to question 1?',
         options: undefined
       },
       {
+        id: '1',
         correct: '0',
-        prompt: 'What is the answer?',
+        prompt: 'What is the answer to question 2?',
         options: undefined
       },
       {
+        id: '2',
         correct: '0',
-        prompt: 'What is the answer?',
+        prompt: 'What is the answer to question 3?',
         options: undefined
       }
     ]
@@ -32,9 +34,10 @@ export class ChallengeService {
 
   private currentChallengeSubject = new BehaviorSubject<Challenge>(undefined);
   private currentQuestionSubject = new BehaviorSubject<ChallengeItem>(undefined);
-  private completionStatusSubject = new BehaviorSubject<any>(undefined);
+  private challengeRecordSubject = new BehaviorSubject<ChallengeRecord>(undefined);
   private currentChallenge: Challenge;
   private currentQuestionId: number;
+  private challengeRecord: ChallengeRecord;
 
   constructor() {
     // Set up mock data
@@ -68,6 +71,13 @@ export class ChallengeService {
   public setChallenge(challengeId: string): void {
     this.getChallengeById(challengeId).subscribe((challenge: any) => {
       this.currentChallengeSubject.next(challenge);
+       this.challengeRecord = {
+        challengeId: challenge.id,
+        completion: 0,
+        responses: new Map<string, Selection>(),
+        userId: 'Bob'
+      };
+      this.challengeRecordSubject.next(this.challengeRecord);
     });
   }
 
@@ -102,6 +112,22 @@ export class ChallengeService {
   }
 
   /**
+   * selectOption
+   * Set the chosen option.
+   */
+  public selectOption(optionId: string): void {
+    this.challengeRecord.responses.set(
+      '' + this.currentQuestionId,
+      {
+        correct: optionId === this.currentChallenge.challengeItems[this.currentQuestionId].correct,
+        selected: optionId
+      }
+    );
+    this.challengeRecord.completion = this.challengeRecord.responses.size / this.currentChallenge.challengeItems.length;
+    this.challengeRecordSubject.next(this.challengeRecord);
+  }
+
+  /**
    * getCurrentChallengeObservable
    * Getter for the current challenge observavble
    */
@@ -124,8 +150,8 @@ export class ChallengeService {
    * Getter for the completion status observavble
    */
   // TODO: add type for observable
-  public getCompletionStatusObservable(): Observable<any> {
-    return this.completionStatusSubject.asObservable();
+  public getChallengeRecordObservable(): Observable<any> {
+    return this.challengeRecordSubject.asObservable();
   }
 
   /**

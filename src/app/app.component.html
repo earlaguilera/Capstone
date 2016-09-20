@@ -8,8 +8,10 @@
         </button>
         <span>&nbsp; {{title}}</span>
     </md-toolbar>
-    <app-document-display></app-document-display>
+    <div class="doc-chal-row">
+        <app-document-display class="doc-display-wrapper"></app-document-display>
+        <app-challenge-display class="chal-display-wrapper"></app-challenge-display>
+    </div>
     <app-resource-menu></app-resource-menu>
     <app-progress-display></app-progress-display>
-    <app-challenge-display></app-challenge-display>
 </md-sidenav-layout>

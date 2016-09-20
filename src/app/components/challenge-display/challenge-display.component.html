@@ -1,3 +1,14 @@
-<p>
-  challenge-display works!
-</p>
+<md-card>
+  <div class="prompt">
+    {{currentQuestion.prompt}}
+  </div>
+  <md-list>
+    <md-radio-group [(value)]="selectedOption">
+      <md-list-item *ngFor="let option of options">
+        <md-radio-button [value]="option.id">{{option.text}}</md-radio-button>
+      </md-list-item>
+    </md-radio-group>
+  </md-list>
+  <button md-raised-button color="accent" (click)="previous()">Previous</button>
+  <button md-raised-button color="accent" (click)="next()">Next</button>
+</md-card>

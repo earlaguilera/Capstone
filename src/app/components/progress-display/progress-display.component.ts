@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ChallengeService } from '../../services';
+import { ChallengeRecord } from '../../models';
+
 @Component({
   selector: 'app-progress-display',
   templateUrl: 'progress-display.component.html',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressDisplayComponent implements OnInit {
 
-  constructor() { }
+  constructor(private challengeService: ChallengeService) { }
 
   ngOnInit() {
+    this.challengeService.getChallengeRecordObservable()
+    .subscribe((record: ChallengeRecord) => {
+      console.log(record);
+    });
   }
 
 }
