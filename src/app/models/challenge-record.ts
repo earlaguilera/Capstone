@@ -7,5 +7,5 @@ export interface ChallengeRecord {
 
 export interface Selection {
     selected: string;
-    correct: boolean;
+    correct: string;
 }

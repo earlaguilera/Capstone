@@ -28,6 +28,18 @@ export class ChallengeService {
         correct: '0',
         prompt: 'What is the answer to question 3?',
         options: undefined
+      },
+      {
+        id: '3',
+        correct: '0',
+        prompt: 'What is the answer to question 4?',
+        options: undefined
+      },
+      {
+        id: '4',
+        correct: '0',
+        prompt: 'What is the answer to question 5?',
+        options: undefined
       }
     ]
   };
@@ -69,17 +81,17 @@ export class ChallengeService {
    * @param challengeId the ID of the challenge
    */
   public setChallenge(challengeId: string): void {
-    this.getChallengeById(challengeId).subscribe((challenge: any) => {
+    this.getChallengeById(challengeId).subscribe((challenge: Challenge) => {
       this.currentChallengeSubject.next(challenge);
        this.challengeRecord = {
-        challengeId: challenge.id,
+        challengeId: challenge.challengeId,
         completion: 0,
         responses: new Map<string, Selection>(),
         userId: 'Bob'
       };
       this.challengeRecordSubject.next(this.challengeRecord);
     });
-  }
+  } 
 
   /**
    * nextQuestion
@@ -119,7 +131,7 @@ export class ChallengeService {
     this.challengeRecord.responses.set(
       '' + this.currentQuestionId,
       {
-        correct: optionId === this.currentChallenge.challengeItems[this.currentQuestionId].correct,
+        correct: this.currentChallenge.challengeItems[this.currentQuestionId].correct,
         selected: optionId
       }
     );

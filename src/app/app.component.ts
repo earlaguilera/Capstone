@@ -17,8 +17,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.challengeService.getCurrentChallengeObservable()
     .subscribe((challenge: Challenge) => {
-      if (challenge && challenge.documentUrl) {
-        console.log(challenge);
+      if (challenge && challenge.title) {
         this.title = challenge.title;
       }
     });

@@ -18,7 +18,6 @@ export class DocumentDisplayComponent implements OnInit {
     this.challengeService.getCurrentChallengeObservable()
     .subscribe((challenge: Challenge) => {
       if (challenge && challenge.documentUrl) {
-        console.log(challenge);
         this.documentUrl = challenge.documentUrl;
       }
     });

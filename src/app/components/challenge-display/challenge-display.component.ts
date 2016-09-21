@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ChallengeService } from '../../services';
-import { ChallengeItem, ChallengeRecord } from '../../models';
+import { ChallengeItem, ChallengeRecord, Selection } from '../../models';
 
 @Component({
   selector: 'app-challenge-display',
@@ -13,6 +13,7 @@ export class ChallengeDisplayComponent implements OnInit {
   public currentQuestion: ChallengeItem;
   public selectedOption: string = '';
   public options: any[] = [];
+  public showQuestion: boolean = true;
 
   private challengeRecord: ChallengeRecord;
 
@@ -24,24 +25,18 @@ export class ChallengeDisplayComponent implements OnInit {
     this.challengeService.getChallengeRecordObservable()
     .subscribe((record: ChallengeRecord) => {
       this.challengeRecord = record;
+      this.updateSelectedOption();
     });
     this.challengeService.getCurrentQuestionObservable()
     .subscribe((question: ChallengeItem) => {
-      let selection = this.challengeRecord.responses.get(question.id);
-      if (selection) {
-        this.selectedOption = selection.selected;
-      } else {
-        this.selectedOption = '';
-      }
-      console.log(this.selectedOption);
       if (question) {
         this.currentQuestion = question;
-        console.log(this.currentQuestion);
         this.options = [];
         this.currentQuestion.options.forEach((optionText: string, id: string) => {
           this.options.push({'id': id, 'text': optionText});
         });
       }
+      this.updateSelectedOption();
     });
   }
 
@@ -50,11 +45,17 @@ export class ChallengeDisplayComponent implements OnInit {
   }
 
   public next(): void {
-    this.challengeService.nextQuestion();
+    if (this.selectedOption) {
+      this.challengeService.nextQuestion();
+    }
   }
 
-  public select(): void {
-    this.challengeService.selectOption(this.selectedOption);
+  public setSelectedOption(option: string) {
+    this.challengeService.selectOption(option);
+  }
+
+  public isSelected(option: string) {
+    return option === this.selectedOption;
   }
 
   private createBlankQuestion(): ChallengeItem {
@@ -64,5 +65,16 @@ export class ChallengeDisplayComponent implements OnInit {
        options: new Map<string, string>(),
        prompt: ''
     };
+  }
+
+  private updateSelectedOption() {
+    this.showQuestion = false;
+    let selection: Selection = this.challengeRecord.responses.get('' + this.currentQuestion.id);
+    if (selection) {
+      this.selectedOption = selection.selected;
+    } else {
+      this.selectedOption = undefined;
+    }
+    this.showQuestion = true;
   }
 }
