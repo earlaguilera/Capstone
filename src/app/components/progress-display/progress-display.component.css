@@ -1,0 +1,9 @@
+.progress-bar {
+    display: inline-block;
+    height: 12px;
+    width: 50%;
+}
+
+.complete {
+    display: inline-block;
+}

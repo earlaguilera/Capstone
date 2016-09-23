@@ -9,13 +9,14 @@ import { ChallengeRecord } from '../../models';
   styleUrls: ['progress-display.component.css']
 })
 export class ProgressDisplayComponent implements OnInit {
+  private completion: number = 0;
 
   constructor(private challengeService: ChallengeService) { }
 
   ngOnInit() {
     this.challengeService.getChallengeRecordObservable()
     .subscribe((record: ChallengeRecord) => {
-      console.log(record);
+      this.completion = record.completion * 100;
     });
   }
 

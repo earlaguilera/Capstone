@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MdButtonModule } from '@angular2-material/button';
 import { MdCardModule } from '@angular2-material/card';
 import { MdListModule } from '@angular2-material/list';
+import { MdProgressBarModule } from '@angular2-material/progress-bar';
 import { MdRadioModule } from '@angular2-material/radio';
 import { MdSidenavModule } from '@angular2-material/sidenav';
 import { MdToolbarModule } from '@angular2-material/toolbar';
@@ -23,6 +24,7 @@ import { ChallengeService } from './services';
     MdButtonModule.forRoot(),
     MdCardModule.forRoot(),
     MdListModule.forRoot(),
+    MdProgressBarModule.forRoot(),
     MdRadioModule.forRoot(),
     MdSidenavModule.forRoot(),
     MdToolbarModule.forRoot()

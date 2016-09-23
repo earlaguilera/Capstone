@@ -1,3 +1,2 @@
-<p>
-  progress-display works!
-</p>
+<md-progress-bar class="progress-bar" mode="determinate" [value]="completion"></md-progress-bar>
+<h4 *ngIf="completion === 100" class="complete"><b>&nbsp;Complete!</b></h4>
