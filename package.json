@@ -24,6 +24,7 @@
     "@angular2-material/card": "^2.0.0-alpha.8-2",
     "@angular2-material/core": "^2.0.0-alpha.8-2",
     "@angular2-material/list": "^2.0.0-alpha.8-2",
+    "@angular2-material/progress-bar": "^2.0.0-alpha.8-2",
     "@angular2-material/radio": "^2.0.0-alpha.8-2",
     "@angular2-material/sidenav": "^2.0.0-alpha.8-2",
     "@angular2-material/toolbar": "^2.0.0-alpha.8-2",
@@ -50,6 +51,6 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "2.0.2",
-    "webpack": "^2.1.0-beta.22"
+    "webpack": "2.1.0-beta.22"
   }
 }
