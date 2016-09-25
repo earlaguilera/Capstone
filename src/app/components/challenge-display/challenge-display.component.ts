@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ChallengeService } from '../../services';
-import { ChallengeItem, ChallengeRecord, Selection } from '../../models';
+import { Challenge, ChallengeItem, ChallengeRecord, Selection } from '../../models';
 
 @Component({
   selector: 'app-challenge-display',
@@ -16,7 +16,10 @@ export class ChallengeDisplayComponent implements OnInit {
   public showQuestion: boolean = true;
 
   private challengeRecord: ChallengeRecord;
-
+  private completion: number = 0;
+  private lastQ: string = '';
+  private currQ: string = '';
+  
   constructor(private challengeService: ChallengeService) {
     this.currentQuestion = this.createBlankQuestion();
    }
@@ -38,6 +41,18 @@ export class ChallengeDisplayComponent implements OnInit {
       }
       this.updateSelectedOption();
     });
+     this.challengeService.getChallengeRecordObservable()
+    .subscribe((record: ChallengeRecord) => {
+      this.completion = record.completion * 100;
+    });
+    this.challengeService.getCurrentChallengeObservable()
+    .subscribe((lastQuestion: Challenge) => {
+      this.lastQ = (lastQuestion.challengeItems.length - 1).toString();
+    });
+    this.challengeService.getCurrentQuestionObservable()
+    .subscribe((questionNum: ChallengeItem) => {
+      this.currQ = questionNum.id;
+    });
   }
 
   public previous(): void {
@@ -47,6 +62,12 @@ export class ChallengeDisplayComponent implements OnInit {
   public next(): void {
     if (this.selectedOption) {
       this.challengeService.nextQuestion();
+    }
+  }
+
+   public submit(): void {
+    if(this.selectedOption){
+    this.challengeService.submitQuestions();
     }
   }
 

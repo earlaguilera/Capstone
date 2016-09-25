@@ -14,6 +14,8 @@
       </md-radio-button>
     </md-list-item>
   </md-list>
-  <button md-raised-button color="accent" (click)="previous()">Previous</button>
-  <button md-raised-button color="accent" (click)="next()">Next</button>
+  <button  *ngIf="currQ !== '0'" md-raised-button color="accent" (click)="previous()">Previous</button>
+  <button *ngIf="currQ !== lastQ" md-raised-button color="accent" (click)="next()">Next</button>
+  <button  *ngIf="completion === 100 && currQ === lastQ" md-raised-button color="accent" (click)="submit()">Submit</button>
 </md-card>
+
