@@ -91,7 +91,7 @@ export class ChallengeService {
       };
       this.challengeRecordSubject.next(this.challengeRecord);
     });
-  } 
+  }
 
   /**
    * nextQuestion
