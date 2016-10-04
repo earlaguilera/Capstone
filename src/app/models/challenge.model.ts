@@ -1,4 +1,4 @@
-import { ChallengeItem } from './challenge-item';
+import { ChallengeItem } from './challenge-item.model';
 
 export interface Challenge {
     documentUrl: string;

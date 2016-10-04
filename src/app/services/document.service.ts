@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Promise } from 'es6-promise';
 import { Observable } from 'rxjs/Rx';
 
 import { Document } from '../models';
