@@ -122,7 +122,11 @@ export class ChallengeService {
       );
     }
   }
-
+  public submitQuestions(): void {
+      if (this.currentQuestionId === this.currentChallenge.challengeItems.length) {
+        
+      }
+    }
   /**
    * selectOption
    * Set the chosen option.
