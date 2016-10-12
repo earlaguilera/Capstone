@@ -22,7 +22,7 @@ Short Clips
 
 1 - "Smart and final extra"
 2 - "Now  Hiring"
-4 - "Job Fair"
+5 - "Job Fair"
 8 - "Immediate openings!"
 11 - "Today I want to"
 12 - "Work smarter"
