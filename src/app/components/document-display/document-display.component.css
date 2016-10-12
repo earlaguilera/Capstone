@@ -2,4 +2,12 @@
     max-height: 90%;
     max-width: 90%;
     margin: auto;
+    overflow: none;
+}
+.documentRow {
+    width: 100%;
+    margin-bottom: -6px;
+}
+.rowContainer {
+    position: relative;
 }

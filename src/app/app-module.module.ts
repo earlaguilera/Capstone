@@ -7,6 +7,7 @@ import { MdProgressBarModule } from '@angular2-material/progress-bar';
 import { MdRadioModule } from '@angular2-material/radio';
 import { MdSidenavModule } from '@angular2-material/sidenav';
 import { MdToolbarModule } from '@angular2-material/toolbar';
+import { ModalModule  } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AppComponent }  from './app.component';
 import {
@@ -16,7 +17,7 @@ import {
   ResourceMenuComponent,
   SideMenuComponent
    } from './components';
-import { ChallengeService } from './services';
+import { ChallengeService, DocumentService } from './services';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { ChallengeService } from './services';
     MdProgressBarModule.forRoot(),
     MdRadioModule.forRoot(),
     MdSidenavModule.forRoot(),
-    MdToolbarModule.forRoot()
+    MdToolbarModule.forRoot(),
+    ModalModule
   ],
   declarations: [
     AppComponent,
@@ -37,7 +39,7 @@ import { ChallengeService } from './services';
     ResourceMenuComponent,
     SideMenuComponent
   ],
-  providers: [ ChallengeService ],
+  providers: [ ChallengeService, DocumentService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

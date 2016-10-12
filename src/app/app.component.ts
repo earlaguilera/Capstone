@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
-import { ChallengeService } from './services/challenge.service';
+import { ChallengeService, DocumentService } from './services';
 import { Challenge } from './models';
 
 @Component({
@@ -9,10 +9,11 @@ import { Challenge } from './models';
   styleUrls: ['app.component.css']
 })
 export class AppComponent implements OnInit {
-
   private title: string = '';
 
-  constructor(private challengeService: ChallengeService) { }
+  constructor(private challengeService: ChallengeService,
+              private documentService: DocumentService,
+              private viewContainerRef: ViewContainerRef) { }
 
   ngOnInit() {
     this.challengeService.getCurrentChallengeObservable()
@@ -21,6 +22,6 @@ export class AppComponent implements OnInit {
         this.title = challenge.title;
       }
     });
+    this.documentService.init();
   }
-
 }

@@ -9,7 +9,7 @@ export class ChallengeService {
   private mockChallenge: Challenge = {
     challengeId: '0',
     title: 'Mock Challenge',
-    documentUrl: 'http://images.clipartpanda.com/document-clipart-9iRRbd7ET.png',
+    documentId: 'job',
     challengeItems: [
       {
         id: '0',

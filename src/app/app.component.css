@@ -52,3 +52,6 @@ div.inline {
     width: auto;
 }
 
+.progress {
+  width: 100%;
+}
