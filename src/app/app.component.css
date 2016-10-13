@@ -12,6 +12,16 @@
     width: auto;
 }
 
+.challenge-title {
+  float: left;
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+  font-size: 24px;
+  height: 100%;
+  padding-top: 15px;
+}
+
 div.inline {
     float:left;
 }
