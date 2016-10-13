@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ViewChild } from '@angular/core';
 
 import { ChallengeService, DocumentService } from './services';
 import { Challenge } from './models';
@@ -10,6 +10,8 @@ import { Challenge } from './models';
 })
 export class AppComponent implements OnInit {
   private title: string = '';
+
+  @ViewChild('helpModal') public helpModal: any;
 
   constructor(private challengeService: ChallengeService,
               private documentService: DocumentService,
@@ -23,5 +25,6 @@ export class AppComponent implements OnInit {
       }
     });
     this.documentService.init();
+    // this.helpModal.show();
   }
 }
