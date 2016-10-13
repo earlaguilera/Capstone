@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-side-menu',
@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['side-menu.component.css']
 })
 export class SideMenuComponent implements OnInit {
-  public closeOnClickOutside: boolean = true;
-  public showOverlay: boolean = true;
 
   constructor() { }
 

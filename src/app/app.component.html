@@ -1,20 +1,29 @@
-<md-sidenav-layout>
-    <md-sidenav #sidenav mode="side" class="app-sidenav">
-        <app-side-menu></app-side-menu>
-    </md-sidenav>
-    <md-toolbar color="primary">
-        <button class="app-icon-button" (click)="sidenav.toggle()">
-            <i class="material-icons app-toolbar-menu">menu</i>
-        </button>
-        <span>&nbsp; {{title}}</span>
-    </md-toolbar>
-    <div class="doc-chal-row">
-        <app-document-display class="doc-display-wrapper"></app-document-display>
-        <app-challenge-display class="chal-display-wrapper"></app-challenge-display>
-    </div>
-    <app-progress-display class="progress"></app-progress-display>
-    <app-resource-menu></app-resource-menu>
-</md-sidenav-layout>
+
+<ng2-sidebar [(open)]="_open"
+              [(closeOnClickOutside)]="closeOnClickOutside"
+              [(showOverlay)]="showOverlay" >
+  <div class="side-menu-body">
+    <app-side-menu></app-side-menu>
+  </div>
+</ng2-sidebar>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid header-bar">
+    <button class="btn btn-lg btn-primary side-menu-toggle" 
+            (click)="_toggleSidebar()" >
+      <span class="glyphicon glyphicon-align-justify"></span>
+    </button>
+  </div>
+</nav>
+<!--<md-toolbar color="primary">
+  
+    <span>&nbsp; {{title}}</span>
+</md-toolbar>-->
+<div class="doc-chal-row">
+    <app-document-display class="doc-display-wrapper"></app-document-display>
+    <app-challenge-display class="chal-display-wrapper"></app-challenge-display>
+</div>
+<app-progress-display class="progress"></app-progress-display>
+<app-resource-menu></app-resource-menu>
 
 <div bsModal #helpModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">

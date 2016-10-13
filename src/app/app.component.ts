@@ -10,6 +10,10 @@ import { Challenge } from './models';
 })
 export class AppComponent implements OnInit {
   private title: string = '';
+  private _open: boolean = false;
+
+  public closeOnClickOutside: boolean = true;
+  public showOverlay: boolean = true;
 
   @ViewChild('helpModal') public helpModal: any;
 
@@ -26,5 +30,9 @@ export class AppComponent implements OnInit {
     });
     this.documentService.init();
     // this.helpModal.show();
+  }
+
+  private _toggleSidebar() {
+    this._open = !this._open;
   }
 }
