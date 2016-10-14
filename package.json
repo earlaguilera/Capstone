@@ -26,7 +26,6 @@
     "@angular2-material/list": "^2.0.0-alpha.8-2",
     "@angular2-material/progress-bar": "^2.0.0-alpha.8-2",
     "@angular2-material/radio": "^2.0.0-alpha.8-2",
-    "@angular2-material/toolbar": "^2.0.0-alpha.8-2",
     "@types/hammerjs": "^2.0.32",
     "@types/jasmine": "^2.2.33",
     "core-js": "^2.4.1",

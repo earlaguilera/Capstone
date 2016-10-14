@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewContainerRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnInit,
+  ViewContainerRef,
+  ViewChild
+} from '@angular/core';
 
 import { ChallengeService, DocumentService } from './services';
 import { Challenge } from './models';
@@ -8,9 +14,10 @@ import { Challenge } from './models';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewInit, OnInit {
   private title: string = '';
   private _open: boolean = false;
+  private viewContainerRef: ViewContainerRef;
 
   public closeOnClickOutside: boolean = true;
   public showOverlay: boolean = true;
@@ -19,7 +26,9 @@ export class AppComponent implements OnInit {
 
   constructor(private challengeService: ChallengeService,
               private documentService: DocumentService,
-              private viewContainerRef: ViewContainerRef) { }
+              viewContainerRef: ViewContainerRef) {
+                this.viewContainerRef = viewContainerRef;
+              }
 
   ngOnInit() {
     this.challengeService.getCurrentChallengeObservable()
@@ -29,6 +38,9 @@ export class AppComponent implements OnInit {
       }
     });
     this.documentService.init();
+  }
+
+  ngAfterViewInit(): void {
     // this.helpModal.show();
   }
 

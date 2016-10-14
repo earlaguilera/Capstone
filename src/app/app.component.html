@@ -15,22 +15,30 @@
     <span class="challenge-title">&nbsp; {{title}}</span>
   </div>
 </nav>
-<!--<md-toolbar color="primary">
-  
-    <span>&nbsp; {{title}}</span>
-</md-toolbar>-->
-<div class="doc-chal-row">
-    <app-document-display class="doc-display-wrapper"></app-document-display>
-    <app-challenge-display class="chal-display-wrapper"></app-challenge-display>
+<div class="container">
+  <div class="row main-field">
+    <div class="col-sm-8 document-field">
+      <app-document-display class="doc-display-wrapper"></app-document-display>
+    </div>
+    <div class="col-sm-4">
+      <app-challenge-display class="chal-display-wrapper"></app-challenge-display>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <app-progress-display class="progress"></app-progress-display>
+    </div>
+  </div>
 </div>
-<app-progress-display class="progress"></app-progress-display>
-<app-resource-menu></app-resource-menu>
 
-<div bsModal #helpModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<button class="activate-modal" (click)="helpModal.show()"></button>
+<div bsModal #helpModal="bs-modal" class="modal fade"
+      tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+      aria-hidden="true" [config]="{backdrop: 'static', show: 'true'}">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" aria-label="Close" (click)="smModal.hide()">
+        <button type="button" class="close" aria-label="Close" (click)="helpModal.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
         <h4 class="modal-title">Small modal</h4>
