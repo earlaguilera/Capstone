@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
 import { Document, SoundProperties } from '../models';
+import { AudioService } from './audio.service';
 
 @Injectable()
 export class DocumentService {
-  private initializeSoundManager: Promise<void>;
   private currentDocumentSubject: BehaviorSubject<Document>;
   private mockDocument: Document = {
     id: 'job',
@@ -22,7 +22,7 @@ export class DocumentService {
     ]
   };
 
-  constructor() {
+  constructor(private audioService: AudioService) {
     // Mock data setup
     for (let row of this.mockDocument.rows) {
       if (row.hasSound) {
@@ -37,38 +37,8 @@ export class DocumentService {
     this.currentDocumentSubject = new BehaviorSubject<Document>(this.mockDocument);
   }
 
-  public init() {
-    this.initializeSoundManager = new Promise<void>((resolve: Function, reject: Function) => {
-      let success = false;
-      soundManager.setup({
-        url: '/app/assets/sounds/',
-        flashLoadTimeout: 1000,
-        onready: () => {
-          resolve();
-          success = true;
-        }
-      });
-      setTimeout(() => {
-        if (!success) {
-          reject();
-        }
-      }, 50000);
-    }).catch(() => {
-      console.error('Failed to start Sound Manager.');
-    });
-  }
-
   public playSound(sound: SoundProperties): Promise<void> {
-    return this.initializeSoundManager.then(() => {
-      return new Promise<void>((resolve: Function, reject: Function) => {
-        let soundToPlay = soundManager.createSound(sound);
-        soundToPlay.load({onload: () => {
-          soundToPlay.play({onfinish: () => {
-            resolve();
-          }});
-        }});
-      });
-    });
+    return this.audioService.playSound(sound);
   }
 
   public getDocument(name: string): Observable<Document> {

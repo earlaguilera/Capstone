@@ -17,7 +17,7 @@ import {
   ResourceMenuComponent,
   SideMenuComponent
    } from './components';
-import { ChallengeService, DocumentService } from './services';
+import { AudioService, ChallengeService, DocumentService } from './services';
 
 @NgModule({
   imports: [
@@ -39,7 +39,7 @@ import { ChallengeService, DocumentService } from './services';
     ResourceMenuComponent,
     SideMenuComponent
   ],
-  providers: [ ChallengeService, DocumentService ],
+  providers: [ AudioService, ChallengeService, DocumentService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
