@@ -9,14 +9,21 @@ import { Challenge, Document } from '../../models';
     trigger('rowState', [
       state('inactive', style({
         transform: 'scale(1)',
-        zIndex: '1'
+        zIndex: '1',
+        opacity: '1'
       })),
-      state('active',   style({
+      state('active-focus',   style({
         transform: 'scale(1.5)',
-        zIndex: '10'
+        zIndex: '10',
+        opacity: '1'
       })),
-      transition('inactive => active', animate('200ms ease-in')),
-      transition('active => inactive', animate('200ms ease-out'))
+      state('active-unfocus',   style({
+        transform: 'scale(1)',
+        zIndex: '1',
+        opacity: '0.2'
+      })),
+      transition('inactive => active-focus', animate('200ms ease-in')),
+      transition('active-focus => inactive', animate('200ms ease-out'))
     ])
   ],
   selector: 'app-document-display',
@@ -46,12 +53,16 @@ export class DocumentDisplayComponent implements OnInit {
 
   clickRow(index: number): void {
     if (this.currentDocument.rows[index].hasSound) {
-      let state = this.currentDocument.rows[index].state;
-      state = state === 'active' ? 'inactive' : 'active';
-      this.currentDocument.rows[index].state = state;
+      this.currentDocument.rows[index].state = 'active-focus';
+      for (let row of this.currentDocument.rows) {
+        if (row.state !== 'active-focus') {
+            row.state = 'active-unfocus';
+        }
+      }
       this.documentService.playSound(this.currentDocument.rows[index].sound).then(() => {
-        state = state === 'active' ? 'inactive' : 'active';
-        this.currentDocument.rows[index].state = state;
+           for (let row of this.currentDocument.rows) {
+             row.state = 'inactive';
+           }
       });
     }
   }

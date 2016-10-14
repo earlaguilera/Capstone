@@ -6,7 +6,7 @@ import {
   ViewChild
 } from '@angular/core';
 
-import { ChallengeService, DocumentService } from './services';
+import { AudioService, ChallengeService } from './services';
 import { Challenge } from './models';
 
 @Component({
@@ -17,7 +17,6 @@ import { Challenge } from './models';
 export class AppComponent implements AfterViewInit, OnInit {
   private title: string = '';
   private _open: boolean = false;
-  private viewContainerRef: ViewContainerRef;
 
   public closeOnClickOutside: boolean = true;
   public showOverlay: boolean = true;
@@ -25,10 +24,8 @@ export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild('helpModal') public helpModal: any;
 
   constructor(private challengeService: ChallengeService,
-              private documentService: DocumentService,
-              viewContainerRef: ViewContainerRef) {
-                this.viewContainerRef = viewContainerRef;
-              }
+              private audioService: AudioService,
+              private viewContainerRef: ViewContainerRef) { }
 
   ngOnInit() {
     this.challengeService.getCurrentChallengeObservable()
@@ -37,10 +34,10 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.title = challenge.title;
       }
     });
-    this.documentService.init();
   }
 
   ngAfterViewInit(): void {
+    this.audioService.init();
     // this.helpModal.show();
   }
 
