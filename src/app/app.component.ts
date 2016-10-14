@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewContainerRef, ViewChild } from '@angular/core';
 
-import { ChallengeService, DocumentService } from './services';
+import { AudioService, ChallengeService } from './services';
 import { Challenge } from './models';
 
 @Component({
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   @ViewChild('helpModal') public helpModal: any;
 
   constructor(private challengeService: ChallengeService,
-              private documentService: DocumentService,
+              private audioService: AudioService,
               private viewContainerRef: ViewContainerRef) { }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
         this.title = challenge.title;
       }
     });
-    this.documentService.init();
+    this.audioService.init();
     // this.helpModal.show();
   }
 
