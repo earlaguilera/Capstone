@@ -1,13 +1,12 @@
 import {
   AfterViewInit,
   Component,
-  OnInit,
-  ViewContainerRef,
-  ViewChild
+  OnInit
 } from '@angular/core';
 
-import { AudioService, ChallengeService } from './services';
+import { ChallengeDisplayComponent } from './components';
 import { Challenge } from './models';
+import { AudioService, ChallengeService, ModalService } from './services';
 
 @Component({
   selector: 'app-root',
@@ -20,12 +19,13 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   public closeOnClickOutside: boolean = true;
   public showOverlay: boolean = true;
+  public closeButton: boolean = false;
+  public closeEsc: boolean = false;
+  public closeClick: boolean = false;
 
-  @ViewChild('helpModal') public helpModal: any;
-
-  constructor(private challengeService: ChallengeService,
-              private audioService: AudioService,
-              private viewContainerRef: ViewContainerRef) { }
+  constructor( private audioService: AudioService,
+               private challengeService: ChallengeService,
+               private modalService: ModalService) {}
 
   ngOnInit() {
     this.challengeService.getCurrentChallengeObservable()
@@ -38,7 +38,17 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     this.audioService.init();
-    // this.helpModal.show();
+    this.modalService.openModal({
+      content: ChallengeDisplayComponent,
+      options: {
+        modalClass: 'modal-md instructions',
+        title: 'Instructions',
+        submitButtonLabel: 'Begin',
+        hideCloseButton: true,
+        closeOnEscape: false,
+        closeOnOutsideClick: false
+      }
+    });
   }
 
   private _toggleSidebar() {

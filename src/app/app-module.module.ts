@@ -6,18 +6,26 @@ import { MdListModule } from '@angular2-material/list';
 import { MdProgressBarModule } from '@angular2-material/progress-bar';
 import { MdRadioModule } from '@angular2-material/radio';
 import { MdToolbarModule } from '@angular2-material/toolbar';
-import { ModalModule  } from 'ng2-bootstrap/ng2-bootstrap';
+import {  } from 'ng2-bootstrap/ng2-bootstrap';
+import { ModalModule } from 'ng2-modal';
 import { SidebarModule } from 'ng2-sidebar';
 
 import { AppComponent }  from './app.component';
 import {
   ChallengeDisplayComponent,
   DocumentDisplayComponent,
+  GeneratedModalComponent,
   ProgressDisplayComponent,
   ResourceMenuComponent,
   SideMenuComponent
    } from './components';
-import { AudioService, ChallengeService, DocumentService } from './services';
+import {  } from './directives';
+import {
+  AudioService,
+  ChallengeService,
+  DocumentService,
+  ModalService
+} from './services';
 
 @NgModule({
   imports: [
@@ -35,11 +43,20 @@ import { AudioService, ChallengeService, DocumentService } from './services';
     AppComponent,
     ChallengeDisplayComponent,
     DocumentDisplayComponent,
+    GeneratedModalComponent,
     ProgressDisplayComponent,
     ResourceMenuComponent,
     SideMenuComponent
   ],
-  providers: [ AudioService, ChallengeService, DocumentService ],
-  bootstrap:    [ AppComponent ]
+  providers: [
+    AudioService,
+    ChallengeService,
+    DocumentService,
+    ModalService
+  ],
+  entryComponents: [
+    ChallengeDisplayComponent
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
