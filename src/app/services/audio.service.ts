@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { SoundProperties } from '../models'
+import { SoundProperties } from '../models';
 
 @Injectable()
 export class AudioService {
