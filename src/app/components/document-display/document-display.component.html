@@ -1,7 +1,6 @@
-<md-card>
-    <div class="document" *ngIf="currentDocument?.rows">
-        <div *ngFor="let row of currentDocument.rows; let i = index;" [@rowState]="row.state" class="rowContainer">
-            <img src="{{getImageUrl(i)}}" class="documentRow" (click)="clickRow(i)">
-        </div>
+
+<div class="document" *ngIf="currentDocument?.rows">
+    <div *ngFor="let row of currentDocument.rows; let i = index;" [@rowState]="row.state" class="rowContainer">
+        <img src="{{getImageUrl(i)}}" class="documentRow" (click)="clickRow(i)">
     </div>
-</md-card>
+</div>

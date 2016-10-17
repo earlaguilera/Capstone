@@ -1,0 +1,16 @@
+modal * div {
+  background-color: pink;
+}
+
+.instructions * .modal-footer{
+  text-align: center;
+}
+
+.instructions * .btn-primary {
+  text-align: center;
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  width: 60%;
+}
