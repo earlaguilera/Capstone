@@ -8,6 +8,8 @@ import { MdRadioModule } from '@angular2-material/radio';
 import { MdToolbarModule } from '@angular2-material/toolbar';
 import { ModalModule  } from 'ng2-bootstrap/ng2-bootstrap';
 import { SidebarModule } from 'ng2-sidebar';
+import { ProgressbarModule } from 'ng2-bootstrap/components/progressbar';
+
 
 import { AppComponent }  from './app.component';
 import {
@@ -29,7 +31,8 @@ import { ChallengeService, DocumentService } from './services';
     MdRadioModule.forRoot(),
     MdToolbarModule.forRoot(),
     ModalModule,
-    SidebarModule
+    SidebarModule,
+    ProgressbarModule
   ],
   declarations: [
     AppComponent,
