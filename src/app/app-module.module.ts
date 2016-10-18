@@ -14,7 +14,10 @@ import {
   ProgressDisplayComponent,
   ResourceMenuComponent,
   SideMenuComponent
-   } from './components';
+} from './components';
+import {
+  ChallengeSummaryComponent
+} from './components/modals';
 import {  } from './directives';
 import {
   AudioService,
@@ -32,6 +35,7 @@ import {
   ],
   declarations: [
     AppComponent,
+    ChallengeSummaryComponent,
     DocumentDisplayComponent,
     ExploreComponent,
     GeneratedModalComponent,
@@ -45,7 +49,9 @@ import {
     DocumentService,
     ModalService
   ],
-  entryComponents: [ ],
+  entryComponents: [
+    ChallengeSummaryComponent
+   ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
