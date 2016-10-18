@@ -34,16 +34,22 @@ export class AppComponent implements OnInit {
 
   private _toggleSidebar() {
     this._open = !this._open;
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    if (!this._open) {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.body.style.backgroundColor = "white";
+    } else {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
   }
 
    private _closeOnClickOutside(){
-   this.closeOnClickOutside = !this.closeOnClickOutside;
-   document.getElementById("mySidenav").style.width = "0";
-   document.getElementById("main").style.marginLeft = "0";
-   document.body.style.backgroundColor = "white";
+    this.closeOnClickOutside = !this.closeOnClickOutside;
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
    }
   
 }
