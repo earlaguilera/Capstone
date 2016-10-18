@@ -41,4 +41,8 @@ export class AudioService {
       });
     });
   }
+
+  public cancelSounds(): void {
+     soundManager.stopAll();
+  }
 }

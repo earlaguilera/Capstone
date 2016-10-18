@@ -52,6 +52,7 @@ export class DocumentDisplayComponent implements OnInit {
   }
 
   clickRow(index: number): void {
+    this.reset();
     if (this.currentDocument.rows[index].hasSound) {
       this.currentDocument.rows[index].state = 'active-focus';
       for (let row of this.currentDocument.rows) {
@@ -69,5 +70,12 @@ export class DocumentDisplayComponent implements OnInit {
 
   public getImageUrl(index: number): string {
     return this.imageUrl + this.documentId + index + '.png';
+  }
+
+  private reset(): void {
+    this.documentService.reset();
+    for (let row of this.currentDocument.rows) {
+      row.state = 'inactive';
+    }
   }
 }

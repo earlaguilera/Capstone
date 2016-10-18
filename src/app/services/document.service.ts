@@ -7,6 +7,7 @@ import { AudioService } from './audio.service';
 @Injectable()
 export class DocumentService {
   private currentDocumentSubject: BehaviorSubject<Document>;
+  private playingSound: boolean = false;
   private mockDocument: Document = {
     id: 'job',
     rows: [
@@ -38,10 +39,21 @@ export class DocumentService {
   }
 
   public playSound(sound: SoundProperties): Promise<void> {
-    return this.audioService.playSound(sound);
+    if (this.playingSound) {
+      this.audioService.cancelSounds();
+    } else {
+      this.playingSound = true;
+    }
+    return this.audioService.playSound(sound).then((): void => {
+      this.playingSound = false;
+    });
   }
 
   public getDocument(name: string): Observable<Document> {
       return this.currentDocumentSubject.asObservable();
+  }
+
+  public reset(): void {
+    this.audioService.cancelSounds();
   }
 }

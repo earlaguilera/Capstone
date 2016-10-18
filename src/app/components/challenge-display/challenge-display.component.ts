@@ -19,7 +19,7 @@ export class ChallengeDisplayComponent implements OnInit {
   private completion: number = 0;
   private lastQ: string = '';
   private currQ: string = '';
-  
+
   constructor(private challengeService: ChallengeService) {
     this.currentQuestion = this.createBlankQuestion();
    }
