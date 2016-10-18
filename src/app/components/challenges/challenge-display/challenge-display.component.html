@@ -1,0 +1,21 @@
+<md-card *ngIf="showQuestion">
+  <div class="prompt">
+    {{currentQuestion.prompt}}
+  </div>
+  <md-list>
+    <md-list-item *ngFor="let option of options">
+      <md-radio-button 
+                        [checked]="isSelected(option.id)"
+                        value="option.id"
+                        (click)="setSelectedOption(option.id)"
+                        md-no-ink="true"
+                        aria-label="label">
+          {{option.text}}
+      </md-radio-button>
+    </md-list-item>
+  </md-list>
+  <button  *ngIf="currQ !== '0'" md-raised-button color="accent" (click)="previous()">Previous</button>
+  <button *ngIf="currQ !== lastQ" md-raised-button color="accent" (click)="next()">Next</button>
+  <button  *ngIf="completion === 100 && currQ === lastQ" md-raised-button color="accent" (click)="submit()">Submit</button>
+</md-card>
+
