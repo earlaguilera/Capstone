@@ -46,9 +46,11 @@ export class AppComponent implements AfterViewInit, OnInit {
         submitButtonLabel: 'Begin',
         hideCloseButton: true,
         closeOnEscape: false,
-        closeOnOutsideClick: false
+        closeOnOutsideClick: false,
+        onClose: () => { this.showOverlay = false; }
       }
     });
+    this.showOverlay = true;
   }
 
   public toggleSidebar(): void {
