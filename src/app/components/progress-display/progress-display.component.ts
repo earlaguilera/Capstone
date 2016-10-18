@@ -19,5 +19,4 @@ export class ProgressDisplayComponent implements OnInit {
       this.completion = record.completion * 100;
     });
   }
-
 }

@@ -16,6 +16,7 @@ import { AppComponent }  from './app.component';
 import {
   ChallengeDisplayComponent,
   DocumentDisplayComponent,
+  ExploreComponent,
   GeneratedModalComponent,
   ProgressDisplayComponent,
   ResourceMenuComponent,
@@ -46,6 +47,7 @@ import {
     AppComponent,
     ChallengeDisplayComponent,
     DocumentDisplayComponent,
+    ExploreComponent,
     GeneratedModalComponent,
     ProgressDisplayComponent,
     ResourceMenuComponent,

@@ -4,7 +4,7 @@ import {
   OnInit
 } from '@angular/core';
 
-import { ChallengeDisplayComponent } from './components';
+import {  } from './components';
 import { Challenge } from './models';
 import { AudioService, ChallengeService, ModalService } from './services';
 
