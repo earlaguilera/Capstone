@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 .sidebar {
-  margin-top: 70px;
+  /*margin-top: 70px;*/
   overflow-y: hidden;
+  z-index: 0 !important;
 }

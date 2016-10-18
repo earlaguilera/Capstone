@@ -35,7 +35,7 @@ import { ChallengeService, DocumentService } from './services';
     DocumentDisplayComponent,
     ProgressDisplayComponent,
     ResourceMenuComponent,
-    SideMenuComponent
+    SideMenuComponent,
   ],
   providers: [ ChallengeService, DocumentService ],
   bootstrap:    [ AppComponent ]
