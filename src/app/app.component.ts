@@ -22,6 +22,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   public closeButton: boolean = false;
   public closeEsc: boolean = false;
   public closeClick: boolean = false;
+  public overlayShown: boolean = false;
 
   constructor( private audioService: AudioService,
                private challengeService: ChallengeService,
