@@ -37,7 +37,7 @@ import {
     GeneratedModalComponent,
     ProgressDisplayComponent,
     ResourceMenuComponent,
-    SideMenuComponent
+    SideMenuComponent,
   ],
   providers: [
     AudioService,
