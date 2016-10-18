@@ -55,6 +55,9 @@ div.inline {
 
 .progress {
   width: 100%;
+  padding-top: 8px;
+  padding: 5px;
+  height: 40px;
 }
 
 .main-field {

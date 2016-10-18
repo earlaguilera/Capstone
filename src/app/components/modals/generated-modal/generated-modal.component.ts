@@ -53,11 +53,13 @@ export class GeneratedModalComponent implements OnInit {
           this.modalOptions.onSubmit ? this.modalOptions.onSubmit :  () => {
             this.generatedModal.close();
           };
-        this.modalContent.createComponent(
-          this.componentFactoryResolver.resolveComponentFactory(
-            modalDescription.content
-          )
-        );
+        if (modalDescription.content) {
+          this.modalContent.createComponent(
+            this.componentFactoryResolver.resolveComponentFactory(
+              modalDescription.content
+            )
+          );
+        }
         if (modalDescription.header) {
           this.modalHeader.createComponent(
             this.componentFactoryResolver.resolveComponentFactory(

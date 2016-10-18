@@ -1,3 +1,6 @@
-<progressbar  class="progress-bar" mode="determinate" [value]="completion"></progressbar>
-<span class="progress-info"><b>&nbsp;{{completion}}%</b></span>
+<progressbar  class="progress-bar" mode="determinate"
+                                   type="info"
+                                   animate="true"
+                                   max="100"
+                                   [value]="completion"></progressbar>
 <h4 *ngIf="completion === 100" class="complete"><b>&nbsp;Complete!</b></h4>

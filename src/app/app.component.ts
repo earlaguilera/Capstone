@@ -39,7 +39,6 @@ export class AppComponent implements AfterViewInit, OnInit {
   ngAfterViewInit(): void {
     this.audioService.init();
     this.modalService.openModal({
-      content: ChallengeDisplayComponent,
       options: {
         modalClass: 'modal-md instructions',
         title: 'Instructions',
