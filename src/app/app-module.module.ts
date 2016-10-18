@@ -16,7 +16,8 @@ import {
   SideMenuComponent
 } from './components';
 import {
-  ChallengeSummaryComponent
+  ChallengeSummaryComponent,
+  HelpModalComponent
 } from './components/modals';
 import {  } from './directives';
 import {
@@ -39,6 +40,7 @@ import {
     DocumentDisplayComponent,
     ExploreComponent,
     GeneratedModalComponent,
+    HelpModalComponent,
     ProgressDisplayComponent,
     ResourceMenuComponent,
     SideMenuComponent,
@@ -50,7 +52,8 @@ import {
     ModalService
   ],
   entryComponents: [
-    ChallengeSummaryComponent
+    ChallengeSummaryComponent,
+    HelpModalComponent
    ],
   bootstrap: [ AppComponent ]
 })
