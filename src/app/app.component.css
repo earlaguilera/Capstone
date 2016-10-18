@@ -13,6 +13,8 @@
 }
 
 .challenge-title {
+  position: absolute;
+  width: 90%;
   float: left;
   color: #FFF;
   font-weight: bold;
@@ -40,10 +42,6 @@ div.inline {
     width: auto;
 }
 
-.header-bar {
-  height: 100%;
-}
-
 .progress {
   width: 100%;
 }
@@ -55,10 +53,21 @@ div.inline {
 .side-menu-body {
   height: 100%;
   width: 200px;
-  background-color: #FFF;
+  background-color: #111;
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 .side-menu-toggle {
   float: left;
   margin-top: 10px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
 }

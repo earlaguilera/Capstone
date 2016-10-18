@@ -1,8 +1,9 @@
 
-<ng2-sidebar [(open)]="_open"
+<ng2-sidebar  [(open)]="_open"
               [(closeOnClickOutside)]="closeOnClickOutside"
+              (click)="_closeOnClickOutside()"
               [(showOverlay)]="showOverlay" >
-  <div class="side-menu-body">
+  <div id="mySidenav" class="side-menu-body">
     <app-side-menu></app-side-menu>
   </div>
 </ng2-sidebar>
@@ -10,11 +11,13 @@
   <div class="container-fluid header-bar">
     <button class="btn btn-lg btn-primary side-menu-toggle" 
             (click)="_toggleSidebar()" >
-      <span class="glyphicon glyphicon-align-justify"></span>
+      <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
     <span class="challenge-title">&nbsp; {{title}}</span>
   </div>
 </nav>
+<div id="main">
+  
 <!--<md-toolbar color="primary">
   
     <span>&nbsp; {{title}}</span>
@@ -40,4 +43,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

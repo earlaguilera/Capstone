@@ -11,5 +11,9 @@ export class SideMenuComponent implements OnInit {
 
   ngOnInit() {
   }
-
+private closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
+}
 }
