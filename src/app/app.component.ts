@@ -50,7 +50,19 @@ export class AppComponent implements AfterViewInit, OnInit {
     });
   }
 
-  private _toggleSidebar() {
+  public toggleSidebar(): void {
     this._open = !this._open;
   }
+
+  public onSidebarOpen(): void {
+    document.getElementById('mySidenav').style.width = '250px';
+    document.getElementById('main').style.marginLeft = '250px';
+    document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
+  }
+
+   public onSidebarClose(): void {
+    document.getElementById('mySidenav').style.width = '0';
+    document.getElementById('main').style.marginLeft = '0';
+    document.body.style.backgroundColor = 'white';
+   }
 }

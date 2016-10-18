@@ -5,9 +5,13 @@ import { MdCardModule } from '@angular2-material/card';
 import { MdListModule } from '@angular2-material/list';
 import { MdProgressBarModule } from '@angular2-material/progress-bar';
 import { MdRadioModule } from '@angular2-material/radio';
+<<<<<<< HEAD
 import { MdToolbarModule } from '@angular2-material/toolbar';
 import {  } from 'ng2-bootstrap/ng2-bootstrap';
 import { ModalModule } from 'ng2-modal';
+=======
+import { ModalModule  } from 'ng2-bootstrap/ng2-bootstrap';
+>>>>>>> 0cd266698a355a71239d1a096f41ea3d6afa73ad
 import { SidebarModule } from 'ng2-sidebar';
 import { ProgressbarModule } from 'ng2-bootstrap/components/progressbar';
 
@@ -38,7 +42,10 @@ import {
     MdListModule.forRoot(),
     MdProgressBarModule.forRoot(),
     MdRadioModule.forRoot(),
+<<<<<<< HEAD
     MdToolbarModule.forRoot(),
+=======
+>>>>>>> 0cd266698a355a71239d1a096f41ea3d6afa73ad
     ModalModule,
     SidebarModule,
     ProgressbarModule
