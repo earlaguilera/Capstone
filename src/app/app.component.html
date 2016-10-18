@@ -1,8 +1,10 @@
 
 <ng2-sidebar  [(open)]="_open"
+              (onOpen)="onSidebarOpen()"
               [(closeOnClickOutside)]="closeOnClickOutside"
-              (click)="_closeOnClickOutside()"
-              [(showOverlay)]="showOverlay" >
+              (onClose)="onSidebarClose()"
+              [(showOverlay)]="showOverlay" 
+              sidebarClass="sidebar">
   <div id="mySidenav" class="side-menu-body">
     <app-side-menu></app-side-menu>
   </div>
@@ -10,7 +12,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid header-bar">
     <button class="btn btn-lg btn-primary side-menu-toggle" 
-            (click)="_toggleSidebar()" >
+            (click)="toggleSidebar()" >
       <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
     <span class="challenge-title">&nbsp; {{title}}</span>
