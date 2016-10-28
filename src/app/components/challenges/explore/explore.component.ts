@@ -13,6 +13,7 @@ export class ExploreComponent implements OnInit {
   constructor(private modalService: ModalService) { }
 
   ngOnInit() {
+    this.onComplete();
   }
 
   private onComplete(): void {
@@ -26,6 +27,6 @@ export class ExploreComponent implements OnInit {
         closeOnEscape: false,
         closeOnOutsideClick: false
       }
-    })
+    });
   }
 }

@@ -14,6 +14,9 @@ import { AudioService, ChallengeService, ModalService } from './services';
   styleUrls: ['app.component.css']
 })
 export class AppComponent implements AfterViewInit, OnInit {
+  // config for dev
+  private skipHelp: boolean = true;
+
   private title: string = '';
   private _open: boolean = false;
 
@@ -39,18 +42,20 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     this.audioService.init();
-    this.modalService.openModal({
-      options: {
-        modalClass: 'modal-md instructions',
-        title: 'Instructions',
-        submitButtonLabel: 'Begin',
-        hideCloseButton: true,
-        closeOnEscape: false,
-        closeOnOutsideClick: false,
-        onClose: () => { this.showOverlay = false; }
-      }
-    });
-    this.showOverlay = true;
+    if (!this.skipHelp) {
+      this.modalService.openModal({
+        options: {
+          modalClass: 'modal-md instructions',
+          title: 'Instructions',
+          submitButtonLabel: 'Begin',
+          hideCloseButton: true,
+          closeOnEscape: false,
+          closeOnOutsideClick: false,
+          onClose: () => { this.showOverlay = false; }
+        }
+      });
+      this.showOverlay = true;
+    }
   }
 
   public toggleSidebar(): void {

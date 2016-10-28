@@ -9,37 +9,33 @@ export class ChallengeService {
   private mockChallenge: Challenge = {
     challengeId: '0',
     title: 'Mock Challenge',
+    type: 'explore',
     documentId: 'job',
     challengeItems: [
       {
         id: '0',
-        correct: '0',
-        prompt: 'What is the answer to question 1?',
-        options: undefined
+        correct: '1',
+        prompt: 'Where is part 1?'
       },
       {
         id: '1',
-        correct: '0',
-        prompt: 'What is the answer to question 2?',
-        options: undefined
+        correct: '2',
+        prompt: 'Where is part 2?'
       },
       {
         id: '2',
-        correct: '0',
-        prompt: 'What is the answer to question 3?',
-        options: undefined
+        correct: '3',
+        prompt: 'Where is part 3?'
       },
       {
         id: '3',
-        correct: '0',
-        prompt: 'What is the answer to question 4?',
-        options: undefined
+        correct: '4',
+        prompt: 'Where is part 4?'
       },
       {
         id: '4',
-        correct: '0',
-        prompt: 'What is the answer to question 5?',
-        options: undefined
+        correct: '5',
+        prompt: 'Where is part 5?'
       }
     ]
   };
@@ -52,15 +48,6 @@ export class ChallengeService {
   private challengeRecord: ChallengeRecord;
 
   constructor() {
-    // Set up mock data
-    let options = new Map<string, string>();
-    options.set('0', 'option one');
-    options.set('1', 'option two');
-    options.set('2', 'option three');
-    options.set('3', 'option four');
-    for (let item of this.mockChallenge.challengeItems) {
-        item.options = options;
-    }
     this.setChallenge('blah');
 
     // Configure service
