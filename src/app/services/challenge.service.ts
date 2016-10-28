@@ -1,44 +1,14 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
+import { MockExploreChallenge, MockMultipleChoiceChallenge } from '../../resources/mock-data';
 import { Challenge, ChallengeItem, ChallengeRecord, Selection } from '../models';
 
 @Injectable()
 export class ChallengeService {
-
-  private mockChallenge: Challenge = {
-    challengeId: '0',
-    title: 'Mock Challenge',
-    type: 'explore',
-    documentId: 'job',
-    challengeItems: [
-      {
-        id: '0',
-        correct: '1',
-        prompt: 'Where is part 1?'
-      },
-      {
-        id: '1',
-        correct: '2',
-        prompt: 'Where is part 2?'
-      },
-      {
-        id: '2',
-        correct: '3',
-        prompt: 'Where is part 3?'
-      },
-      {
-        id: '3',
-        correct: '4',
-        prompt: 'Where is part 4?'
-      },
-      {
-        id: '4',
-        correct: '5',
-        prompt: 'Where is part 5?'
-      }
-    ]
-  };
+  // dev config
+  private mockMultipleChoiceChallenge: Challenge = MockMultipleChoiceChallenge;
+  private mockExploreChallenge: Challenge = MockExploreChallenge;
 
   private currentChallengeSubject = new BehaviorSubject<Challenge>(undefined);
   private currentQuestionSubject = new BehaviorSubject<ChallengeItem>(undefined);
@@ -48,8 +18,6 @@ export class ChallengeService {
   private challengeRecord: ChallengeRecord;
 
   constructor() {
-    this.setChallenge('blah');
-
     // Configure service
     this.currentChallengeSubject.subscribe((challenge: Challenge) => {
       this.currentChallenge = challenge;
@@ -67,7 +35,7 @@ export class ChallengeService {
    * Set the current challenge
    * @param challengeId the ID of the challenge
    */
-  public setChallenge(challengeId: string): void {
+  public setChallenge(challengeId: string): Observable<Challenge> {
     this.getChallengeById(challengeId).subscribe((challenge: Challenge) => {
       this.currentChallengeSubject.next(challenge);
        this.challengeRecord = {
@@ -78,6 +46,7 @@ export class ChallengeService {
       };
       this.challengeRecordSubject.next(this.challengeRecord);
     });
+    return this.getCurrentChallengeObservable();
   }
 
   /**
@@ -110,8 +79,8 @@ export class ChallengeService {
     }
   }
   public submitQuestions(): void {
-      if (this.currentQuestionId === this.currentChallenge.challengeItems.length) {
-        
+      if (this.currentChallenge.itemsRemaining === 0) {
+        // TODO: open results in summary modal
       }
     }
   /**
@@ -136,7 +105,9 @@ export class ChallengeService {
    */
   // TODO: add type for observable
   public getCurrentChallengeObservable(): Observable<Challenge> {
-    return this.currentChallengeSubject.asObservable();
+    return this.currentChallengeSubject.asObservable().filter((challenge: Challenge): boolean => {
+      return challenge !== undefined;
+    });
   }
 
   /**
@@ -166,6 +137,12 @@ export class ChallengeService {
   // TODO: return type Challenge
   private getChallengeById(challengeId: string): Observable<Challenge> {
     // TODO make http call to server
-    return Observable.from([this.mockChallenge]);
+    if (challengeId === 'multiple-choice') {
+      return Observable.from([this.mockMultipleChoiceChallenge]);
+    } else if (challengeId === 'explore') {
+      return Observable.from([this.mockExploreChallenge]);
+    } else {
+      return Observable.throw('CHALLENGE_NOT_FOUND');
+    }
   }
 }

@@ -53,6 +53,7 @@ import {
   ],
   entryComponents: [
     ChallengeSummaryComponent,
+    ExploreComponent,
     HelpModalComponent
    ],
   bootstrap: [ AppComponent ]

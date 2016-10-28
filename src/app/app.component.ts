@@ -1,10 +1,13 @@
 import {
   AfterViewInit,
   Component,
-  OnInit
+  ComponentFactoryResolver,
+  OnInit,
+  ViewChild,
+  ViewContainerRef
 } from '@angular/core';
 
-import {  } from './components';
+import { getComponetClass } from './components/challenges';
 import { Challenge } from './models';
 import { AudioService, ChallengeService, ModalService } from './services';
 
@@ -16,10 +19,13 @@ import { AudioService, ChallengeService, ModalService } from './services';
 export class AppComponent implements AfterViewInit, OnInit {
   // config for dev
   private skipHelp: boolean = true;
+  private challengeType: string = 'explore';
+
+  @ViewChild('challengeDisplay', {read: ViewContainerRef})
+  private challengeContainer: ViewContainerRef;
 
   private title: string = '';
   private _open: boolean = false;
-
   public closeOnClickOutside: boolean = true;
   public showOverlay: boolean = true;
   public closeButton: boolean = false;
@@ -28,15 +34,30 @@ export class AppComponent implements AfterViewInit, OnInit {
   public overlayShown: boolean = false;
 
   constructor( private audioService: AudioService,
+               private componentFactoryResolver: ComponentFactoryResolver,
                private challengeService: ChallengeService,
                private modalService: ModalService) {}
 
+/*
+ * OnInit: Get the current challenge by ID, then inject the correct
+ *          component type into the container.
+ */
   ngOnInit() {
-    this.challengeService.getCurrentChallengeObservable()
+    this.challengeService.setChallenge(this.challengeType)
     .subscribe((challenge: Challenge) => {
-      if (challenge && challenge.title) {
+      const component = getComponetClass(challenge.type);
+      if (component) {
         this.title = challenge.title;
+        this.challengeContainer.createComponent(
+          this.componentFactoryResolver.resolveComponentFactory(component)
+        );
+      } else {
+        // TODO: Handle component class not found
+        console.error('Challenge Component class not found: ', challenge.type);
       }
+    }, (error: string) => {
+      // TODO: handle challenge not found
+      console.error('Challenge not found: ', this.challengeType);
     });
   }
 

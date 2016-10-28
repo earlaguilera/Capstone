@@ -1,0 +1,14 @@
+.doc-display-wrapper {
+    display: inline-block;
+    margin-left: 10px;
+    width: 55%;
+    max-width: 600px;
+    max-height: 800px;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+}
+
+.document-field {
+  border-right: 2px #000 solid;
+}

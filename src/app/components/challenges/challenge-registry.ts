@@ -1,5 +1,10 @@
 import { ExploreComponent } from './';
 
-export const Challenges = {
-    'explore': ExploreComponent
-};
+export function getComponetClass(className: string): any {
+    switch (className) {
+        case 'explore':
+            return ExploreComponent;
+        default:
+            return undefined;
+    }
+}
