@@ -9,7 +9,12 @@ import {
 
 import { getComponetClass } from './components/challenges';
 import { Challenge } from './models';
-import { AudioService, ChallengeService, ModalService } from './services';
+import {
+  AudioService,
+  ChallengeService,
+  ModalService,
+  WindowService
+} from './services';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +37,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   public closeEsc: boolean = false;
   public closeClick: boolean = false;
   public overlayShown: boolean = false;
+  private windowService = new WindowService();
 
   constructor( private audioService: AudioService,
                private componentFactoryResolver: ComponentFactoryResolver,
@@ -65,6 +71,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     this.audioService.init();
     if (!this.skipHelp) {
       this.modalService.openModal({
+        content: undefined, // TODO: Help modal
         options: {
           modalClass: 'modal-md instructions',
           title: 'Instructions',
@@ -86,12 +93,12 @@ export class AppComponent implements AfterViewInit, OnInit {
   public onSidebarOpen(): void {
     document.getElementById('mySidenav').style.width = '250px';
     document.getElementById('main').style.marginLeft = '250px';
-    document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
+    this.windowService.showBackdrop();
   }
 
    public onSidebarClose(): void {
     document.getElementById('mySidenav').style.width = '0';
     document.getElementById('main').style.marginLeft = '0';
-    document.body.style.backgroundColor = 'white';
+    this.windowService.hideBackdrop();
    }
 }

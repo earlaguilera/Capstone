@@ -4,6 +4,8 @@ import { SoundProperties } from '../models';
 
 @Injectable()
 export class AudioService {
+  // dev config
+  private debug: boolean = false;
   private initializeSoundManager: Promise<void>;
 
   constructor() { }
@@ -12,6 +14,7 @@ export class AudioService {
     this.initializeSoundManager = new Promise<void>((resolve: Function, reject: Function) => {
       let success = false;
       soundManager.setup({
+        debugMode: this.debug,
         url: '/app/assets/sounds/',
         flashLoadTimeout: 1000,
         onready: () => {

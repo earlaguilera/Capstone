@@ -66,8 +66,7 @@ export class ChallengeDisplayComponent implements OnInit {
   }
 
    public submit(): void {
-    if(this.selectedOption){
-    this.challengeService.submitQuestions();
+    if (this.selectedOption) {
     }
   }
 

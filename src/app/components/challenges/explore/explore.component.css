@@ -1,3 +1,7 @@
+.challenge-field {
+  margin-top: 20%;
+}
+
 .doc-display-wrapper {
     display: inline-block;
     margin-left: 10px;
@@ -11,4 +15,12 @@
 
 .document-field {
   border-right: 2px #000 solid;
+}
+
+.explore-item {
+  margin-top: 10px;
+}
+
+.explore-item-prompt {
+  padding-top: 6px;
 }

@@ -4,7 +4,7 @@ export interface Challenge {
     documentId: string;
     challengeId: string;
     challengeItems: ChallengeItem[];
-    itemsRemaining: number;
+    prompt?: string;
     title: string;
     type: string;
 }

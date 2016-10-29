@@ -11,7 +11,7 @@ export interface ModalOptions {
 }
 
 export interface ModalDescription {
-    content?: any;
+    content: any;
     footer?: any;
     header?: any;
     options: ModalOptions;

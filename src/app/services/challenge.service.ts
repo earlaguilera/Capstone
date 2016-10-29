@@ -41,8 +41,9 @@ export class ChallengeService {
        this.challengeRecord = {
         challengeId: challenge.challengeId,
         completion: 0,
-        responses: new Map<string, Selection>(),
-        userId: 'Bob'
+        itemCount: challenge.challengeItems.length,
+        userId: 'Bob',
+        responses: new Map<string, Selection>()
       };
       this.challengeRecordSubject.next(this.challengeRecord);
     });
@@ -78,18 +79,15 @@ export class ChallengeService {
       );
     }
   }
-  public submitQuestions(): void {
-      if (this.currentChallenge.itemsRemaining === 0) {
-        // TODO: open results in summary modal
-      }
-    }
+
   /**
    * selectOption
    * Set the chosen option.
    */
   public selectOption(optionId: string): void {
+    const key: string = this.currentChallenge.type === 'explore' ? optionId : '' + this.currentQuestionId;
     this.challengeRecord.responses.set(
-      '' + this.currentQuestionId,
+      key,
       {
         correct: this.currentChallenge.challengeItems[this.currentQuestionId].correct,
         selected: optionId
@@ -107,7 +105,7 @@ export class ChallengeService {
   public getCurrentChallengeObservable(): Observable<Challenge> {
     return this.currentChallengeSubject.asObservable().filter((challenge: Challenge): boolean => {
       return challenge !== undefined;
-    });
+    }).first();
   }
 
   /**

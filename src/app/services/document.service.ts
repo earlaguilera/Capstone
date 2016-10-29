@@ -1,56 +1,34 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
-import { Document, SoundProperties } from '../models';
+import { createMockDocument } from '../../resources/mock-data';
+import { Document, Row } from '../models';
 import { AudioService } from './audio.service';
 
 @Injectable()
 export class DocumentService {
   private currentDocumentSubject: BehaviorSubject<Document>;
-  private playingSound: boolean = false;
-  private mockDocument: Document = {
-    id: 'job',
-    rows: [
-      { id: '0', hasSound: false, state: 'inactive' },
-      { id: '1', hasSound: true, state: 'inactive' },
-      { id: '2', hasSound: true, state: 'inactive' },
-      { id: '3', hasSound: true, state: 'inactive' },
-      { id: '4', hasSound: true, state: 'inactive' },
-      { id: '5', hasSound: true, state: 'inactive' },
-      { id: '6', hasSound: true, state: 'inactive' },
-      { id: '7', hasSound: true, state: 'inactive' },
-      { id: '8', hasSound: true, state: 'inactive' }
-    ]
-  };
+  private documentClick: BehaviorSubject<string>;
+  private mockDocument: Document;
 
   constructor(private audioService: AudioService) {
-    // Mock data setup
-    for (let row of this.mockDocument.rows) {
-      if (row.hasSound) {
-        row.sound = {
-          url: '/app/assets/sounds/' + this.mockDocument.id + row.id + '.wav',
-          autoplay: false,
-          id: this.mockDocument.id + row.id,
-          type: 'audio/wav'
-        };
-      }
-    }
+    this.mockDocument = createMockDocument();
     this.currentDocumentSubject = new BehaviorSubject<Document>(this.mockDocument);
+    this.documentClick = new BehaviorSubject<string>(undefined);
   }
 
-  public playSound(sound: SoundProperties): Promise<void> {
-    if (this.playingSound) {
-      this.audioService.cancelSounds();
-    } else {
-      this.playingSound = true;
-    }
-    return this.audioService.playSound(sound).then((): void => {
-      this.playingSound = false;
+  public clickRow(row: Row): Promise<void> {
+    return this.audioService.playSound(row.sound).then((): void => {
+      this.documentClick.next(row.id);
     });
   }
 
   public getDocument(name: string): Observable<Document> {
       return this.currentDocumentSubject.asObservable();
+  }
+
+  public getDocumentClickStream(): Observable<string> {
+    return Observable.from(this.documentClick.filter((id: string) => id !== undefined));
   }
 
   public reset(): void {
