@@ -24,7 +24,7 @@ import {
 export class AppComponent implements AfterViewInit, OnInit {
   // config for dev
   private skipHelp: boolean = true;
-  private challengeType: string = 'explore';
+  private challengeType: string = 'character';
 
   @ViewChild('challengeDisplay', {read: ViewContainerRef})
   private challengeContainer: ViewContainerRef;
