@@ -1,0 +1,17 @@
+
+<div class="col-sm-8 document-field">
+    <img src="{{imageUrl}}" > 
+</div>
+<div class="col-sm-4 challenge-field">
+    <h3 class="">{{title}}</h3>
+    <div class="card" *ngFor = "let char in characters">
+        <div class="w3-card-4" style="width:70%"> 
+            <header class="w3-container w3-light-grey">
+                <h5>{{char.fname}}</h5>
+            </header>
+            <img src="char.pictureUrl" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <p>{{char.bio}}</p><br>
+        </div>
+    </div>
+</div>
+
