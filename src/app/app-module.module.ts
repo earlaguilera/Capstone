@@ -8,6 +8,7 @@ import { ProgressbarModule } from 'ng2-bootstrap/components/progressbar';
 
 import { AppComponent }  from './app.component';
 import {
+  CharacterChallengeComponent,
   DocumentDisplayComponent,
   ExploreComponent,
   GeneratedModalComponent,
@@ -19,7 +20,6 @@ import {
   ChallengeSummaryComponent,
   HelpModalComponent
 } from './components/modals';
-import {  } from './directives';
 import {
   AudioService,
   ChallengeService,
@@ -37,6 +37,7 @@ import {
   declarations: [
     AppComponent,
     ChallengeSummaryComponent,
+    CharacterChallengeComponent,
     DocumentDisplayComponent,
     ExploreComponent,
     GeneratedModalComponent,
@@ -53,6 +54,7 @@ import {
   ],
   entryComponents: [
     ChallengeSummaryComponent,
+    CharacterChallengeComponent,
     ExploreComponent,
     HelpModalComponent
    ],
