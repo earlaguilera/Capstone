@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
-import { MockExploreChallenge, MockMultipleChoiceChallenge } from '../../resources/mock-data';
+import {
+  MockCharacterChallenge,
+  MockExploreChallenge,
+  MockMultipleChoiceChallenge
+} from '../../resources/mock-data';
 import { Challenge, ChallengeItem, ChallengeRecord, Selection } from '../models';
 
 @Injectable()
@@ -9,6 +13,7 @@ export class ChallengeService {
   // dev config
   private mockMultipleChoiceChallenge: Challenge = MockMultipleChoiceChallenge;
   private mockExploreChallenge: Challenge = MockExploreChallenge;
+  private mockCharacterChallenge: Challenge = MockCharacterChallenge;
 
   private currentChallengeSubject = new BehaviorSubject<Challenge>(undefined);
   private currentQuestionSubject = new BehaviorSubject<ChallengeItem>(undefined);
@@ -139,6 +144,8 @@ export class ChallengeService {
       return Observable.from([this.mockMultipleChoiceChallenge]);
     } else if (challengeId === 'explore') {
       return Observable.from([this.mockExploreChallenge]);
+    } else if (challengeId === 'character') {
+      return Observable.from([this.mockCharacterChallenge]);
     } else {
       return Observable.throw('CHALLENGE_NOT_FOUND');
     }

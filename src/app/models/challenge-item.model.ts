@@ -4,4 +4,5 @@ export interface ChallengeItem {
     options?: Map<string, string>;
     correct?: string;
     documentSubject?: string;
+    data?: any;
 }

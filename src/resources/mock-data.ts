@@ -69,6 +69,47 @@ export let MockExploreChallenge: Challenge = {
     ]
 };
 
+export let MockCharacterChallenge: Challenge = {
+    challengeId: '3',
+    title: 'Mock Character Challenge',
+    type: 'character',
+    prompt: 'Match the job with the person who you think fits best',
+    challengeItems: [
+        {
+            id: '0',
+            prompt: 'Who fits this job the best?',
+            documentSubject: '/image/url',
+            data: {
+                characters: []
+            }
+        },
+        {
+            id: '1',
+            prompt: 'Who fits this job the best?',
+            documentSubject: '/image/url',
+            data: {
+                characters: []
+            }
+        },
+        {
+            id: '2',
+            prompt: 'Who fits this job the best?',
+            documentSubject: '/image/url',
+            data: {
+                characters: []
+            }
+        },
+        {
+            id: '3',
+            prompt: 'Who fits this job the best?',
+            documentSubject: '/image/url',
+            data: {
+                characters: []
+            }
+        }
+    ]
+};
+
 export function createMockDocument(): Document {
     let document: Document = {
         id: 'job',
