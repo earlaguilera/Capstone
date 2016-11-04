@@ -80,7 +80,24 @@ export let MockCharacterChallenge: Challenge = {
             prompt: 'Who fits this job the best?',
             documentSubject: '/image/url',
             data: {
-                characters: []
+                characters: [
+                    {
+                        name: 'Bobby Joe',
+                        bio:
+                            'BIO: Bobby joe is a character. Bobby joe is a character. Bobby joe is a character. Bobby joe is a character.' +
+                            'Bobby joe is a character. Bobby joe is a character. Bobby joe is a character. Bobby joe is a character. ' +
+                            'Bobby joe is a character. Bobby joe is a character. Bobby joe is a character. Bobby joe is a character. ',
+                        imageURl: 'image/url'
+                    },
+                    {
+                        name: 'Mary Jane',
+                        bio:
+                            'BIO: Mary Jane is a character. Mary Jane is a character. Mary Jane is a character. Mary Jane is a character.' +
+                            'Mary Jane is a character. Mary Jane is a character. Mary Jane is a character. Mary Jane is a character. ' +
+                            'Mary Jane is a character. Mary Jane is a character. Mary Jane is a character. Mary Jane is a character. ',
+                        imageURl: 'image/url'
+                    }
+                ]
             }
         },
         {

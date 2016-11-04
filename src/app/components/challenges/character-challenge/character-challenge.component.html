@@ -1,3 +1,13 @@
-<p>
-  character-challenge works!
-</p>
+<div class="row" *ngFor="let ch of characters">
+  <p>{{ch.name}}</p>
+  <p>{{ch.bio}}</p>
+  <p>{{ch.imageUrl}}</p>
+</div>
+
+<div class="row">
+  {{prompt}}
+</div>
+
+<div class="row">
+  {{documentUrl}}
+</div>
