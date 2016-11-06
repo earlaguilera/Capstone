@@ -36,19 +36,6 @@ div.inline {
   height: 80%;
 }
 
-.progress {
-  width: 100%;
-  height: 50px;
-  padding-top: 8px;
-  padding: 5px;
-  background-color: #FFF;
-}
-
-.main-field {
-  border: 2px #000 solid;
-  padding: 10px;
-}
-
 .navbar {
   height: 70px;
 }
@@ -67,12 +54,13 @@ div.inline {
 
 .side-menu-toggle {
   float: left;
-  margin-top: 10px;
 }
 
-#main {
+.main {
     transition: margin-left .5s;
     padding: 20px;
+    margin: 0;
+    width: 100%
 }
 
 .top-placement {

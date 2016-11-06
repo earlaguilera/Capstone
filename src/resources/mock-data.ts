@@ -1,6 +1,6 @@
 import { Challenge, Document } from '../app/models';
 
-export let MockMultipleChoiceChallenge: Challenge = {
+let MockMultipleChoiceChallenge: Challenge = {
     challengeId: '0',
     title: 'Mock Multiple Choice Challenge',
     type: 'multiple-choice',
@@ -34,7 +34,7 @@ export let MockMultipleChoiceChallenge: Challenge = {
     ]
 };
 
-export let MockExploreChallenge: Challenge = {
+let MockExploreChallenge: Challenge = {
     challengeId: '1',
     title: 'Mock Explore Challenge',
     type: 'explore',
@@ -69,8 +69,8 @@ export let MockExploreChallenge: Challenge = {
     ]
 };
 
-export let MockCharacterChallenge: Challenge = {
-    challengeId: '3',
+let MockCharacterChallenge: Challenge = {
+    challengeId: '2',
     title: 'Mock Character Challenge',
     type: 'character',
     prompt: 'Match the job with the person who you think fits best',
@@ -78,24 +78,24 @@ export let MockCharacterChallenge: Challenge = {
         {
             id: '0',
             prompt: 'Who fits this job the best?',
-            documentSubject: '/image/url',
+            documentSubject: '/app/assets/images/jobfair.jpg',
             data: {
                 characters: [
                     {
-                        name: 'Bobby Joe',
+                        name: 'Abe',
                         bio:
-                            'BIO: Bobby joe is a character. Bobby joe is a character. Bobby joe is a character. Bobby joe is a character.' +
-                            'Bobby joe is a character. Bobby joe is a character. Bobby joe is a character. Bobby joe is a character. ' +
-                            'Bobby joe is a character. Bobby joe is a character. Bobby joe is a character. Bobby joe is a character. ',
-                        imageURl: 'image/url'
+                            'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
+                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
+                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
+                        imageUrl: '/app/assets/images/abe.png'
                     },
                     {
-                        name: 'Mary Jane',
+                        name: 'Maria',
                         bio:
-                            'BIO: Mary Jane is a character. Mary Jane is a character. Mary Jane is a character. Mary Jane is a character.' +
-                            'Mary Jane is a character. Mary Jane is a character. Mary Jane is a character. Mary Jane is a character. ' +
-                            'Mary Jane is a character. Mary Jane is a character. Mary Jane is a character. Mary Jane is a character. ',
-                        imageURl: 'image/url'
+                            'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
+                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
+                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
+                        imageUrl: '/app/assets/images/maria.png'
                     }
                 ]
             }
@@ -103,29 +103,86 @@ export let MockCharacterChallenge: Challenge = {
         {
             id: '1',
             prompt: 'Who fits this job the best?',
-            documentSubject: '/image/url',
+            documentSubject: '/app/assets/images/jobfair.jpg',
             data: {
-                characters: []
+                characters: [
+                    {
+                        name: 'Abe',
+                        bio:
+                            'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
+                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
+                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
+                        imageUrl: '/app/assets/images/abe.png'
+                    },
+                    {
+                        name: 'Maria',
+                        bio:
+                            'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
+                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
+                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
+                        imageUrl: '/app/assets/images/maria.png'
+                    }
+                ]
             }
         },
         {
             id: '2',
             prompt: 'Who fits this job the best?',
-            documentSubject: '/image/url',
+            documentSubject: '/app/assets/images/jobfair.jpg',
             data: {
-                characters: []
+                characters: [
+                    {
+                        name: 'Abe',
+                        bio:
+                            'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
+                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
+                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
+                        imageUrl: '/app/assets/images/abe.png'
+                    },
+                    {
+                        name: 'Maria',
+                        bio:
+                            'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
+                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
+                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
+                        imageUrl: '/app/assets/images/maria.png'
+                    }
+                ]
             }
         },
         {
             id: '3',
             prompt: 'Who fits this job the best?',
-            documentSubject: '/image/url',
+            documentSubject: '/app/assets/images/jobfair.jpg',
             data: {
-                characters: []
+                characters: [
+                    {
+                        name: 'Abe',
+                        bio:
+                            'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
+                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
+                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
+                        imageUrl: '/app/assets/images/abe.png'
+                    },
+                    {
+                        name: 'Maria',
+                        bio:
+                            'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
+                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
+                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
+                        imageUrl: '/app/assets/images/maria.png'
+                    }
+                ]
             }
         }
     ]
 };
+
+let mockChallenges = {};
+mockChallenges[MockCharacterChallenge.challengeId] = MockCharacterChallenge;
+mockChallenges[MockExploreChallenge.challengeId] = MockExploreChallenge;
+mockChallenges[MockMultipleChoiceChallenge.challengeId] = MockMultipleChoiceChallenge;
+export const MockChallenges = mockChallenges;
 
 export function createMockDocument(): Document {
     let document: Document = {

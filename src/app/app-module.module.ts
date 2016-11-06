@@ -1,13 +1,16 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {  } from 'ng2-bootstrap/ng2-bootstrap';
+import { RouterModule } from '@angular/router';
+import { ProgressbarModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 import { ModalModule } from 'ng2-modal';
 import { SidebarModule } from 'ng2-sidebar';
-import { ProgressbarModule } from 'ng2-bootstrap/components/progressbar';
 
 
 import { AppComponent }  from './app.component';
 import {
+  ChallengeAppComponent,
+  ChallengeMenuComponent,
   CharacterChallengeComponent,
   DocumentDisplayComponent,
   ExploreComponent,
@@ -24,18 +27,26 @@ import {
   AudioService,
   ChallengeService,
   DocumentService,
-  ModalService
+  ModalService,
+  TitleService
 } from './services';
 
 @NgModule({
   imports: [
     BrowserModule,
+    DragulaModule,
     ModalModule,
     SidebarModule,
-    ProgressbarModule
+    ProgressbarModule,
+    RouterModule.forRoot([
+      { path: 'challenge/:id', component: ChallengeAppComponent },
+      { path: '**', component: ChallengeMenuComponent }
+    ], {useHash: true})
   ],
   declarations: [
     AppComponent,
+    ChallengeAppComponent,
+    ChallengeMenuComponent,
     ChallengeSummaryComponent,
     CharacterChallengeComponent,
     DocumentDisplayComponent,
@@ -50,7 +61,8 @@ import {
     AudioService,
     ChallengeService,
     DocumentService,
-    ModalService
+    ModalService,
+    TitleService
   ],
   entryComponents: [
     ChallengeSummaryComponent,

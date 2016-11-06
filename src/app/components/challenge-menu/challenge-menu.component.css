@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:900|Roboto:400,100);
+
+h2 {
+    color: cadetblue;
+}
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color:cadetblue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {
+    background-color: gray
+}
+
+.button:active {
+    background-color: cadetblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

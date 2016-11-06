@@ -1,20 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
-import {
-  MockCharacterChallenge,
-  MockExploreChallenge,
-  MockMultipleChoiceChallenge
-} from '../../resources/mock-data';
+import { MockChallenges } from '../../resources/mock-data';
 import { Challenge, ChallengeItem, ChallengeRecord, Selection } from '../models';
 
 @Injectable()
 export class ChallengeService {
-  // dev config
-  private mockMultipleChoiceChallenge: Challenge = MockMultipleChoiceChallenge;
-  private mockExploreChallenge: Challenge = MockExploreChallenge;
-  private mockCharacterChallenge: Challenge = MockCharacterChallenge;
-
   private currentChallengeSubject = new BehaviorSubject<Challenge>(undefined);
   private currentQuestionSubject = new BehaviorSubject<ChallengeItem>(undefined);
   private challengeRecordSubject = new BehaviorSubject<ChallengeRecord>(undefined);
@@ -140,13 +131,10 @@ export class ChallengeService {
   // TODO: return type Challenge
   private getChallengeById(challengeId: string): Observable<Challenge> {
     // TODO make http call to server
-    if (challengeId === 'multiple-choice') {
-      return Observable.from([this.mockMultipleChoiceChallenge]);
-    } else if (challengeId === 'explore') {
-      return Observable.from([this.mockExploreChallenge]);
-    } else if (challengeId === 'character') {
-      return Observable.from([this.mockCharacterChallenge]);
+    if (MockChallenges.hasOwnProperty(challengeId)) {
+      return Observable.from([MockChallenges[challengeId]]);
     } else {
+      console.log(challengeId, MockChallenges);
       return Observable.throw('CHALLENGE_NOT_FOUND');
     }
   }

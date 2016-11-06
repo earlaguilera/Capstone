@@ -8,22 +8,17 @@
     <app-side-menu></app-side-menu>
   </div>
 </ng2-sidebar>
-<nav class="navbar navbar-inverse top-placement">
+<nav class="navbar navbar-dark bg-inverse top-placement">
   <div class="container-fluid header-bar">
     <button class="btn btn-lg btn-primary side-menu-toggle" 
             (click)="toggleSidebar()" >
-      <span class="glyphicon glyphicon-menu-hamburger"></span>
+      <span class="fa fa-bars"></span>
     </button>
     <span class="challenge-title">&nbsp; {{title}}</span>
   </div>
 </nav>
-<div class="container" id="main">
-  <div class="row main-field"><div #challengeDisplay></div></div>
-  <div class="row progress">
-    <div class="col-sm-8">
-      <app-progress-display></app-progress-display>
-    </div>
-  </div>
+<div class="container main" id="main">
+  <router-outlet></router-outlet>
 </div>
 
 <app-generated-modal></app-generated-modal>

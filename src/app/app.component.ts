@@ -1,18 +1,13 @@
 import {
   AfterViewInit,
   Component,
-  ComponentFactoryResolver,
-  OnInit,
-  ViewChild,
-  ViewContainerRef
+  OnInit
 } from '@angular/core';
 
-import { getComponetClass } from './components/challenges';
-import { Challenge } from './models';
 import {
   AudioService,
-  ChallengeService,
   ModalService,
+  TitleService,
   WindowService
 } from './services';
 
@@ -24,46 +19,25 @@ import {
 export class AppComponent implements AfterViewInit, OnInit {
   // config for dev
   private skipHelp: boolean = true;
-  private challengeType: string = 'character';
 
-  @ViewChild('challengeDisplay', {read: ViewContainerRef})
-  private challengeContainer: ViewContainerRef;
-
-  private title: string = '';
   private _open: boolean = false;
+  private windowService = new WindowService();
+
   public closeOnClickOutside: boolean = true;
   public showOverlay: boolean = true;
   public closeButton: boolean = false;
   public closeEsc: boolean = false;
   public closeClick: boolean = false;
   public overlayShown: boolean = false;
-  private windowService = new WindowService();
+  public title: string = '';
 
-  constructor( private audioService: AudioService,
-               private componentFactoryResolver: ComponentFactoryResolver,
-               private challengeService: ChallengeService,
-               private modalService: ModalService) {}
+  constructor(private audioService: AudioService,
+              private modalService: ModalService,
+              private titleService: TitleService) {}
 
-/*
- * OnInit: Get the current challenge by ID, then inject the correct
- *          component type into the container.
- */
   ngOnInit() {
-    this.challengeService.setChallenge(this.challengeType)
-    .subscribe((challenge: Challenge) => {
-      const component = getComponetClass(challenge.type);
-      if (component) {
-        this.title = challenge.title;
-        this.challengeContainer.createComponent(
-          this.componentFactoryResolver.resolveComponentFactory(component)
-        );
-      } else {
-        // TODO: Handle component class not found
-        console.error('Challenge Component class not found: ', challenge.type);
-      }
-    }, (error: string) => {
-      // TODO: handle challenge not found
-      console.error('Challenge not found: ', this.challengeType);
+    this.titleService.getTitle().subscribe((title: string): void => {
+      this.title = title || 'ImagineIf';
     });
   }
 

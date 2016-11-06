@@ -1,17 +1,25 @@
-
-<div class="col-sm-8 document-field">
-    <img src="{{imageUrl}}" > 
-</div>
-<div class="col-sm-4 challenge-field">
-    <h3 class="">{{title}}</h3>
-    <div class="card" *ngFor = "let char in characters">
-        <div class="w3-card-4" style="width:70%"> 
-            <header class="w3-container w3-light-grey">
-                <h5>{{char.fname}}</h5>
-            </header>
-            <img src="char.pictureUrl" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-            <p>{{char.bio}}</p><br>
+<div class="char-challenge">
+    <div class="col-sm-5 doc-col">
+        <div class="doc" [dragula]='"doc-images"'>
+            <img src="{{documentUrl}}" class="doc-image">
+        </div>
+    </div>
+    <div class="col-sm-7 challenge-col">
+        <div class="challenge-field" *ngIf="characters">
+            <div class="row">
+                <h4 class="h2">{{title}}</h4>
+            </div>
+            <div class="row" *ngFor="let ch of characters; let i = index">
+                <div class="character-card" id="character{{i}}" [dragula]='"doc-images"'>
+                    <div class="character-image-wrapper">
+                        <img src="{{ch.imageUrl}}" class="character-image">
+                    </div>
+                    <div class="character-info">
+                        <h4 class="h4">{{ch.name}}</h4>
+                        <p class="card-text">{{ch.bio}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
