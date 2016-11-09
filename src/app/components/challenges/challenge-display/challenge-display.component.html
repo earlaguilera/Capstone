@@ -1,21 +1,16 @@
-<md-card *ngIf="showQuestion">
-  <div class="prompt">
-    {{currentQuestion.prompt}}
+<div class=".col-md-6" *ngIf="showQuestion">
+  <div class="promt">
+    {{currentQuestion.promt}}
   </div>
-  <md-list>
-    <md-list-item *ngFor="let option of options">
-      <md-radio-button 
-                        [checked]="isSelected(option.id)"
-                        value="option.id"
-                        (click)="setSelectedOption(option.id)"
-                        md-no-ink="true"
-                        aria-label="label">
-          {{option.text}}
-      </md-radio-button>
-    </md-list-item>
-  </md-list>
-  <button  *ngIf="currQ !== '0'" md-raised-button color="accent" (click)="previous()">Previous</button>
-  <button *ngIf="currQ !== lastQ" md-raised-button color="accent" (click)="next()">Next</button>
-  <button  *ngIf="completion === 100 && currQ === lastQ" md-raised-button color="accent" (click)="submit()">Submit</button>
-</md-card>
-
+  <form *ngFor ="let option of options">
+  <input type="radio"
+              [checked]= "isSelected(option.id)"
+              value="option.id"
+              onclick = "setSelected(option.id)"
+              aria-label="label">
+              {{option.text}} <br>
+  </form>
+  <button *ngIf="currQ !== '0' " type="button" class="btn btn-primary btn-lg raised" onclick="previous()">Previous</button>
+  <button *ngIf="currQ !== lastQ " type="button" class="btn btn-primary btn-lg raised" onclick="next()">Next</button>
+   <button *ngIf="completion === 100 && currQ == lastQ" type="button" class="btn btn-primary btn-lg raised" onclick="submit()">Submit</button>
+</div>
