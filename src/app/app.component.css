@@ -58,9 +58,9 @@ div.inline {
 
 .main {
     transition: margin-left .5s;
-    padding: 20px;
-    margin: 0;
-    width: 100%
+    padding: 50px;
+    width: 100%;
+    max-width: 1500px;
 }
 
 .top-placement {
