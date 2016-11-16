@@ -79,6 +79,7 @@ let MockCharacterChallenge: Challenge = {
             id: '0',
             prompt: 'Who fits this job the best?',
             documentSubject: '/assets/images/jobfair.jpg',
+            correct: 'Abe',
             data: {
                 characters: [
                     {
@@ -104,6 +105,7 @@ let MockCharacterChallenge: Challenge = {
             id: '1',
             prompt: 'Who fits this job the best?',
             documentSubject: '/assets/images/jobfair.jpg',
+            correct: 'Abe',
             data: {
                 characters: [
                     {
@@ -129,6 +131,7 @@ let MockCharacterChallenge: Challenge = {
             id: '2',
             prompt: 'Who fits this job the best?',
             documentSubject: '/assets/images/jobfair.jpg',
+            correct: 'Maria',
             data: {
                 characters: [
                     {
@@ -154,6 +157,7 @@ let MockCharacterChallenge: Challenge = {
             id: '3',
             prompt: 'Who fits this job the best?',
             documentSubject: '/assets/images/jobfair.jpg',
+            correct: 'Maria',
             data: {
                 characters: [
                     {

@@ -3,6 +3,7 @@
 h2 {
     color: cadetblue;
 }
+
 .button {
     display: inline-block;
     padding: 15px 25px;
@@ -15,7 +16,7 @@ h2 {
     background-color:cadetblue;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 3px #555;
 }
 
 .button:hover {
@@ -24,6 +25,16 @@ h2 {
 
 .button:active {
     background-color: cadetblue;
-    box-shadow: 0 5px #666;
+    box-shadow: 0 2px #222;
     transform: translateY(4px);
+}
+
+.challenge-launch {
+    width: 100%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.module {
+    margin-top: 15px;
 }

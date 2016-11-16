@@ -1,50 +1,45 @@
-.challenge-col {
-    padding: 0;
-    margin: 0;
-}
-
 .character-card {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    margin: 15px;
+    margin: 15px 20px 15px 5px;
     padding: 5px;
     border: 1px #888 solid;
     border-radius: 3px;
+    font-size: 14px;
+}
+
+.character-row {
+    margin: 5px !important;
+    padding-left: 10px;
+    padding-right: 5px;
 }
 
 .character-image {
-    max-height: 200px;
+    max-height: 100%;
+    width: 100%;
     max-width: 200px;
 }
 
-.character-info {
-    width: 60%;
-    min-width: 200px;
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
 }
 
-.character-image-wrapper {
-    height: 100%;
-    margin-right: 10px;
+.continue {
+    width: 100%;
 }
 
-.doc-col {
-    padding: 0;
-    margin: 0;
+.v-middle {
+    vertical-align: middle;
 }
 
 .doc-image {
     margin-left: auto;
     margin-right: auto;
-    max-height: 600px;
-    max-width: 500px;
+    max-height: 100%;
+    width: 100%;
+    max-width: 600px;
 }
 
-/* Dragula Styling */
-.dragging {
-    opacity: .2;
-}
-
-.over {
-    border: 3px blue solid;
+.prompt {
+    margin: 15px 0 0 10px;
 }

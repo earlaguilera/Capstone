@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ProgressbarModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 import { ModalModule } from 'ng2-modal';
 import { SidebarModule } from 'ng2-sidebar';
 
@@ -34,7 +33,6 @@ import {
 @NgModule({
   imports: [
     BrowserModule,
-    DragulaModule,
     ModalModule,
     SidebarModule,
     ProgressbarModule,
