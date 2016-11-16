@@ -25,7 +25,7 @@ import { Challenge, Document } from '../../models';
 export class DocumentDisplayComponent implements OnInit {
   private documentId: string;
   private currentDocument: Document;
-  private imageUrl: string = 'app/assets/images/';
+  private imageUrl: string = 'assets/images/';
   private playingSound: boolean = false;
   private windowService = new WindowService();
 

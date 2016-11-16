@@ -20,12 +20,6 @@
     "@angular/platform-browser": "2.1.0",
     "@angular/platform-browser-dynamic": "2.1.0",
     "@angular/router": "3.1.0",
-    "@angular2-material/button": "^2.0.0-alpha.8-2",
-    "@angular2-material/card": "^2.0.0-alpha.8-2",
-    "@angular2-material/core": "^2.0.0-alpha.8-2",
-    "@angular2-material/list": "^2.0.0-alpha.8-2",
-    "@angular2-material/progress-bar": "^2.0.0-alpha.8-2",
-    "@angular2-material/radio": "^2.0.0-alpha.8-2",
     "@types/hammerjs": "^2.0.32",
     "@types/jasmine": "^2.2.33",
     "core-js": "^2.4.1",
@@ -42,7 +36,7 @@
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.30",
-    "angular-cli": "1.0.0-beta.14",
+    "angular-cli": "^1.0.0-beta.19-3",
     "codelyzer": "~0.0.26",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
@@ -54,7 +48,6 @@
     "protractor": "4.0.5",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
-    "typescript": "2.0.2",
-    "webpack": "2.1.0-beta.22"
+    "typescript": "2.0.2"
   }
 }

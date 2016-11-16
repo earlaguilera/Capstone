@@ -78,7 +78,7 @@ let MockCharacterChallenge: Challenge = {
         {
             id: '0',
             prompt: 'Who fits this job the best?',
-            documentSubject: '/app/assets/images/jobfair.jpg',
+            documentSubject: '/assets/images/jobfair.jpg',
             data: {
                 characters: [
                     {
@@ -87,7 +87,7 @@ let MockCharacterChallenge: Challenge = {
                             'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
                             'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
                             'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
-                        imageUrl: '/app/assets/images/abe.png'
+                        imageUrl: '/assets/images/abe.png'
                     },
                     {
                         name: 'Maria',
@@ -95,7 +95,7 @@ let MockCharacterChallenge: Challenge = {
                             'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
                             'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
                             'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
-                        imageUrl: '/app/assets/images/maria.png'
+                        imageUrl: '/assets/images/maria.png'
                     }
                 ]
             }
@@ -103,7 +103,7 @@ let MockCharacterChallenge: Challenge = {
         {
             id: '1',
             prompt: 'Who fits this job the best?',
-            documentSubject: '/app/assets/images/jobfair.jpg',
+            documentSubject: '/assets/images/jobfair.jpg',
             data: {
                 characters: [
                     {
@@ -112,7 +112,7 @@ let MockCharacterChallenge: Challenge = {
                             'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
                             'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
                             'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
-                        imageUrl: '/app/assets/images/abe.png'
+                        imageUrl: '/assets/images/abe.png'
                     },
                     {
                         name: 'Maria',
@@ -120,7 +120,7 @@ let MockCharacterChallenge: Challenge = {
                             'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
                             'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
                             'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
-                        imageUrl: '/app/assets/images/maria.png'
+                        imageUrl: '/assets/images/maria.png'
                     }
                 ]
             }
@@ -128,7 +128,7 @@ let MockCharacterChallenge: Challenge = {
         {
             id: '2',
             prompt: 'Who fits this job the best?',
-            documentSubject: '/app/assets/images/jobfair.jpg',
+            documentSubject: '/assets/images/jobfair.jpg',
             data: {
                 characters: [
                     {
@@ -137,7 +137,7 @@ let MockCharacterChallenge: Challenge = {
                             'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
                             'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
                             'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
-                        imageUrl: '/app/assets/images/abe.png'
+                        imageUrl: '/assets/images/abe.png'
                     },
                     {
                         name: 'Maria',
@@ -145,7 +145,7 @@ let MockCharacterChallenge: Challenge = {
                             'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
                             'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
                             'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
-                        imageUrl: '/app/assets/images/maria.png'
+                        imageUrl: '/assets/images/maria.png'
                     }
                 ]
             }
@@ -153,7 +153,7 @@ let MockCharacterChallenge: Challenge = {
         {
             id: '3',
             prompt: 'Who fits this job the best?',
-            documentSubject: '/app/assets/images/jobfair.jpg',
+            documentSubject: '/assets/images/jobfair.jpg',
             data: {
                 characters: [
                     {
@@ -162,7 +162,7 @@ let MockCharacterChallenge: Challenge = {
                             'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
                             'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
                             'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
-                        imageUrl: '/app/assets/images/abe.png'
+                        imageUrl: '/assets/images/abe.png'
                     },
                     {
                         name: 'Maria',
@@ -170,7 +170,7 @@ let MockCharacterChallenge: Challenge = {
                             'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
                             'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
                             'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
-                        imageUrl: '/app/assets/images/maria.png'
+                        imageUrl: '/assets/images/maria.png'
                     }
                 ]
             }
@@ -202,7 +202,7 @@ export function createMockDocument(): Document {
     for (let row of document.rows) {
       if (row.hasSound) {
         row.sound = {
-          url: '/app/assets/sounds/' + document.id + row.id + '.wav',
+          url: '/assets/sounds/' + document.id + row.id + '.wav',
           autoplay: false,
           id: document.id + row.id,
           type: 'audio/wav'

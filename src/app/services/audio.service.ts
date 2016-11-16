@@ -15,7 +15,7 @@ export class AudioService {
       let success = false;
       soundManager.setup({
         debugMode: this.debug,
-        url: '/app/assets/sounds/',
+        url: '/assets/sounds/',
         flashLoadTimeout: 1000,
         onready: () => {
           resolve();
