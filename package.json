@@ -2,6 +2,7 @@
   "name": "imagine-if",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "server.js",
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",
@@ -9,6 +10,9 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
+  },
+  "engines": {
+    "node": "7.1.0"
   },
   "private": true,
   "dependencies": {
