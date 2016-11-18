@@ -9,12 +9,14 @@ import { AudioService } from './audio.service';
 export class DocumentService {
   private currentDocumentSubject: BehaviorSubject<Document>;
   private documentClick: BehaviorSubject<string>;
+  private documentFocus: BehaviorSubject<number>;
   private mockDocument: Document;
 
   constructor(private audioService: AudioService) {
     this.mockDocument = createMockDocument();
     this.currentDocumentSubject = new BehaviorSubject<Document>(this.mockDocument);
     this.documentClick = new BehaviorSubject<string>(undefined);
+    this.documentFocus = new BehaviorSubject<number>(-1);
   }
 
   public clickRow(row: Row): Promise<void> {
@@ -29,6 +31,14 @@ export class DocumentService {
 
   public getDocumentClickStream(): Observable<string> {
     return Observable.from(this.documentClick.filter((id: string) => id !== undefined));
+  }
+
+  public getDocumentFocusStream(): Observable<number> {
+    return Observable.from(this.documentFocus.filter((id: number) => id !== undefined));
+  }
+
+  public setDocumentFocus(rowId: number): void {
+    this.documentFocus.next(rowId);
   }
 
   public reset(): void {

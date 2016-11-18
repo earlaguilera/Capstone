@@ -1,4 +1,13 @@
-import { animate, Component, OnInit, trigger, state, style, transition } from '@angular/core';
+import {
+  animate,
+  Component,
+  Input,
+  OnInit,
+  trigger,
+  state,
+  style,
+  transition
+} from '@angular/core';
 
 import { ChallengeService, DocumentService, WindowService } from '../../services';
 import { Challenge, Document } from '../../models';
@@ -28,6 +37,9 @@ export class DocumentDisplayComponent implements OnInit {
   private imageUrl: string = 'assets/images/';
   private playingSound: boolean = false;
   private windowService = new WindowService();
+  private focusedRow: number;
+
+  @Input() public allowClicks: boolean = true;
 
   constructor(private challengeService: ChallengeService,
   private documentService: DocumentService) { }
@@ -42,10 +54,21 @@ export class DocumentDisplayComponent implements OnInit {
         });
       }
     });
+    this.documentService.getDocumentFocusStream().subscribe((rowId: number): void => {
+      if (rowId >= 0) {
+        if (this.focusedRow) {
+          this.currentDocument.rows[this.focusedRow].state = 'inactive';
+        }
+        this.currentDocument.rows[rowId].state = 'active';
+        this.focusedRow = rowId;
+      } else if (this.focusedRow) {
+        this.currentDocument.rows[this.focusedRow].state = 'inactive';
+      }
+    });
   }
 
   clickRow(index: number): void {
-    if (this.playingSound || !this.currentDocument.rows[index].hasSound) {
+    if (!this.allowClicks || this.playingSound || !this.currentDocument.rows[index].hasSound) {
       return;
     }
     this.playingSound = true;

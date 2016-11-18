@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TitleService } from '../../services';
+
 @Component({
   selector: 'app-challenge-menu',
   templateUrl: './challenge-menu.component.html',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChallengeMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: TitleService) { }
 
   ngOnInit() {
+    this.titleService.setTitle('My Challenges');
   }
 
 }

@@ -10,3 +10,7 @@
 .rowContainer {
     position: relative;
 }
+
+.focusedRow {
+    border: 3px #2b3 solid;
+}

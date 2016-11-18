@@ -32,6 +32,10 @@ export class ChallengeService {
    * @param challengeId the ID of the challenge
    */
   public setChallenge(challengeId: string): Observable<Challenge> {
+    // Clear current data
+    this.challengeRecordSubject.next(undefined);
+    this.currentChallengeSubject.next(undefined);
+    this.currentQuestionSubject.next(undefined);
     this.getChallengeById(challengeId).subscribe((challenge: Challenge) => {
       this.currentChallengeSubject.next(challenge);
        this.challengeRecord = {
@@ -110,7 +114,7 @@ export class ChallengeService {
    */
   // TODO: add type for observable
   public getCurrentQuestionObservable(): Observable<ChallengeItem> {
-    return this.currentQuestionSubject.asObservable();
+    return this.currentQuestionSubject.asObservable().filter((data: any) => data !== undefined);
   }
 
   /**
@@ -119,13 +123,13 @@ export class ChallengeService {
    */
   // TODO: add type for observable
   public getChallengeRecordObservable(): Observable<any> {
-    return this.challengeRecordSubject.asObservable();
+    return this.challengeRecordSubject.asObservable().filter((data: any) => data !== undefined);
   }
 
   /**
    * getChallengeById
    * Get the challenge of ID from the server.
-   * @param challengeId tje ID of the challenge
+   * @param challengeId the ID of the challenge
    * @return the requested challenge
    */
   // TODO: return type Challenge

@@ -12,7 +12,7 @@
         </div>
         <div class="row character-row" *ngFor="let ch of characters; let i = index">
             <div class="col-sm-12 character-card" id="character{{i}}"
-                    (click)="select(ch.name)">
+                    (click)="select(ch.name)" [ngStyle]="{'border': borderFor(ch.name)}">
                 <div class="row">
                     <div class=" col-sm-5 v-middle">
                         <img src="{{ch.imageUrl}}" class="character-image">
@@ -25,7 +25,10 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <p class="card-text">{{ch.bio}}</p>
+                                <p class="card-text">
+                                    <b>{{ch.name}}&nbsp;</b>
+                                    {{ch.bio}}
+                                </p>
                             </div>
                         </div>
                     </div>

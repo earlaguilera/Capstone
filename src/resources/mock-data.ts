@@ -1,77 +1,102 @@
 import { Challenge, Document } from '../app/models';
 
-let MockMultipleChoiceChallenge: Challenge = {
-    challengeId: '0',
-    title: 'Mock Multiple Choice Challenge',
+const MockMultipleChoiceChallenge: Challenge = {
+    challengeId: '2',
+    title: 'Understand The Parts of a Job Posting',
     type: 'multiple-choice',
     documentId: 'job',
     challengeItems: [
         {
         id: '0',
-        correct: '1',
-        prompt: 'Where is part 1?'
+        correct: '0',
+        prompt: 'This part tells you…?',
+        documentSubject: '1',
+        options: new Map<string, string>().set('0', '...WHO is hiring.')
+                                          .set('1', '...WHERE the store is.')
+                                          .set('2', '...WHEN the job fair is.')
+                                          .set('3', '...HOW to apply.')
         },
         {
         id: '1',
-        correct: '2',
-        prompt: 'Where is part 2?'
+        correct: '3',
+        prompt: 'This part tells you…',
+        documentSubject: '4',
+        options: new Map<string, string>().set('0', '...WHEN the job fair is.')
+                                          .set('1', '...WHERE the store is.')
+                                          .set('2', '...WHO is hiring.')
+                                          .set('3', '...HOW to apply.')
         },
         {
         id: '2',
-        correct: '3',
-        prompt: 'Where is part 3?'
+        correct: '1',
+        prompt: 'This part tells you…',
+        documentSubject: '3',
+        options: new Map<string, string>().set('0', '...WHAT jobs there are.')
+                                          .set('1', '...WHERE the store is.')
+                                          .set('2', '...HOW to apply.')
+                                          .set('3', '...WHEN the job fair is.')
         },
         {
         id: '3',
-        correct: '4',
-        prompt: 'Where is part 4?'
+        correct: '2',
+        prompt: 'This part tells you…',
+        documentSubject: '8',
+        options: new Map<string, string>().set('0', '...WHO is hiring.')
+                                          .set('1', '...WHERE the store is.')
+                                          .set('2', '...WHAT jobs there are.')
+                                          .set('3', '...HOW to apply.')
         },
         {
         id: '4',
-        correct: '5',
-        prompt: 'Where is part 5?'
+        correct: '2',
+        prompt: 'This part tells you…',
+        documentSubject: '5',
+        options: new Map<string, string>().set('0', '...WHO is hiring.')
+                                          .set('1', '...WHERE the store is.')
+                                          .set('2', '...WHEN the job fair is.')
+                                          .set('3', '...HOW to apply.')
         }
     ]
 };
 
-let MockExploreChallenge: Challenge = {
+const MockExploreChallenge: Challenge = {
     challengeId: '1',
-    title: 'Mock Explore Challenge',
+    title: 'Explore The Parts of a Job Posting',
     type: 'explore',
     documentId: 'job',
-    prompt: 'Discover the parts of a job posting!',
+    prompt: 'Discover the parts of a job posting! Find the part that tells you...',
     challengeItems: [
         {
         id: '0',
-        prompt: 'Find the part that.. 1',
+        prompt: 'WHO is hiring?',
         documentSubject: '1'
         },
         {
         id: '1',
-        prompt: 'Find the part that.. 2',
-        documentSubject: '2'
+        prompt: 'WHAT jobs there are?',
+        documentSubject: '8'
         },
         {
         id: '2',
-        prompt: 'Find the part that.. 3',
+        prompt: 'WHERE would you work?',
         documentSubject: '3'
         },
         {
         id: '3',
-        prompt: 'Find the part that.. 4',
+        prompt: 'HOW do you apply?',
         documentSubject: '4'
         },
         {
         id: '4',
-        prompt: 'Find the part that.. 5',
-        documentSubject: '5'
+        prompt: 'WHERE the job fair is?',
+        documentSubject: '6'
         }
     ]
 };
 
-let MockCharacterChallenge: Challenge = {
-    challengeId: '2',
-    title: 'Mock Character Challenge',
+const MockCharacterChallenge: Challenge = {
+    challengeId: '3',
+    title: 'Find the Right Person for the Job',
     type: 'character',
     prompt: 'Match the job with the person who you think fits best',
     challengeItems: [
@@ -79,23 +104,20 @@ let MockCharacterChallenge: Challenge = {
             id: '0',
             prompt: 'Who fits this job the best?',
             documentSubject: '/assets/images/jobfair.jpg',
-            correct: 'Abe',
+            correct: 'Maria',
             data: {
                 characters: [
                     {
                         name: 'Abe',
                         bio:
-                            'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
-                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
-                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
+                            'took care of his parents in their old age. He is a very patient person, '
+                            + 'and is looking for a job that has flexible hours. He likes playing cards for fun.',
                         imageUrl: '/assets/images/abe.png'
                     },
                     {
                         name: 'Maria',
-                        bio:
-                            'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
-                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
-                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
+                        bio: 'loves cooking. She has worked with a cash register before. She is also a very '
+                        + 'friendly and outgoing person. She is looking for a job that will keep her on her feet.',
                         imageUrl: '/assets/images/maria.png'
                     }
                 ]
@@ -104,24 +126,21 @@ let MockCharacterChallenge: Challenge = {
         {
             id: '1',
             prompt: 'Who fits this job the best?',
-            documentSubject: '/assets/images/jobfair.jpg',
-            correct: 'Abe',
+            documentSubject: '/assets/images/jobfair2.jpg',
+            correct: 'Maria',
             data: {
                 characters: [
                     {
                         name: 'Abe',
                         bio:
-                            'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
-                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
-                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
+                            'took care of his parents in their old age. He is a very patient person, '
+                            + 'and is looking for a job that has flexible hours. He likes playing cards for fun.',
                         imageUrl: '/assets/images/abe.png'
                     },
                     {
                         name: 'Maria',
-                        bio:
-                            'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
-                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
-                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
+                        bio: 'loves cooking. She has worked with a cash register before. She is also a very '
+                        + 'friendly and outgoing person. She is looking for a job that will keep her on her feet.',
                         imageUrl: '/assets/images/maria.png'
                     }
                 ]
@@ -130,50 +149,21 @@ let MockCharacterChallenge: Challenge = {
         {
             id: '2',
             prompt: 'Who fits this job the best?',
-            documentSubject: '/assets/images/jobfair.jpg',
-            correct: 'Maria',
+            documentSubject: '/assets/images/jobfair3.jpg',
+            correct: 'Abe',
             data: {
                 characters: [
                     {
                         name: 'Abe',
                         bio:
-                            'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
-                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
-                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
+                            'took care of his parents in their old age. He is a very patient person, '
+                            + 'and is looking for a job that has flexible hours. He likes playing cards for fun.',
                         imageUrl: '/assets/images/abe.png'
                     },
                     {
                         name: 'Maria',
-                        bio:
-                            'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
-                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
-                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
-                        imageUrl: '/assets/images/maria.png'
-                    }
-                ]
-            }
-        },
-        {
-            id: '3',
-            prompt: 'Who fits this job the best?',
-            documentSubject: '/assets/images/jobfair.jpg',
-            correct: 'Maria',
-            data: {
-                characters: [
-                    {
-                        name: 'Abe',
-                        bio:
-                            'BIO: Abe is a character. Abe is a character. Abe is a character. Abe is a character.' +
-                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ' +
-                            'Abe is a character. Abe is a character. Abe is a character. Abe is a character. ',
-                        imageUrl: '/assets/images/abe.png'
-                    },
-                    {
-                        name: 'Maria',
-                        bio:
-                            'BIO: Maria is a character. Maria is a character. Maria is a character. Maria is a character.' +
-                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ' +
-                            'Maria is a character. Maria is a character. Maria is a character. Maria is a character. ',
+                        bio: 'loves cooking. She has worked with a cash register before. She is also a very '
+                        + 'friendly and outgoing person. She is looking for a job that will keep her on her feet.',
                         imageUrl: '/assets/images/maria.png'
                     }
                 ]

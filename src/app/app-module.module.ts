@@ -14,6 +14,7 @@ import {
   DocumentDisplayComponent,
   ExploreComponent,
   GeneratedModalComponent,
+  MultipleChoiceComponent,
   ProgressDisplayComponent,
   ResourceMenuComponent,
   SideMenuComponent
@@ -52,6 +53,7 @@ import {
     GeneratedModalComponent,
     HelpModalComponent,
     ProgressDisplayComponent,
+    MultipleChoiceComponent,
     ResourceMenuComponent,
     SideMenuComponent,
   ],
@@ -66,7 +68,8 @@ import {
     ChallengeSummaryComponent,
     CharacterChallengeComponent,
     ExploreComponent,
-    HelpModalComponent
+    HelpModalComponent,
+    MultipleChoiceComponent
    ],
   bootstrap: [ AppComponent ]
 })

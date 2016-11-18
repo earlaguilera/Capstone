@@ -1,5 +1,6 @@
 import { CharacterChallengeComponent } from './character-challenge/character-challenge.component';
 import { ExploreComponent } from './';
+import { MultipleChoiceComponent } from './multiple-choice';
 
 export function getComponetClass(className: string): any {
     switch (className) {
@@ -7,6 +8,8 @@ export function getComponetClass(className: string): any {
             return CharacterChallengeComponent;
         case 'explore':
             return ExploreComponent;
+        case 'multiple-choice':
+            return MultipleChoiceComponent;
         default:
             return undefined;
     }

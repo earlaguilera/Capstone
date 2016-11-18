@@ -21,6 +21,7 @@ export class CharacterChallengeComponent implements OnDestroy, OnInit {
   private subscriptions: Subscription[];
   private showContinue: boolean = false;
   private finished: boolean = false;
+  private selected: string;
 
   constructor(private challengeService: ChallengeService) { }
 
@@ -50,18 +51,30 @@ export class CharacterChallengeComponent implements OnDestroy, OnInit {
   }
 
   public select(characterName: string): void {
+    this.selected = characterName;
     if (characterName === this.correct) {
       this.challengeService.selectOption(characterName);
       this.showContinue = true;
     } else {
-
+      this.showContinue = false;
     }
   }
 
   public continue(): void {
-    if (!this.finished) {
+    if (!this.finished && this.selected === this.correct) {
       this.challengeService.nextQuestion();
       this.showContinue = false;
+      this.selected = undefined;
+    }
+  }
+
+  public borderFor(name: string): string {
+    if (this.selected === name && this.selected === this.correct) {
+      return '3px #4bf442 solid';
+    } else if (this.selected === name && this.selected !== this.correct) {
+      return '3px #ff0000 solid';
+    } else {
+      return '1px #888 solid';
     }
   }
 
