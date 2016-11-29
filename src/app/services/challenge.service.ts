@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
 import { MockChallenges } from '../../resources/mock-data';
-import { Challenge, ChallengeItem, ChallengeRecord, Selection } from '../models';
+import { Challenge, ChallengeItem, ChallengeRecord, ChallengeType, Selection } from '../models';
 
 @Injectable()
 export class ChallengeService {
@@ -40,7 +40,10 @@ export class ChallengeService {
       this.currentChallengeSubject.next(challenge);
        this.challengeRecord = {
         challengeId: challenge.challengeId,
+        challengeTitle: challenge.title,
+        challengeType: challenge.type,
         completion: 0,
+        completionMessage: challenge.completionMessage,
         itemCount: challenge.challengeItems.length,
         userId: 'Bob',
         responses: new Map<string, Selection>()
@@ -85,7 +88,7 @@ export class ChallengeService {
    * Set the chosen option.
    */
   public selectOption(optionId: string): void {
-    const key: string = this.currentChallenge.type === 'explore' ? optionId : '' + this.currentQuestionId;
+    const key: string = this.currentChallenge.type === ChallengeType.EXPLORE ? optionId : '' + this.currentQuestionId;
     this.challengeRecord.responses.set(
       key,
       {

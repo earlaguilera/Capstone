@@ -4,13 +4,38 @@
     margin: auto;
     overflow: none;
 }
-.documentRow {
+.document-row-image {
+    float: left;
     width: 100%;
+    border-left: 1px #AAA solid;
+    border-right: 1px #AAA solid;
 }
-.rowContainer {
+
+.doc-tab {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.doc-image-col {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.doc-tab-col {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    margin-left: -25px;
+    z-index: 1;
+}
+
+.row-container {
     position: relative;
 }
 
-.focusedRow {
+.focused-row {
     border: 3px #2b3 solid;
 }

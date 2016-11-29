@@ -1,9 +1,10 @@
-import { Challenge, Document } from '../app/models';
+import { Challenge, ChallengeType, Document } from '../app/models';
 
 const MockMultipleChoiceChallenge: Challenge = {
     challengeId: '2',
     title: 'Understand The Parts of a Job Posting',
-    type: 'multiple-choice',
+    type: ChallengeType.MULTIPLE_CHOICE,
+    completionMessage: 'Work in progress. This will show each incorrect option with an explanation of why its incorrect',
     documentId: 'job',
     challengeItems: [
         {
@@ -62,9 +63,10 @@ const MockMultipleChoiceChallenge: Challenge = {
 const MockExploreChallenge: Challenge = {
     challengeId: '1',
     title: 'Explore The Parts of a Job Posting',
-    type: 'explore',
+    type: ChallengeType.EXPLORE,
     documentId: 'job',
     prompt: 'Discover the parts of a job posting! Find the part that tells you...',
+    completionMessage: 'You found the key parts of a Job Posting! Good work! Continue on to the next challenge.',
     challengeItems: [
         {
         id: '0',
@@ -88,8 +90,8 @@ const MockExploreChallenge: Challenge = {
         },
         {
         id: '4',
-        prompt: 'WHERE the job fair is?',
-        documentSubject: '6'
+        prompt: 'WHEN the job fair is?',
+        documentSubject: '5'
         }
     ]
 };
@@ -97,8 +99,9 @@ const MockExploreChallenge: Challenge = {
 const MockCharacterChallenge: Challenge = {
     challengeId: '3',
     title: 'Find the Right Person for the Job',
-    type: 'character',
+    type: ChallengeType.CHARACTER,
     prompt: 'Match the job with the person who you think fits best',
+    completionMessage: 'You found the right person for each Job Posting! Good work! Continue on to the next challenge.',
     challengeItems: [
         {
             id: '0',
@@ -182,15 +185,15 @@ export function createMockDocument(): Document {
     let document: Document = {
         id: 'job',
         rows: [
-        { id: '0', hasSound: false, state: 'inactive' },
-        { id: '1', hasSound: true, state: 'inactive' },
-        { id: '2', hasSound: true, state: 'inactive' },
-        { id: '3', hasSound: true, state: 'inactive' },
-        { id: '4', hasSound: true, state: 'inactive' },
-        { id: '5', hasSound: true, state: 'inactive' },
-        { id: '6', hasSound: true, state: 'inactive' },
-        { id: '7', hasSound: true, state: 'inactive' },
-        { id: '8', hasSound: true, state: 'inactive' }
+        { id: '0', hasSound: false, hasTabSound: false, state: 'inactive' },
+        { id: '1', hasSound: true, hasTabSound: true, state: 'inactive' },
+        { id: '2', hasSound: true, hasTabSound: false, state: 'inactive' },
+        { id: '3', hasSound: true, hasTabSound: true, state: 'inactive' },
+        { id: '4', hasSound: true, hasTabSound: true, state: 'inactive' },
+        { id: '5', hasSound: true, hasTabSound: true, state: 'inactive' },
+        { id: '6', hasSound: true, hasTabSound: false, state: 'inactive' },
+        { id: '7', hasSound: true, hasTabSound: false, state: 'inactive' },
+        { id: '8', hasSound: true, hasTabSound: true, state: 'inactive' }
         ]
     };
     for (let row of document.rows) {
@@ -199,6 +202,14 @@ export function createMockDocument(): Document {
           url: '/assets/sounds/' + document.id + row.id + '.wav',
           autoplay: false,
           id: document.id + row.id,
+          type: 'audio/wav'
+        };
+      }
+      if (row.hasTabSound) {
+        row.tabSound = {
+          url: '/assets/sounds/' + document.id + row.id + 'tab.wav',
+          autoplay: false,
+          id: document.id + row.id + 'tab',
           type: 'audio/wav'
         };
       }

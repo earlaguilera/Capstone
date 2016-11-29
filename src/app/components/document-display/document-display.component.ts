@@ -17,7 +17,7 @@ import { Challenge, Document } from '../../models';
     trigger('rowState', [
       state('inactive', style({
         transform: 'scale(1)',
-        zIndex: '1',
+        zIndex: '10',
       })),
       state('active',   style({
         transform: 'scale(1.5)',
@@ -32,6 +32,7 @@ import { Challenge, Document } from '../../models';
   styleUrls: ['document-display.component.css']
 })
 export class DocumentDisplayComponent implements OnInit {
+  private activeTab: number = -1;
   private documentId: string;
   private currentDocument: Document;
   private imageUrl: string = 'assets/images/';
@@ -40,6 +41,7 @@ export class DocumentDisplayComponent implements OnInit {
   private focusedRow: number;
 
   @Input() public allowClicks: boolean = true;
+  @Input() public documentTabs: boolean = false;
 
   constructor(private challengeService: ChallengeService,
   private documentService: DocumentService) { }
@@ -83,5 +85,24 @@ export class DocumentDisplayComponent implements OnInit {
 
   public getImageUrl(index: number): string {
     return this.imageUrl + this.documentId + index + '.png';
+  }
+
+  public showTab(index) {
+    if (this.documentTabs && this.currentDocument.rows[index].hasTabSound && this.allowClicks) {
+      return true;
+    }
+    return false;
+  }
+
+  public clickTab(index) {
+    if (this.playingSound === true) {
+      return;
+    }
+    this.playingSound = true;
+    this.activeTab = index;
+    this.documentService.clickTab(this.currentDocument.rows[index]).then(() => {
+      this.playingSound = false;
+      this.activeTab = -1;
+    });
   }
 }

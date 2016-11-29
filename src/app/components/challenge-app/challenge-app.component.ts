@@ -19,8 +19,8 @@ import { ChallengeService, TitleService } from '../../services';
 export class ChallengeAppComponent implements OnInit {
   @ViewChild('challengeDisplay', {read: ViewContainerRef})
   private challengeContainer: ViewContainerRef;
-
   private challengeId: string;
+  private challengeReady: boolean = false;
 
   constructor(private route: ActivatedRoute,
               private challengeService: ChallengeService,
@@ -41,6 +41,7 @@ export class ChallengeAppComponent implements OnInit {
           this.challengeContainer.createComponent(
             this.componentFactoryResolver.resolveComponentFactory(component)
           );
+          this.challengeReady = true;
         } else {
           // TODO: Handle component class not found
           console.error('Challenge Component class not found: ', challenge.type);

@@ -8,20 +8,28 @@ import { AudioService } from './audio.service';
 @Injectable()
 export class DocumentService {
   private currentDocumentSubject: BehaviorSubject<Document>;
-  private documentClick: BehaviorSubject<string>;
+  private documentRowClick: BehaviorSubject<string>;
+  private documentTabClick: BehaviorSubject<string>;
   private documentFocus: BehaviorSubject<number>;
   private mockDocument: Document;
 
   constructor(private audioService: AudioService) {
     this.mockDocument = createMockDocument();
     this.currentDocumentSubject = new BehaviorSubject<Document>(this.mockDocument);
-    this.documentClick = new BehaviorSubject<string>(undefined);
+    this.documentRowClick = new BehaviorSubject<string>(undefined);
+    this.documentTabClick = new BehaviorSubject<string>(undefined);
     this.documentFocus = new BehaviorSubject<number>(-1);
   }
 
   public clickRow(row: Row): Promise<void> {
     return this.audioService.playSound(row.sound).then((): void => {
-      this.documentClick.next(row.id);
+      this.documentRowClick.next(row.id);
+    });
+  }
+
+  public clickTab(row: Row): Promise<void> {
+    return this.audioService.playSound(row.tabSound).then((): void => {
+      this.documentTabClick.next(row.id);
     });
   }
 
@@ -29,9 +37,14 @@ export class DocumentService {
       return this.currentDocumentSubject.asObservable();
   }
 
-  public getDocumentClickStream(): Observable<string> {
-    return Observable.from(this.documentClick.filter((id: string) => id !== undefined));
+  public getDocumentRowClickStream(): Observable<string> {
+    return Observable.from(this.documentRowClick.filter((id: string) => id !== undefined));
   }
+
+  public getDocumentTabClickStream(): Observable<string> {
+    return Observable.from(this.documentTabClick.filter((id: string) => id !== undefined));
+  }
+
 
   public getDocumentFocusStream(): Observable<number> {
     return Observable.from(this.documentFocus.filter((id: number) => id !== undefined));
