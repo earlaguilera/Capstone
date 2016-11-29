@@ -12,7 +12,6 @@ h1, h2 {
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
-    margin: 4px 2px;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -31,10 +30,6 @@ h1, h2 {
     transform: translateY(4px);
 }
 
-.col-md-4{
-    width:32%;
-}
-
 .container{
     position: absolute;
     margin-left: 38%;
@@ -45,4 +40,8 @@ h1, h2 {
     position: absolute;
     margin-top: 17%;
     margin-left: 8%;
+}
+
+.row {
+    margin-top: 15px;
 }

@@ -65,7 +65,7 @@ const MockExploreChallenge: Challenge = {
     title: 'Explore The Parts of a Job Posting',
     type: ChallengeType.EXPLORE,
     documentId: 'job',
-    prompt: 'Discover the parts of a job posting! Find the part that tells you...',
+    prompt: 'Click on the document to discover the parts of a job posting! Find the part that tells you...',
     completionMessage: 'You found the key parts of a Job Posting! Good work! Continue on to the next challenge.',
     challengeItems: [
         {
