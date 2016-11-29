@@ -1,3 +1,5 @@
 export enum ChallengeType {
-    EXPLORE
+    EXPLORE,
+    MULTIPLE_CHOICE,
+    CHARACTER
 }

@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
 import {
@@ -6,7 +7,8 @@ import {
   ChallengeRecord,
   Character
 } from '../../../models';
-import { ChallengeService } from '../../../services';
+import { ChallengeService, ModalService } from '../../../services';
+import { ChallengeSummaryComponent } from '../../modals'; 
 
 @Component({
   selector: 'app-character-challenge',
@@ -23,7 +25,9 @@ export class CharacterChallengeComponent implements OnDestroy, OnInit {
   private finished: boolean = false;
   private selected: string;
 
-  constructor(private challengeService: ChallengeService) { }
+  constructor(private challengeService: ChallengeService,
+              private modalService: ModalService,
+              private router: Router) { }
 
   public ngOnInit(): void {
     this.subscriptions = [];
@@ -38,6 +42,8 @@ export class CharacterChallengeComponent implements OnDestroy, OnInit {
     .subscribe((record: ChallengeRecord): void => {
       if (record.completion === 1) {
         this.finished = true;
+      } else {
+        this.finished = false;
       }
     }));
   }
@@ -57,6 +63,7 @@ export class CharacterChallengeComponent implements OnDestroy, OnInit {
       this.showContinue = true;
     } else {
       this.showContinue = false;
+      this.finished = false;
     }
   }
 
@@ -78,7 +85,21 @@ export class CharacterChallengeComponent implements OnDestroy, OnInit {
     }
   }
 
-  private endChallenge(): void {
-    // TODO open modal for summary
+  public endChallenge(): void {
+    this.modalService.openModal({
+      content: ChallengeSummaryComponent,
+      options: {
+        modalClass: 'modal-md',
+        title: 'Character Challenge Summary',
+        submitButtonLabel: 'Continue',
+        hideCloseButton: true,
+        closeOnEscape: false,
+        closeOnOutsideClick: false,
+        onSubmit: (): void => {
+          this.modalService.closeModal();
+          this.router.navigateByUrl('/');
+        }
+      }
+    });
   }
 }

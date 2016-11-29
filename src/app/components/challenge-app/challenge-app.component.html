@@ -1,7 +1,7 @@
 <div class="row main-field"><div #challengeDisplay></div>
 <div class="row progress">
   <div class="col-sm-8">
-    <app-progress-display></app-progress-display>
+    <app-progress-display *ngIf="challengeReady"></app-progress-display>
   </div>
 </div>
 </div>

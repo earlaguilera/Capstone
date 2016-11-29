@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { ChallengeService, DocumentService } from '../../../services';
+import { ChallengeService, DocumentService, ModalService } from '../../../services';
 import { Challenge, ChallengeItem, ChallengeRecord, Selection } from '../../../models';
+import { ChallengeSummaryComponent } from '../../modals';
 
 @Component({
   selector: 'app-multiple-choice',
@@ -22,7 +24,9 @@ export class MultipleChoiceComponent implements OnInit {
   private prompt: string = '';
 
   constructor(private challengeService: ChallengeService,
-              private documentService: DocumentService) {
+              private documentService: DocumentService,
+              private modalService: ModalService,
+              private router: Router) {
     this.currentQuestion = this.createBlankQuestion();
    }
 
@@ -70,6 +74,22 @@ export class MultipleChoiceComponent implements OnInit {
 
    public submit(): void {
     if (this.selectedOption) {
+      this.documentService.setDocumentFocus(-1);
+      this.modalService.openModal({
+      content: ChallengeSummaryComponent,
+      options: {
+        modalClass: 'modal-md',
+        title: 'Learning Challenge Summary',
+        submitButtonLabel: 'Continue',
+        hideCloseButton: true,
+        closeOnEscape: false,
+        closeOnOutsideClick: false,
+        onSubmit: (): void => {
+          this.modalService.closeModal();
+          this.router.navigateByUrl('/');
+        }
+      }
+    });
     }
   }
 

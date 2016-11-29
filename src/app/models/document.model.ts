@@ -6,7 +6,9 @@ export interface Document {
 export interface Row {
     id: string;
     hasSound: boolean;
+    hasTabSound: boolean;
     sound?: SoundProperties;
+    tabSound?: SoundProperties;
     state: string;
 }
 
