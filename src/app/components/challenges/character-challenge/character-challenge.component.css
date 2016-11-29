@@ -1,0 +1,44 @@
+.character-card {
+    margin: 15px 20px 15px 5px;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.character-row {
+    margin: 5px !important;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.character-image {
+    max-height: 100%;
+    width: 100%;
+    max-width: 200px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+}
+
+.continue {
+    width: 100%;
+}
+
+.v-middle {
+    vertical-align: middle;
+}
+
+.doc-image {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 100%;
+    width: 100%;
+    max-width: 600px;
+}
+
+.prompt {
+    margin: 15px 0 0 10px;
+}

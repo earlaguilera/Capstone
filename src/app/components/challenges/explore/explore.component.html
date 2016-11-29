@@ -1,0 +1,19 @@
+<div class="col-sm-8 document-field">
+  <app-document-display class="doc-display-wrapper"></app-document-display>
+</div>
+<div class="col-sm-4 challenge-field">
+  <h4 class="">{{prompt}}</h4>
+  <div class="explore-list">
+    <div class="row explore-item" *ngFor="let item of items">
+      <div class="col-sm-2">
+        <span class="fa-stack fa-lg" [style.color]="record.responses.has(item.documentSubject) ? '#26ff00' : '#ff0000'">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa {{ record.responses.has(item.documentSubject) ? 'fa-check' : 'fa-question' }} fa-stack-1x"></i>
+        </span>
+      </div>
+      <div class="col-sm-10 explore-item-prompt">
+        {{item.prompt}}
+      </div>
+    </div>
+  </div>
+</div>

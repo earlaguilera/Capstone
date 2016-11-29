@@ -1,17 +1,24 @@
-<md-sidenav-layout>
-    <md-sidenav #sidenav mode="side" class="app-sidenav">
-        <app-side-menu></app-side-menu>
-    </md-sidenav>
-    <md-toolbar color="primary">
-        <button class="app-icon-button" (click)="sidenav.toggle()">
-            <i class="material-icons app-toolbar-menu">menu</i>
-        </button>
-        <span>&nbsp; {{title}}</span>
-    </md-toolbar>
-    <div class="doc-chal-row">
-        <app-document-display class="doc-display-wrapper"></app-document-display>
-        <app-challenge-display class="chal-display-wrapper"></app-challenge-display>
-    </div>
-    <app-progress-display></app-progress-display>
-    <app-resource-menu></app-resource-menu>
-</md-sidenav-layout>
+<ng2-sidebar  [(open)]="_open"
+              (onOpen)="onSidebarOpen()"
+              [(closeOnClickOutside)]="closeOnClickOutside"
+              (onClose)="onSidebarClose()"
+              [(showOverlay)]="showOverlay" 
+              sidebarClass="sidebar">
+  <div id="mySidenav" class="side-menu-body">
+    <app-side-menu></app-side-menu>
+  </div>
+</ng2-sidebar>
+<nav class="navbar navbar-dark bg-inverse top-placement">
+  <div class="container-fluid header-bar">
+    <button class="btn btn-lg btn-primary side-menu-toggle" 
+            (click)="toggleSidebar()" >
+      <span class="fa fa-bars"></span>
+    </button>
+    <span class="challenge-title">&nbsp; {{title}}</span>
+  </div>
+</nav>
+<div class="container main" id="main">
+  <router-outlet></router-outlet>
+</div>
+
+<app-generated-modal></app-generated-modal>

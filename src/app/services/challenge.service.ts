@@ -1,49 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
+import { MockChallenges } from '../../resources/mock-data';
 import { Challenge, ChallengeItem, ChallengeRecord, Selection } from '../models';
 
 @Injectable()
 export class ChallengeService {
-
-  private mockChallenge: Challenge = {
-    challengeId: '0',
-    title: 'Mock Challenge',
-    documentUrl: 'http://images.clipartpanda.com/document-clipart-9iRRbd7ET.png',
-    challengeItems: [
-      {
-        id: '0',
-        correct: '0',
-        prompt: 'What is the answer to question 1?',
-        options: undefined
-      },
-      {
-        id: '1',
-        correct: '0',
-        prompt: 'What is the answer to question 2?',
-        options: undefined
-      },
-      {
-        id: '2',
-        correct: '0',
-        prompt: 'What is the answer to question 3?',
-        options: undefined
-      },
-      {
-        id: '3',
-        correct: '0',
-        prompt: 'What is the answer to question 4?',
-        options: undefined
-      },
-      {
-        id: '4',
-        correct: '0',
-        prompt: 'What is the answer to question 5?',
-        options: undefined
-      }
-    ]
-  };
-
   private currentChallengeSubject = new BehaviorSubject<Challenge>(undefined);
   private currentQuestionSubject = new BehaviorSubject<ChallengeItem>(undefined);
   private challengeRecordSubject = new BehaviorSubject<ChallengeRecord>(undefined);
@@ -52,17 +14,6 @@ export class ChallengeService {
   private challengeRecord: ChallengeRecord;
 
   constructor() {
-    // Set up mock data
-    let options = new Map<string, string>();
-    options.set('0', 'option one');
-    options.set('1', 'option two');
-    options.set('2', 'option three');
-    options.set('3', 'option four');
-    for (let item of this.mockChallenge.challengeItems) {
-        item.options = options;
-    }
-    this.setChallenge('blah');
-
     // Configure service
     this.currentChallengeSubject.subscribe((challenge: Challenge) => {
       this.currentChallenge = challenge;
@@ -80,17 +31,23 @@ export class ChallengeService {
    * Set the current challenge
    * @param challengeId the ID of the challenge
    */
-  public setChallenge(challengeId: string): void {
+  public setChallenge(challengeId: string): Observable<Challenge> {
+    // Clear current data
+    this.challengeRecordSubject.next(undefined);
+    this.currentChallengeSubject.next(undefined);
+    this.currentQuestionSubject.next(undefined);
     this.getChallengeById(challengeId).subscribe((challenge: Challenge) => {
       this.currentChallengeSubject.next(challenge);
        this.challengeRecord = {
         challengeId: challenge.challengeId,
         completion: 0,
-        responses: new Map<string, Selection>(),
-        userId: 'Bob'
+        itemCount: challenge.challengeItems.length,
+        userId: 'Bob',
+        responses: new Map<string, Selection>()
       };
       this.challengeRecordSubject.next(this.challengeRecord);
     });
+    return this.getCurrentChallengeObservable();
   }
 
   /**
@@ -122,18 +79,15 @@ export class ChallengeService {
       );
     }
   }
-  public submitQuestions(): void {
-      if (this.currentQuestionId === this.currentChallenge.challengeItems.length) {
-        
-      }
-    }
+
   /**
    * selectOption
    * Set the chosen option.
    */
   public selectOption(optionId: string): void {
+    const key: string = this.currentChallenge.type === 'explore' ? optionId : '' + this.currentQuestionId;
     this.challengeRecord.responses.set(
-      '' + this.currentQuestionId,
+      key,
       {
         correct: this.currentChallenge.challengeItems[this.currentQuestionId].correct,
         selected: optionId
@@ -149,7 +103,9 @@ export class ChallengeService {
    */
   // TODO: add type for observable
   public getCurrentChallengeObservable(): Observable<Challenge> {
-    return this.currentChallengeSubject.asObservable();
+    return this.currentChallengeSubject.asObservable().filter((challenge: Challenge): boolean => {
+      return challenge !== undefined;
+    }).first();
   }
 
   /**
@@ -158,7 +114,7 @@ export class ChallengeService {
    */
   // TODO: add type for observable
   public getCurrentQuestionObservable(): Observable<ChallengeItem> {
-    return this.currentQuestionSubject.asObservable();
+    return this.currentQuestionSubject.asObservable().filter((data: any) => data !== undefined);
   }
 
   /**
@@ -167,18 +123,23 @@ export class ChallengeService {
    */
   // TODO: add type for observable
   public getChallengeRecordObservable(): Observable<any> {
-    return this.challengeRecordSubject.asObservable();
+    return this.challengeRecordSubject.asObservable().filter((data: any) => data !== undefined);
   }
 
   /**
    * getChallengeById
    * Get the challenge of ID from the server.
-   * @param challengeId tje ID of the challenge
+   * @param challengeId the ID of the challenge
    * @return the requested challenge
    */
   // TODO: return type Challenge
   private getChallengeById(challengeId: string): Observable<Challenge> {
     // TODO make http call to server
-    return Observable.from([this.mockChallenge]);
+    if (MockChallenges.hasOwnProperty(challengeId)) {
+      return Observable.from([MockChallenges[challengeId]]);
+    } else {
+      console.log(challengeId, MockChallenges);
+      return Observable.throw('CHALLENGE_NOT_FOUND');
+    }
   }
 }
