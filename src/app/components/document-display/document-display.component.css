@@ -13,8 +13,9 @@
 
 .doc-tab {
     float: left;
-    width: 100%;
+    width: 50px;
     height: 100%;
+    padding: 4px;
 }
 
 .doc-image-col {
@@ -28,7 +29,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    margin-left: -25px;
+    margin-left: -5px;
     z-index: 1;
 }
 
