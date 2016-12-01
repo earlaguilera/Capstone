@@ -5,7 +5,7 @@
   "main": "server.js",
   "angular-cli": {},
   "scripts": {
-    "start": "ng build && node server.js",
+    "start": "./node_modules/angular-cli/bin/ng build && node server.js",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
