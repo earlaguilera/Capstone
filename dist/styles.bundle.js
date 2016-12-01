@@ -1,6 +1,6 @@
 webpackJsonp([1,2],{
 
-/***/ 1065:
+/***/ 1073:
 /***/ function(module, exports) {
 
 /*
@@ -253,24 +253,24 @@ function updateLink(linkElement, obj) {
 
 /***/ },
 
-/***/ 1071:
+/***/ 1079:
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(468);
+module.exports = __webpack_require__(470);
 
 
 /***/ },
 
-/***/ 468:
+/***/ 470:
 /***/ function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(750);
+var content = __webpack_require__(758);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(1065)(content, {});
+var update = __webpack_require__(1073)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -288,22 +288,22 @@ if(false) {
 
 /***/ },
 
-/***/ 750:
+/***/ 758:
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(751)();
+exports = module.exports = __webpack_require__(759)();
 // imports
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n.backdrop {\n  display: none;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(0,0,0, 0);\n  z-index: 100;\n}\n\n.sidebar {\n  /*margin-top: 70px;*/\n  overflow-y: hidden;\n  z-index: 101 !important;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n.backdrop {\n  display: none;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(0,0,0, 0);\n  z-index: 100;\n}\n\n.if-modal {\n  z-index: 20000;\n}\n\n.sidebar {\n  /*margin-top: 70px;*/\n  overflow-y: hidden;\n  z-index: 101 !important;\n}\n", ""]);
 
 // exports
 
 
 /***/ },
 
-/***/ 751:
+/***/ 759:
 /***/ function(module, exports) {
 
 /*
@@ -360,5 +360,5 @@ module.exports = function() {
 
 /***/ }
 
-},[1071]);
+},[1079]);
 //# sourceMappingURL=styles.map
