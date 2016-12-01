@@ -5,11 +5,12 @@
   "main": "server.js",
   "angular-cli": {},
   "scripts": {
-    "start": "node server.js",
+    "start": "ng build && node server.js",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "build": "ng build"
   },
   "engines": {
     "node": "7.1.0"
