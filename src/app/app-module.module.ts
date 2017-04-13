@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ProgressbarModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { ModalModule } from 'ng2-modal';
+import { ModalModule } from 'ngx-modal';
 import { SidebarModule } from 'ng2-sidebar';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent }  from './app.component';
 import {
@@ -37,6 +37,7 @@ import {
     ModalModule,
     SidebarModule,
     ProgressbarModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: 'challenge/:id', component: ChallengeAppComponent },
       { path: '**', component: ChallengeMenuComponent }

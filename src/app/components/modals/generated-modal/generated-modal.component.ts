@@ -6,7 +6,7 @@ import {
   ViewContainerRef,
   ViewChild
 } from '@angular/core';
-import { Modal } from 'ng2-modal';
+import { Modal } from 'ngx-modal';
 
 import { ModalDescription, ModalOptions } from '../../../models';
 import { ModalService } from '../../../services';
