@@ -6,3 +6,4 @@ export * from './modals';
 export * from './progress-display';
 export * from './resource-menu';
 export * from './side-menu';
+export * from './admin-menu/admin-menu.component';

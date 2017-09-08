@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { ProgressbarModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { ProgressbarModule } from 'ng2-bootstrap';
 import { ModalModule } from 'ngx-modal';
 import { SidebarModule } from 'ng2-sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,7 +17,8 @@ import {
   MultipleChoiceComponent,
   ProgressDisplayComponent,
   ResourceMenuComponent,
-  SideMenuComponent
+  SideMenuComponent,
+  AdminMenuComponent
 } from './components';
 import {
   ChallengeSummaryComponent,
@@ -57,6 +58,7 @@ import {
     MultipleChoiceComponent,
     ResourceMenuComponent,
     SideMenuComponent,
+    AdminMenuComponent,
   ],
   providers: [
     AudioService,
