@@ -1,0 +1,211 @@
+
+.leftMenu
+{
+	position: absolute;
+	float: left;
+	background-color: #e4e0e0;
+	width: 23%;
+	top: 0px;
+	bottom: 0px;
+}
+
+.leftHeaderLogo
+{
+	position: absolute; 
+	top: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	width: 100%;
+	height: 100px;
+	left: 0px;
+	background-color: #1D4F8E;
+	color: #F09616;
+	font-size: 3em;
+	text-align: center;
+	vertical-align: bottom;
+	font-size: 2em;
+}
+
+.leftProfile
+{
+	position: absolute;
+	top: 100px;
+	left: 0%;
+	padding: 5px;
+	width: 100%;
+	/*background-color: #FFFFFF;*/
+	color: #6C6867;
+	text-align: center;
+}
+
+.leftProfile p
+{
+	font-size: 1em;
+	padding: 5px;
+	text-align: center;
+}
+
+.leftProfile h3
+{
+	padding-top: 50px;
+}
+
+.leftProfile form
+{
+	width: 269px;
+	margin: auto;
+	margin-top: 5px;
+}
+
+
+.editProfileButton
+{
+	background: url('editProfileBg.png') no-repeat;
+	background-size: cover;
+	width: 198px;
+	height: 51px;
+	border: none;
+	color: #FFFFFF;
+	float:left;
+}
+
+.logOutButton
+{
+	float: left;
+	background: url('logOutBg.png') no-repeat;
+	background-size: cover;
+	width: 71px;
+	height: 51px;
+	border: none;
+}
+
+.leftProfile h3
+{
+	font-size: 1.5em;
+	text-align: center;
+	letter-spacing: 0.1em;
+}
+
+.rightContent
+{
+	position: relative;
+	float: left;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+}
+
+.searchBox
+{
+	float: left;
+	margin-left: 3px;
+	margin-top: 5px;
+	margin-right: 10px;
+	padding-left: 20px;
+	background: url('searchBarBg.png') no-repeat;
+	background-size: cover;
+	border: hidden;
+	height: 42px;
+	width: 529px;
+}
+
+.filterBox
+{
+	float: left;
+	margin-left: 3px;
+	margin-top: 5px;
+	padding-left: 20px;
+	background: url('filterBarBg.png') no-repeat;
+	background-size: cover;
+	border: hidden;
+	height: 42px;
+	width: 190px;
+}
+
+.wrapperDiv
+{
+	width: 100%;
+	height: 100%;
+}
+
+.tableDiv
+{
+	margin: 15px;
+}
+.studentTable tr, td
+{
+	padding: 5px;
+	background-color: #e9e7e7;
+	border-color: #FFFFFF;
+}
+
+.oddStudentRows
+{
+	background-color: #f6f6f6 !important;
+}
+
+.evenStudentRows
+{
+	background-color: #FFFFFF !important;
+}
+
+.emailIcon
+{
+	background-image: url('letter.png');
+	background-position:left;
+	width: 30px;
+	height: 25px;
+	background-color: transparent;
+	border: none;
+}
+
+/*small screens*/
+@media screen and (max-width: 800px) {
+	.leftProfile, .leftMenu, .leftHeaderLogo
+	{
+		/*min-width: 200px;*/
+		visibility: hidden;
+	}
+	.rightContent
+	{
+    	min-width: 100px;
+	}
+	
+	.searchBar
+	{
+		visibility: hidden;
+		display:none;
+	}
+}
+
+/*large screens*/
+@media screen and (min-width: 800px) {
+	.rightContent
+	{
+		left: 300px;	
+	}
+		.leftProfile, .leftMenu, .leftHeaderLogo
+	{
+		visibility: visible;
+	}
+		.searchBar
+	{
+		top: 2px;
+		min-height: 58px;
+		padding-left: 5px;
+		background-color: #F4F4F4;
+		visibility: visible;
+		display:block;
+	}
+	.leftMenu
+	{
+		width: 300px;
+	}
+	
+	#profileCanvas
+	{
+		/*border: 4px solid #dbdbdb;*/
+	}
+	
+}
