@@ -4,7 +4,7 @@ var path = require("path");
 
 var port = process.env.PORT || 8080;
 
-app.use(express.static(__dirname + '/dist'));
+//app.use(express.static(__dirname + '/dist'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/dist/index.html'))
@@ -20,6 +20,10 @@ app.get('/instructor', function (req, res) {
 
 app.get('/social', function (req, res) {
   res.sendFile(path.join(__dirname+'/dist/social.html'))
+});
+
+app.get('/test', function (req, res) {
+  res.send('hello, world')
 });
 
 app.listen(port, function () {

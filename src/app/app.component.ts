@@ -37,7 +37,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     this.titleService.getTitle().subscribe((title: string): void => {
-      this.title = title || 'ImagineIf';
+      this.title = title || 'ImagineIf-TEST';
     });
   }
 
