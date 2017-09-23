@@ -52,7 +52,9 @@
     "tslint": "latest",
     "typescript": "2.2.2",
     "zone.js": "latest",
-    "es6-promise": "4.1.0"
+    "es6-promise": "4.1.0",
+    "mongojs": "latest",
+    "body-parser": "latest"
   },
   "devDependencies": {
     "@angular/cli": "1.0.0-rc.2"
