@@ -1,5 +1,5 @@
 import { CharacterChallengeComponent } from './character-challenge/character-challenge.component';
-import { ExploreComponent } from './';
+import { ExploreComponent } from './explore';
 import { MultipleChoiceComponent } from './multiple-choice';
 import { NewTestComponent } from './new-test'
 import { ChallengeType } from '../../models/challenge-type.model';

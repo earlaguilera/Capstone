@@ -1,13 +1,21 @@
-<ng2-sidebar  [(open)]="_open"
-              (onOpen)="onSidebarOpen()"
-              [(closeOnClickOutside)]="closeOnClickOutside"
-              (onClose)="onSidebarClose()"
-              [(showOverlay)]="showOverlay" 
-              sidebarClass="sidebar">
-  <div id="mySidenav" class="side-menu-body">
-    <app-side-menu></app-side-menu>
-  </div>
-</ng2-sidebar>
+<ng-sidebar-container class="side-menu-container">
+  <ng-sidebar
+                [(opened)]="_opened"
+                (onOpened)="onSidebarOpen()"
+                [(closeOnClickOutside)]="closeOnClickOutside"
+                (onClosed)="onSidebarClose()"
+                position="left"
+                aria-label="mySidenav"
+                sidebarClass="sidebar">
+    <div class="side-menu-body">
+      <a href="/"><i class="fa fa-home"></i>&nbsp;Home</a> 
+      <a href="/profile"><i class="fa fa-user"></i>&nbsp;Profile</a> 
+      <a href="/"><i class="fa fa-tasks"></i>&nbsp;Challenges</a>
+      <a href="/social"><i class="fa fa-cloud"></i>&nbsp;Social</a>
+      <a href="/instructor"><i class="fa fa-university"></i>&nbsp;Instructor</a>
+    </div>
+  </ng-sidebar>
+</ng-sidebar-container>
 <nav class="navbar navbar-dark bg-inverse top-placement">
   <div class="container-fluid header-bar">
     <button class="btn btn-lg btn-primary side-menu-toggle" 

@@ -42,7 +42,7 @@
     "karma-remap-istanbul": "^0.2.1",
     "ng2-bootstrap": "latest",
     "ngx-modal": "latest",
-    "ng2-sidebar": "latest",
+    "ng-sidebar": "6.0.0",
     "path": "latest",
     "protractor": "4.0.5",
     "rxjs": "latest",
@@ -55,6 +55,7 @@
     "es6-promise": "4.1.0"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.2"
+    "@angular/cli": "latest",
+    "@angular/compiler-cli": "latest"
   }
 }

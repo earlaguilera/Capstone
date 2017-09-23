@@ -20,11 +20,11 @@ export class AppComponent implements AfterViewInit, OnInit {
   // config for dev
   private skipHelp: boolean = true;
 
-  private _open: boolean = false;
+  private _opened: boolean = false;
   private windowService = new WindowService();
 
   public closeOnClickOutside: boolean = true;
-  public showOverlay: boolean = true;
+  public showBackdrop: boolean = true;
   public closeButton: boolean = false;
   public closeEsc: boolean = false;
   public closeClick: boolean = false;
@@ -53,26 +53,32 @@ export class AppComponent implements AfterViewInit, OnInit {
           hideCloseButton: true,
           closeOnEscape: false,
           closeOnOutsideClick: false,
-          onClose: () => { this.showOverlay = false; }
+          onClose: () => { this.showBackdrop = false; }
         }
       });
-      this.showOverlay = true;
+      this.showBackdrop = true;
     }
   }
 
   public toggleSidebar(): void {
-    this._open = !this._open;
+    this._opened = !this._opened;
   }
 
   public onSidebarOpen(): void {
+    /*
     document.getElementById('mySidenav').style.width = '250px';
+    document.getElementById('mySidenav').style.height = '250px';
     document.getElementById('main').style.marginLeft = '250px';
     this.windowService.showBackdrop();
+    */
   }
 
    public onSidebarClose(): void {
+    /*
     document.getElementById('mySidenav').style.width = '0';
+    document.getElementById('mySidenav').style.height = '0';    
     document.getElementById('main').style.marginLeft = '0';
     this.windowService.hideBackdrop();
+    */
    }
 }

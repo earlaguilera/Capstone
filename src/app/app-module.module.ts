@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ProgressbarModule } from 'ng2-bootstrap';
 import { ModalModule } from 'ngx-modal';
-import { SidebarModule } from 'ng2-sidebar';
+import { SidebarModule } from 'ng-sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent }  from './app.component';
@@ -36,7 +36,7 @@ import {
   imports: [
     BrowserModule,
     ModalModule,
-    SidebarModule,
+    SidebarModule.forRoot(),
     ProgressbarModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
@@ -57,7 +57,6 @@ import {
     ProgressDisplayComponent,
     MultipleChoiceComponent,
     ResourceMenuComponent,
-    SideMenuComponent,
     AdminMenuComponent,
   ],
   providers: [
