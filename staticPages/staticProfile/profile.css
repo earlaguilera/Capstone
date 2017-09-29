@@ -1,0 +1,226 @@
+
+.backdrop {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0, 0);
+  z-index: 100;
+}
+
+.if-modal {
+  z-index: 20000;
+}
+
+.sidebar {
+  /*margin-top: 70px;*/
+  overflow-y: hidden;
+}
+</style><style>.activate-modal[_ngcontent-olr-1] {
+  visibility: hidden;
+}
+
+.app-toolbar-menu[_ngcontent-olr-1] {
+  padding: 0 14px 0 14px;
+  color: white;
+}
+
+.chal-display-wrapper[_ngcontent-olr-1] {
+    display: inline-block;
+    margin-right: 10px;
+    max-width: 400px;
+    max-height: 800px;
+    height: 100%;
+    width: auto;
+}
+
+.challenge-title[_ngcontent-olr-1] {
+  position: absolute;
+  width: 90%;
+  float: left;
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+  font-size: 24px;
+  height: 100%;
+  padding-top: 15px;
+}
+
+div.inline[_ngcontent-olr-1] {
+    float:left;
+}
+
+.doc-chal-row[_ngcontent-olr-1] {
+  height: 80%;
+}
+
+.navbar[_ngcontent-olr-1] {
+  height: 70px;
+}
+
+
+.side-menu-body[_ngcontent-olr-1] {
+  height: 100%;
+  width: 200px;
+  background-color: #111;
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  -webkit-transition: 0.5s;
+  transition: 0.5s; 
+}
+
+.side-menu-toggle[_ngcontent-olr-1] {
+  float: left;
+}
+
+.main[_ngcontent-olr-1] {
+    -webkit-transition: margin-left .5s;
+    transition: margin-left .5s;
+    padding: 50px;
+    width: 100%;
+    max-width: 1500px;
+}
+
+.top-placement[_ngcontent-olr-1] {
+  z-index: 1000;
+}</style><style>
+    .ng2-sidebar {
+      overflow: auto;
+      pointer-events: none;
+      position: fixed;
+      z-index: 99999999;
+    }
+
+      .ng2-sidebar--left {
+        bottom: 0;
+        left: 0;
+        top: 0;
+      }
+
+      .ng2-sidebar--right {
+        bottom: 0;
+        right: 0;
+        top: 0;
+      }
+
+      .ng2-sidebar--top {
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+
+      .ng2-sidebar--bottom {
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .ng2-sidebar--style {
+        background: #fff;
+        box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+      }
+
+    .ng2-sidebar__overlay {
+      height: 100%;
+      left: 0;
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 99999998;
+    }
+
+      .ng2-sidebar__overlay--style {
+        background: #000;
+        opacity: 0.75;
+      }
+  </style><style>.side-menu-body[_ngcontent-olr-3]   a[_ngcontent-olr-3] {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s
+}
+
+.side-menu-body[_ngcontent-olr-3]   a[_ngcontent-olr-3]:hover, .offcanvas[_ngcontent-olr-3]   a[_ngcontent-olr-3]:focus{
+    color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav[_ngcontent-olr-3] {padding-top: 15px;}
+    .sidenav[_ngcontent-olr-3]   a[_ngcontent-olr-3] {font-size: 18px;}
+}
+.side-menu-body[_ngcontent-olr-3]   .closebtn[_ngcontent-olr-3] {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}</style><style>modal[_ngcontent-olr-4]   *[_ngcontent-olr-4]   div[_ngcontent-olr-4] {
+  background-color: pink;
+}
+
+.instructions[_ngcontent-olr-4]   *[_ngcontent-olr-4]   .modal-footer[_ngcontent-olr-4]{
+  text-align: center;
+}
+
+.instructions[_ngcontent-olr-4]   *[_ngcontent-olr-4]   .btn-primary[_ngcontent-olr-4] {
+  text-align: center;
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  width: 60%;
+}</style><style>@import url(http://fonts.googleapis.com/css?family=Titillium+Web:900|Roboto:400,100);
+
+h1[_ngcontent-olr-10], h2[_ngcontent-olr-10] {
+    color: #4682B4;
+}
+.button[_ngcontent-olr-10] {
+    background-color: #4682B4; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    width: 13em;
+}
+
+
+.button[_ngcontent-olr-10]:hover {
+    background-color: gray;
+}
+
+.button[_ngcontent-olr-10]:active {
+    background-color: #4682B4;
+    box-shadow: 0 5px #666;
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+}
+
+.container[_ngcontent-olr-10]{
+    position: absolute;
+    margin-left: 38%;
+    margin-top: 0%;
+}
+
+.head[_ngcontent-olr-10]{
+    position: absolute;
+    margin-top: 17%;
+    margin-left: 8%;
+}
+
+.row[_ngcontent-olr-10] {
+    margin-top: 15px;
+}

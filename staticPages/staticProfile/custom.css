@@ -1,0 +1,77 @@
+.dividebar {
+    width: 77%;
+    min-height: 60px;
+    height: 8%;
+    background-color: #f4f4f4;
+    position: relative;
+    left: 0%;
+}
+
+.dividebar-image {
+    top: 50%;
+    left:15px;
+    padding-right: 1%;
+    position:absolute;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+.dividebar-text {
+    font-family: sans-serif;
+    color: #362f2d;
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    font-size: 150%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.noDotList li {
+    list-style-type: none;
+}
+
+.divideContent {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.listTable {
+    width: 77%;
+}
+
+.listTable td {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.goalImage {
+    padding-right: 5px;
+}
+
+.goalAchievedText{
+    color: #267e22;
+}
+
+.inProgressText {
+    color: #ffb400;
+}
+
+.plannedText {
+    color: #8d8d8d;
+}
+
+.textData {
+    width: 75%;
+}
+
+.statText{
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
