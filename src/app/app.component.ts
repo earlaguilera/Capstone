@@ -11,6 +11,8 @@ import {
   WindowService
 } from './services';
 
+import { DataService } from './data.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -30,15 +32,20 @@ export class AppComponent implements AfterViewInit, OnInit {
   public closeClick: boolean = false;
   public overlayShown: boolean = false;
   public title: string = '';
+  users: Array<any>;
 
   constructor(private audioService: AudioService,
               private modalService: ModalService,
-              private titleService: TitleService) {}
+              private titleService: TitleService,
+              private _dataService: DataService) {}
 
   ngOnInit() {
     this.titleService.getTitle().subscribe((title: string): void => {
       this.title = title || 'ImagineIf-TEST';
     });
+
+    this._dataService.getUsers()
+    .subscribe(res => this.users = res);
   }
 
   ngAfterViewInit(): void {
@@ -81,4 +88,6 @@ export class AppComponent implements AfterViewInit, OnInit {
     this.windowService.hideBackdrop();
     */
    }
+
+   
 }

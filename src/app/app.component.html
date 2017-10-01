@@ -28,5 +28,7 @@
 <div class="container main" id="main">
   <router-outlet></router-outlet>
 </div>
-
+<ul>
+  <li *ngFor="let user of users">{{ user.name }}</li>
+</ul>
 <app-generated-modal></app-generated-modal>

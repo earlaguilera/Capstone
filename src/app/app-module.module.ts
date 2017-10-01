@@ -32,9 +32,15 @@ import {
   TitleService
 } from './services';
 
+// Import the Http Module and our Data Service
+import { HttpModule } from '@angular/http';
+import { DataService } from './data.service';
+
+
 @NgModule({
   imports: [
     BrowserModule,
+    HttpModule,
     ModalModule,
     SidebarModule.forRoot(),
     ProgressbarModule,
@@ -57,14 +63,15 @@ import {
     ProgressDisplayComponent,
     MultipleChoiceComponent,
     ResourceMenuComponent,
-    AdminMenuComponent,
+    AdminMenuComponent
   ],
   providers: [
     AudioService,
     ChallengeService,
     DocumentService,
     ModalService,
-    TitleService
+    TitleService,
+    DataService
   ],
   entryComponents: [
     ChallengeSummaryComponent,
