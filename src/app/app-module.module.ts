@@ -8,34 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent }  from './app.component';
 import {
-  ChallengeAppComponent,
-  ChallengeMenuComponent,
-  CharacterChallengeComponent,
-  DocumentDisplayComponent,
-  ExploreComponent,
-  GeneratedModalComponent,
-  MultipleChoiceComponent,
-  ProgressDisplayComponent,
-  ResourceMenuComponent,
   SideMenuComponent,
   AdminMenuComponent
 } from './components';
-import {
-  ChallengeSummaryComponent,
-  HelpModalComponent
-} from './components/modals';
-import {
-  AudioService,
-  ChallengeService,
-  DocumentService,
-  ModalService,
-  TitleService
-} from './services';
 
 // Import the Http Module and our Data Service
 import { HttpModule } from '@angular/http';
 import { DataService } from './data.service';
-
+import { ChallengeComponent } from './components/challenge/challenge.component';
+import { ChallengesOverviewComponent } from './components/challenges-overview/challenges-overview.component';
+import { FacilitatorDashboardComponent } from './components/facilitator-dashboard/facilitator-dashboard.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 
 @NgModule({
   imports: [
@@ -46,40 +29,23 @@ import { DataService } from './data.service';
     ProgressbarModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: 'challenge/:id', component: ChallengeAppComponent },
-      { path: '**', component: ChallengeMenuComponent }
+      { path: 'challenge/:id', component: ChallengeComponent },
+      { path: 'facilitatorDashboard', component: FacilitatorDashboardComponent },
+      { path: 'userDashboard', component: UserDashboardComponent },
+      { path: '**', component: ChallengesOverviewComponent }
     ], {useHash: true})
   ],
   declarations: [
     AppComponent,
-    ChallengeAppComponent,
-    ChallengeMenuComponent,
-    ChallengeSummaryComponent,
-    CharacterChallengeComponent,
-    DocumentDisplayComponent,
-    ExploreComponent,
-    GeneratedModalComponent,
-    HelpModalComponent,
-    ProgressDisplayComponent,
-    MultipleChoiceComponent,
-    ResourceMenuComponent,
-    AdminMenuComponent
+    AdminMenuComponent,
+    ChallengeComponent,
+    ChallengesOverviewComponent,
+    FacilitatorDashboardComponent,
+    UserDashboardComponent
   ],
   providers: [
-    AudioService,
-    ChallengeService,
-    DocumentService,
-    ModalService,
-    TitleService,
     DataService
   ],
-  entryComponents: [
-    ChallengeSummaryComponent,
-    CharacterChallengeComponent,
-    ExploreComponent,
-    HelpModalComponent,
-    MultipleChoiceComponent
-   ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

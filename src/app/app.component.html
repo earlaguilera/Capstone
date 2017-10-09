@@ -1,9 +1,7 @@
 <ng-sidebar-container class="side-menu-container">
   <ng-sidebar
                 [(opened)]="_opened"
-                (onOpened)="onSidebarOpen()"
                 [(closeOnClickOutside)]="closeOnClickOutside"
-                (onClosed)="onSidebarClose()"
                 position="left"
                 aria-label="mySidenav"
                 sidebarClass="sidebar">
@@ -31,4 +29,3 @@
 <ul>
   <li *ngFor="let user of users">{{ user.name }}</li>
 </ul>
-<app-generated-modal></app-generated-modal>

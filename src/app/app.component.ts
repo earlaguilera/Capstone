@@ -4,13 +4,6 @@ import {
   OnInit
 } from '@angular/core';
 
-import {
-  AudioService,
-  ModalService,
-  TitleService,
-  WindowService
-} from './services';
-
 import { DataService } from './data.service';
 
 @Component({
@@ -23,8 +16,6 @@ export class AppComponent implements AfterViewInit, OnInit {
   private skipHelp: boolean = true;
 
   private _opened: boolean = false;
-  private windowService = new WindowService();
-
   public closeOnClickOutside: boolean = true;
   public showBackdrop: boolean = true;
   public closeButton: boolean = false;
@@ -34,60 +25,19 @@ export class AppComponent implements AfterViewInit, OnInit {
   public title: string = '';
   users: Array<any>;
 
-  constructor(private audioService: AudioService,
-              private modalService: ModalService,
-              private titleService: TitleService,
-              private _dataService: DataService) {}
+  constructor(private _dataService: DataService) {}
 
   ngOnInit() {
-    this.titleService.getTitle().subscribe((title: string): void => {
-      this.title = title || 'ImagineIf-TEST';
-    });
+    this.title = 'Never Too Late';
 
     this._dataService.getUsers()
     .subscribe(res => this.users = res);
   }
 
   ngAfterViewInit(): void {
-    this.audioService.init();
-    if (!this.skipHelp) {
-      this.modalService.openModal({
-        content: undefined, // TODO: Help modal
-        options: {
-          modalClass: 'modal-md instructions',
-          title: 'Instructions',
-          submitButtonLabel: 'Begin',
-          hideCloseButton: true,
-          closeOnEscape: false,
-          closeOnOutsideClick: false,
-          onClose: () => { this.showBackdrop = false; }
-        }
-      });
-      this.showBackdrop = true;
-    }
   }
 
   public toggleSidebar(): void {
     this._opened = !this._opened;
   }
-
-  public onSidebarOpen(): void {
-    /*
-    document.getElementById('mySidenav').style.width = '250px';
-    document.getElementById('mySidenav').style.height = '250px';
-    document.getElementById('main').style.marginLeft = '250px';
-    this.windowService.showBackdrop();
-    */
-  }
-
-   public onSidebarClose(): void {
-    /*
-    document.getElementById('mySidenav').style.width = '0';
-    document.getElementById('mySidenav').style.height = '0';    
-    document.getElementById('main').style.marginLeft = '0';
-    this.windowService.hideBackdrop();
-    */
-   }
-
-   
 }

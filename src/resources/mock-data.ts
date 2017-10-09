@@ -1,4 +1,4 @@
-import { Challenge, ChallengeType, Document } from '../app/models';
+/*import { Challenge, ChallengeType, Document } from '../app/models';
 
 const MockMultipleChoiceChallenge: Challenge = {
     challengeId: '2',
@@ -217,3 +217,4 @@ export function createMockDocument(): Document {
 
     return document;
 }
+*/
