@@ -30,8 +30,8 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: 'challenge/:id', component: ChallengeComponent },
-      { path: 'facilitatorDashboard', component: FacilitatorDashboardComponent },
-      { path: 'userDashboard', component: UserDashboardComponent },
+      { path: 'facilitator-dashboard/:id', component: FacilitatorDashboardComponent },
+      { path: 'user-dashboard/:id', component: UserDashboardComponent },
       { path: '**', component: ChallengesOverviewComponent }
     ], {useHash: true})
   ],
