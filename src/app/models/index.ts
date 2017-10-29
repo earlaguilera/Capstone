@@ -5,3 +5,6 @@ export * from './challenge-type.model';
 export * from './character.model';
 export * from './document.model';
 export * from './modal.model';*/
+export * from './facilitator.model';
+export * from './task.model';
+export * from './student.model';
