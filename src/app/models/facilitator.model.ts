@@ -1,6 +1,6 @@
 import { Student } from './student.model';
 import { Task } from './task.model';
-import { Gradde } from './grade.model';
+import { Grades } from './grades.model';
 
 export interface Facilitator {
     id: string;
