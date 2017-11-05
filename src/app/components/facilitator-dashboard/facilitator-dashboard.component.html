@@ -69,6 +69,9 @@
 				<tr>
 					<td class = "oddStudentRows">
 						STUDENT
+						<ul>
+							<li *ngFor="let user of users">{{ user.name }}</li>
+						</ul>
 					</td>
 					<td class = "oddStudentRows">
 						STUDENT
@@ -111,6 +114,8 @@
 					</td>
 				</tr>
 			</table>
+
+
 		</div>
 	</div>
 </div>

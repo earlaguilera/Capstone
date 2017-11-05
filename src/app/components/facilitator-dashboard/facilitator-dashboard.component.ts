@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+AfterViewInit,
+Component,
+OnInit
+} from '@angular/core';
+
+import { DataService } from './../../data.service';
 
 var loader, canvasCenterWidth, canvasCenterHeight, radius, beginningAngle, endingAngle, myCanvas, context, image;
 
@@ -7,12 +13,18 @@ var loader, canvasCenterWidth, canvasCenterHeight, radius, beginningAngle, endin
   templateUrl: './facilitator-dashboard.component.html',
   styleUrls: ['./facilitator-dashboard.component.css']
 })
-export class FacilitatorDashboardComponent implements OnInit {
+export class FacilitatorDashboardComponent implements AfterViewInit, OnInit {
 
-  constructor() {
-  }
+  users: Array<any>;
+
+  constructor(private _dataService: DataService) {}
 
   ngOnInit() {
+
+//get users
+    this._dataService.getUsers()
+    .subscribe(res => this.users = res);
+
           //draw circle in center of canvas
         myCanvas = document.getElementById('profileCanvas');
         context = myCanvas.getContext('2d');
@@ -34,6 +46,9 @@ export class FacilitatorDashboardComponent implements OnInit {
         context.stroke();
 		image = new Image();
 		image.onload = (() => setAPicture(this));
+  }
+
+  ngAfterViewInit(): void {
   }
 
 }
