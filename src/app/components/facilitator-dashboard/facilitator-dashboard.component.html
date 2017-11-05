@@ -66,53 +66,37 @@
 						</form>
 					</td>
 				</tr>
-				<tr>
-					<td class = "oddStudentRows">
-						STUDENT
-						<ul>
-							<li *ngFor="let user of users">{{ user.name }}</li>
-						</ul>
-					</td>
-					<td class = "oddStudentRows">
-						STUDENT
-					</td>
-					<td class = "oddStudentRows">
-						STUDENT
-					</td>
-					<td class = "oddStudentRows">
-						STUDENT
-					</td>
-					<td class = "oddStudentRows">
-						STUDENT
-					</td>
-					<td class = "oddStudentRows">
-						<form>
-							<input type = "button" name = "mail"  class = "emailIcon" value ="">
-						</form>
-					</td>
-				</tr>
-				<tr>
-					<td class = "evenStudentRows">
-						STUDENT
-					</td>
-					<td class = "evenStudentRows">
-						STUDENT
-					</td>
-					<td class = "evenStudentRows">
-						STUDENT
-					</td>
-					<td class = "evenStudentRows">
-						STUDENT
-					</td>
-					<td class = "evenStudentRows">
-						STUDENT
-					</td>
-					<td class = "evenStudentRows">
-						<form>
-							<input type = "button" name = "mail"  class = "emailIcon" value ="">
-						</form>
-					</td>
-				</tr>
+				<ng-container *ngFor="let user of users; let i = index;" >
+
+					<ng-container *ngIf="i%2 !=0">
+					<tr>
+						<td class = "oddStudentRows">{{ user.name }}</td>
+						<td class = "oddStudentRows">{{ user.name }}</td>
+						<td class = "oddStudentRows">{{ user.name }}</td>
+						<td class = "oddStudentRows">{{ user.name }}</td>
+						<td class = "oddStudentRows">{{ user.name }}</td>
+						<td class = "oddStudentRows">
+							<form>
+								<input type = "button" name = "mail"  class = "emailIcon" value ="">
+							</form>
+						</td>
+					</tr>
+					</ng-container>
+						<ng-container *ngIf="i%2 === 0">
+							<tr>
+								<td  class = "evenStudentRows">{{ user.name }}</td>
+								<td  class = "evenStudentRows">{{ user.name }}</td>
+								<td  class = "evenStudentRows">{{ user.name }}</td>
+								<td  class = "evenStudentRows">{{ user.name }}</td>
+								<td  class = "evenStudentRows">{{ user.name }}</td>
+								<td class = "evenStudentRows">
+									<form>
+										<input type = "button" name = "mail"  class = "emailIcon" value ="">
+									</form>
+								</td>
+							</tr>
+						</ng-container>
+					</ng-container>
 			</table>
 
 
