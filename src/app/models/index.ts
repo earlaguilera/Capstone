@@ -8,3 +8,4 @@ export * from './modal.model';*/
 export * from './facilitator.model';
 export * from './task.model';
 export * from './student.model';
+export * from './grades.model';
