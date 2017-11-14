@@ -1,0 +1,13 @@
+.bare-lesson {
+	display: grid;
+	padding: 5%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25%;
+	grid-auto-rows: 500px 300px;
+    grid-auto-flow: columns;
+}
+
+.content {
+	font-size: 25px;
+	border: 2px solid #000000;
+}
