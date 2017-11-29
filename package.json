@@ -50,7 +50,7 @@
     "ts-helpers": "latest",
     "ts-node": "latest",
     "tslint": "latest",
-    "typescript": "2.2.2",
+    "typescript": "2.4",
     "zone.js": "latest",
     "es6-promise": "4.1.0",
     "mongodb": "^2.2.31",
