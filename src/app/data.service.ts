@@ -15,4 +15,13 @@ export class DataService {
       .map(result => this.result = result.json().data);
   }
 
+  getCategories() {
+    return this._http.get("/api/categories")
+      .map(result => this.result = result.json().data);
+  }
+
+  getTasks() {
+    return this._http.get("/api/tasks")
+      .map(result => this.result = result.json().data);
+  }
 }

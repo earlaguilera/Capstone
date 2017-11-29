@@ -24,6 +24,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   public overlayShown: boolean = false;
   public title: string = '';
   users: Array<any>;
+  categories: Array<any>;
 
   constructor(private _dataService: DataService) {}
 
