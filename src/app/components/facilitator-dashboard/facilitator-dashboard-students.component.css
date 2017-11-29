@@ -29,22 +29,6 @@
 	font-size: 2em;
 }
 
-.standardButton
-{
-    padding: 10px;
-    margin: 10px;
-    color:#FFFFFF;
-    font-size: 1.5 em;
-    background-color: #1D4F8E;
-
-}
-
-.divWithPadding
-{
-    padding:15px;
-    margin: 10px;
-}
-
 .leftProfile
 {
 	position: absolute;

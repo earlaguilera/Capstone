@@ -37,18 +37,27 @@
 
 		<div class = "searchBar">
 			<form>
-				<input type = "text" name= "searchName" class = "searchBox" value ="Search Student" onfocus="this.value==this.defaultValue?this.value='':null">
+				<input type = "text" name= "searchName" class = "searchBox" value ="Search Categories" onfocus="this.value==this.defaultValue?this.value='':null">
 				<input type = "text" name = "filterTo"  class = "filterBox" value ="Filter To" onfocus="this.value==this.defaultValue?this.value='':null">
 			</form>
 		</div>
 
 		<div class = "tableDiv">
-			<p>
-			<a class = "standardButton" href = "#/facilitator-dashboard/Categories">Learning Categories</a>
-			<a  class = "standardButton" href = "#/facilitator-dashboard/Students">Students</a>
-			<a  class = "standardButton" href = "#/facilitator-dashboard/Tasks">All Tasks</a>
-			</p>
-
+		<form>
+			<label>Enter your instructions here:</label><br/>
+			<textarea width="400px" height="400px">Go to Google.com.</textarea><br/>
+			<label>Enter any external links here, separated by commas:</label><br/>
+			<textarea width="400px" height="400px">www.google.com</textarea>
+		</form>
 		</div>
+		<div>
+			<p>
+				<a  class = "standardButton" href = "#/facilitator-dashboard/Editor/1">Save</a>
+				<a  class = "standardButton" href = "#/facilitator-dashboard/Home">Home</a>
+				<a class = "standardButton" href = "#/facilitator-dashboard/Categories">Learning Categories</a>
+				<a  class = "standardButton" href = "#/facilitator-dashboard/Students">Students</a>
+			</p>
+		</div>
+
 	</div>
 </div>

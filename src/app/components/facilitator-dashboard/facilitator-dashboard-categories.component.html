@@ -37,17 +37,51 @@
 
 		<div class = "searchBar">
 			<form>
-				<input type = "text" name= "searchName" class = "searchBox" value ="Search Student" onfocus="this.value==this.defaultValue?this.value='':null">
+				<input type = "text" name= "searchName" class = "searchBox" value ="Search Categories" onfocus="this.value==this.defaultValue?this.value='':null">
 				<input type = "text" name = "filterTo"  class = "filterBox" value ="Filter To" onfocus="this.value==this.defaultValue?this.value='':null">
 			</form>
 		</div>
 
 		<div class = "tableDiv">
-			<p>
-			<a class = "standardButton" href = "#/facilitator-dashboard/Categories">Learning Categories</a>
-			<a  class = "standardButton" href = "#/facilitator-dashboard/Students">Students</a>
-			<a  class = "standardButton" href = "#/facilitator-dashboard/Tasks">All Tasks</a>
-			</p>
+			<div class = "divWithPadding">
+			<table class = "studentTable">
+				<tr>
+					<td>
+						CATEGORY
+					</td>
+					<td>
+						DESCRIPTION
+					</td>
+					<td>
+						# OF TASKS
+					</td>
+				</tr>
+				<ng-container *ngFor="let category of categories; let i = index;" >
+
+					<ng-container *ngIf="i%2 !=0">
+						<tr>
+							<td class = "oddStudentRows">{{ category.name }}</td>
+							<td class = "oddStudentRows">{{ category.description}}</td>
+							<td class = "oddStudentRows"><a href="#/facilitator-dashboard/Tasks">{{ category.tasks }}</a></td>
+						</tr>
+					</ng-container>
+					<ng-container *ngIf="i%2 === 0">
+						<tr>
+							<td  class = "evenStudentRows">{{ category.name }}</td>
+							<td  class = "evenStudentRows">{{ category.description }}</td>
+							<td  class = "evenStudentRows"><a href="#/facilitator-dashboard/Tasks">{{ category.tasks }}</a></td>
+						</tr>
+					</ng-container>
+				</ng-container>
+			</table>
+</div>
+			<div>
+				<p>
+					<a  class = "standardButton" href = "#/facilitator-dashboard/Home">Home</a>
+					<a  class = "standardButton" href = "#/facilitator-dashboard/Students">Students</a>
+					<a  class = "standardButton" href = "#/facilitator-dashboard/Tasks">All Tasks</a>
+				</p>
+			</div>
 
 		</div>
 	</div>
