@@ -9,7 +9,7 @@ then
 4. go back to parent folder
 5. run node app.js
 
-it should be running in localhost:3000
+it should be running in localhost:3000, 
 register a test user and then login.
 
 hope it works
