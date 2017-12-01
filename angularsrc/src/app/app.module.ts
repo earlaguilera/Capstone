@@ -18,6 +18,9 @@ import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { FacilitatorDashboardComponent } from './components/facilitator-dashboard/facilitator-dashboard.component';
 import { ChallengesOverviewComponent } from './components/challenges-overview/challenges-overview.component';
+import { Challenge1Component } from './components/challenge1/challenge1.component';
+import { Challenge2Component } from './components/challenge2/challenge2.component';
+import { Challenge3Component } from './components/challenge3/challenge3.component';
 
 const appRoutes:Routes=[
 {path:'', component:HomeComponent},
@@ -26,7 +29,10 @@ const appRoutes:Routes=[
 {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard]},
 {path:'profile', component:ProfileComponent, canActivate:[AuthGuard]},
 {path:'facilitator-dashboard', component:FacilitatorDashboardComponent, canActivate:[AuthGuard]},
-{path:'challenges-overview', component:ChallengesOverviewComponent, canActivate:[AuthGuard]}
+{path:'challenges-overview', component:ChallengesOverviewComponent, canActivate:[AuthGuard]},
+{path:'challenge1', component:Challenge1Component, canActivate:[AuthGuard]},
+{path:'challenge2', component:Challenge2Component, canActivate:[AuthGuard]},
+{path:'challenge3', component:Challenge3Component, canActivate:[AuthGuard]}
 ]
 
 @NgModule({
@@ -40,6 +46,9 @@ const appRoutes:Routes=[
     ProfileComponent,
     FacilitatorDashboardComponent,
     ChallengesOverviewComponent,
+    Challenge1Component,
+    Challenge2Component,
+    Challenge3Component,
   ],
   imports: [
     BrowserModule,

@@ -97,12 +97,18 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_facilitator_dashboard_facilitator_dashboard_component__ = __webpack_require__("../../../../../src/app/components/facilitator-dashboard/facilitator-dashboard.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_challenges_overview_challenges_overview_component__ = __webpack_require__("../../../../../src/app/components/challenges-overview/challenges-overview.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_challenge1_challenge1_component__ = __webpack_require__("../../../../../src/app/components/challenge1/challenge1.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_challenge2_challenge2_component__ = __webpack_require__("../../../../../src/app/components/challenge2/challenge2.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_challenge3_challenge3_component__ = __webpack_require__("../../../../../src/app/components/challenge3/challenge3.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -128,7 +134,10 @@ var appRoutes = [
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_12__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'facilitator-dashboard', component: __WEBPACK_IMPORTED_MODULE_16__components_facilitator_dashboard_facilitator_dashboard_component__["a" /* FacilitatorDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'challenges-overview', component: __WEBPACK_IMPORTED_MODULE_17__components_challenges_overview_challenges_overview_component__["a" /* ChallengesOverviewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'challenges-overview', component: __WEBPACK_IMPORTED_MODULE_17__components_challenges_overview_challenges_overview_component__["a" /* ChallengesOverviewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'challenge1', component: __WEBPACK_IMPORTED_MODULE_18__components_challenge1_challenge1_component__["a" /* Challenge1Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'challenge2', component: __WEBPACK_IMPORTED_MODULE_19__components_challenge2_challenge2_component__["a" /* Challenge2Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'challenge3', component: __WEBPACK_IMPORTED_MODULE_20__components_challenge3_challenge3_component__["a" /* Challenge3Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -147,6 +156,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */],
             __WEBPACK_IMPORTED_MODULE_16__components_facilitator_dashboard_facilitator_dashboard_component__["a" /* FacilitatorDashboardComponent */],
             __WEBPACK_IMPORTED_MODULE_17__components_challenges_overview_challenges_overview_component__["a" /* ChallengesOverviewComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_challenge1_challenge1_component__["a" /* Challenge1Component */],
+            __WEBPACK_IMPORTED_MODULE_19__components_challenge2_challenge2_component__["a" /* Challenge2Component */],
+            __WEBPACK_IMPORTED_MODULE_20__components_challenge3_challenge3_component__["a" /* Challenge3Component */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -161,6 +173,200 @@ AppModule = __decorate([
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/challenge1/challenge1.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/challenge1/challenge1.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2>Challenge 1</h2>\n<p>1. Read the following article:<a href=\"https://www.forbes.com/sites/rachelritlop/2016/12/28/6-tips-on-working-smart-not-hard-this-year/\" target=\"_blank\">6 tips on working hard</a></p>\n<p>2. Write your summary of the article below</p>\n<textarea rows=\"8\" cols=\"70\"></textarea><br>\n<button (click)=\"save()\">Submit</button>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/challenge1/challenge1.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Challenge1Component; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var Challenge1Component = (function () {
+    function Challenge1Component(flashMessage) {
+        this.flashMessage = flashMessage;
+    }
+    Challenge1Component.prototype.ngOnInit = function () {
+    };
+    Challenge1Component.prototype.save = function () {
+        this.flashMessage.show('Your submission has been saved', {
+            cssClass: 'alert-success',
+            timeout: 1500
+        });
+    };
+    return Challenge1Component;
+}());
+Challenge1Component = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-challenge1',
+        template: __webpack_require__("../../../../../src/app/components/challenge1/challenge1.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/challenge1/challenge1.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"]) === "function" && _a || Object])
+], Challenge1Component);
+
+var _a;
+//# sourceMappingURL=challenge1.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/challenge2/challenge2.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/challenge2/challenge2.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  challenge2 works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/challenge2/challenge2.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Challenge2Component; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var Challenge2Component = (function () {
+    function Challenge2Component() {
+    }
+    Challenge2Component.prototype.ngOnInit = function () {
+    };
+    return Challenge2Component;
+}());
+Challenge2Component = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-challenge2',
+        template: __webpack_require__("../../../../../src/app/components/challenge2/challenge2.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/challenge2/challenge2.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], Challenge2Component);
+
+//# sourceMappingURL=challenge2.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/challenge3/challenge3.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/challenge3/challenge3.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  challenge3 works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/challenge3/challenge3.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Challenge3Component; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var Challenge3Component = (function () {
+    function Challenge3Component() {
+    }
+    Challenge3Component.prototype.ngOnInit = function () {
+    };
+    return Challenge3Component;
+}());
+Challenge3Component = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-challenge3',
+        template: __webpack_require__("../../../../../src/app/components/challenge3/challenge3.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/challenge3/challenge3.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], Challenge3Component);
+
+//# sourceMappingURL=challenge3.component.js.map
 
 /***/ }),
 
@@ -185,7 +391,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/challenges-overview/challenges-overview.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row all\">\n  <div class=\"col-sm-5\">\n    <div class=\"head\">\n      <h1 class=\"text-center\">\n        Today I want to ...\n      </h1>\n    </div>\n  </div>\n\n  <div class=\"col-sm-7\">\n\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <h2 class=\"text-center\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>\n          Work Smarter\n        </h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button\" href=\"#/challenge/1\">\n          Explore\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button\" href=\"#/challenge/2\">\n          Identify\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button\" href=\"#/challenge/3\">\n          Match\n        </a>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <h2 class=\"text-center\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n          Live Better\n        </h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button\" href=\"#/facilitator-dashboard/1\">\n          Facilitator Dashboard\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button\" href=\"#/user-dashboard/1\">\n          User Dashboard\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 3\n        </a>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <h2 class=\"text-center\"><i class=\"fa fa-heart\" aria-hidden=\"true\"></i>\n          Stay Healthy\n        </h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 1\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled disabled\" href=\"#\">\n          Challenge 2\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 3\n        </a>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <h2 class=\"text-center\"><i class=\"fa fa-money\" aria-hidden=\"true\"></i>\n          Save More\n        </h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 1\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 2\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 3\n        </a>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <h2 class=\"text-center\"><i class=\"fa fa-gavel\" aria-hidden=\"true\"></i>\n          Know My Rights\n        </h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 1\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 2\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 3\n        </a>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"row all\">\n  <div class=\"col-sm-5\">\n    <div class=\"head\">\n      <h1 class=\"text-center\">\n        Today I want to ...\n      </h1>\n    </div>\n  </div>\n\n  <div class=\"col-sm-7\">\n\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <h2 class=\"text-center\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>\n          Work Smarter\n        </h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button\" [routerLink]=\"['/challenge1']\">\n          Explore\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button\" [routerLink]=\"['/challenge2']\">\n          Identify\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button\" [routerLink]=\"['/challenge3']\">\n          Match\n        </a>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <h2 class=\"text-center\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n          Live Better\n        </h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button\" [routerLink]=\"['/facilitator-dashboard']\">\n          Facilitator Dashboard\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button\" [routerLink]=\"['/dashboard']\">\n          User Dashboard\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 3\n        </a>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <h2 class=\"text-center\"><i class=\"fa fa-heart\" aria-hidden=\"true\"></i>\n          Stay Healthy\n        </h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 1\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled disabled\" href=\"#\">\n          Challenge 2\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 3\n        </a>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <h2 class=\"text-center\"><i class=\"fa fa-money\" aria-hidden=\"true\"></i>\n          Save More\n        </h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 1\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 2\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 3\n        </a>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <h2 class=\"text-center\"><i class=\"fa fa-gavel\" aria-hidden=\"true\"></i>\n          Know My Rights\n        </h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 1\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 2\n        </a>\n      </div>\n      <div class=\"col-sm-4\">\n        <a class=\"btn btn-lg button disabled\" href=\"#\">\n          Challenge 3\n        </a>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -286,6 +492,13 @@ DashboardComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/facilitator-dashboard/editProfileBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAAzCAYAAADMxHf3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwVJREFUeNrsndtymzAURQ9gfFGcTKf//0Xt9EeaSeJLjGwDOpW4KjjNe8xaMwoyjF/OsLIlZFvJ7z+/xDkVp9oeh+akjo+16/rt0UXnhlZX6lwloq5tnkRUAL4bC+3vW+1ac9C26y8211XHy9q89C2cc1pXF6mrq/hOJwLAHYjR3f/Dja8a3fy9Jr0c2irjY0HL80mq67k5B3CXYgyJ0ekRC6EayyF6PVu5FEeEgHsfSumgwyBCP4TqJAn9ui71ff/mh00lVYOZJMbkv/8w7Wit0Mu5kCAFKQHzSYxobtFPqqU/+sPp/SCnw55KwcwSQ2+zon84ddi9SeHFAJgb6QcThjm46nG/RwqYrxjjUGp8ZlucTnL0cwqAeSdGxLW86tvLM5WBmYuhGs8t9PX5L0+fADHaKUXbwrzierlQFUCMPhucc7p7faEiAPEc47DfNZ+QBYCQGBrSQvWw21ENgDgxitO71HVNNQBiMY4HFvIAPogRvolni4JKAMRinG2hrFsATMSw1lIFgKkYLOgBfCJGWfKNPIAbMeqqogoAUzFY7Qb4RAyeSAF8IkaS8BNpADdieKgCwFSMLFtQBYCpGIs8pwoAUzHy5ZIqAEzFWK03fCYEYCrGcrU2PJkCmIgRpPCpQSUAYjHCn832kUoAxGKEle/1xtg0zagGQJwYiSSG1ACIE0Pa3yE02yebsAoO0CVGtzlGmqbm4fEHFQFoE2PcTmxttnaRs+AHkI4bxzQdY55+WtY1ADGk27O7214syxZ+Is6QChhKTU6p5KuNXW62VAfmPZTq0yLaoNIs1w82XxkqBHNODI3mGUOCmNzLsUAOIDHifvPaZPnGZqsHG5YBAWaUGPK/xOhfmzTLTSNHwgIgzCYx9IvEGHdy9VKYNDdW0iXpAXfP4uvEEBnmIK0oRtJMnCRF4kqvh+Pz6nCfYkiXCnFiRNFx+472lHGSiTovSNAkUUnbEEEUuJ/E0ElifNBhtGVoyZgrxoXLdZDKhfNFWDQPU5HUd/oVdFbS4bvxT4ABAD1r/4Sz4IvzAAAAAElFTkSuQmCC"
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/facilitator-dashboard/facilitator-dashboard.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -294,7 +507,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\r\n.leftMenu\r\n{\r\n\tposition: absolute;\r\n\tfloat: left !important;\r\n\tbackground-color: #e4e0e0;\r\n\twidth: 23%;\r\n\t/*Keep from being pushed underneath the standard bar.*/\r\n\ttop: 70px;\r\n\tbottom: 0px;\r\n\tleft: 0px;\r\n}\r\n\r\n.leftHeaderLogo\r\n{\r\n\tposition: absolute;\r\n\ttop: 0px;\r\n\tpadding-left: 5px;\r\n\tpadding-right: 5px;\r\n\tpadding-top: 5px;\r\n\twidth: 100%;\r\n\theight: 100px;\r\n\tleft: 0px;\r\n\tbackground-color: #1D4F8E;\r\n\tcolor: #F09616;\r\n\tfont-size: 3em;\r\n\ttext-align: center;\r\n\tvertical-align: bottom;\r\n\tfont-size: 2em;\r\n}\r\n\r\n.standardButton\r\n{\r\n    padding: 10px;\r\n    margin: 10px;\r\n    color:#FFFFFF;\r\n    font-size: 1.5 em;\r\n    background-color: #1D4F8E;\r\n\r\n}\r\n\r\n.divWithPadding\r\n{\r\n    padding:15px;\r\n    margin: 10px;\r\n}\r\n\r\n.leftProfile\r\n{\r\n\tposition: absolute;\r\n\ttop: 100px;\r\n\tleft: 0%;\r\n\tpadding: 5px;\r\n\twidth: 100%;\r\n\tcolor: #6C6867;\r\n\ttext-align: center;\r\n}\r\n\r\n.leftProfile p\r\n{\r\n\tfont-size: 1em;\r\n\tpadding: 5px;\r\n\ttext-align: center;\r\n}\r\n\r\n.leftProfile h3\r\n{\r\n\tpadding-top: 50px;\r\n}\r\n\r\n.leftProfile form\r\n{\r\n\twidth: 269px;\r\n\tmargin: auto;\r\n\tmargin-top: 5px;\r\n}\r\n\r\n\r\n.editProfileButton\r\n{\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard/editProfileBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\twidth: 198px;\r\n\theight: 51px;\r\n\tborder: none;\r\n\tcolor: #FFFFFF;\r\n\tfloat:left;\r\n}\r\n\r\n.logOutButton\r\n{\r\n\tfloat: left;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard/logOutBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\twidth: 71px;\r\n\theight: 51px;\r\n\tborder: none;\r\n}\r\n\r\n.leftProfile h3\r\n{\r\n\tfont-size: 1.5em;\r\n\ttext-align: center;\r\n\tletter-spacing: 0.1em;\r\n}\r\n\r\n\r\n.rightContent\r\n{\r\n    position: absolute;\r\n\tleft: 0px;\r\n\tpadding-top: 0px;\r\n/*Negative margin to fix interference from general styles. Not a good solution, but it works*/\r\n\tmargin-top: 16px;\r\n\twidth: 100%;\r\n}\r\n\r\n.searchBox\r\n{\r\n\tfloat: left;\r\n\tmargin-left: 3px;\r\n\tmargin-top: 5px;\r\n\tmargin-right: 10px;\r\n\tpadding-left: 20px;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard/searchBarBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\tborder: hidden;\r\n\theight: 42px;\r\n\tmin-width: 529px;\r\n\r\n}\r\n.filterBox\r\n{\r\n\tfloat: left;\r\n\tmargin-left: 3px;\r\n\tmargin-top: 5px;\r\n\tpadding-left: 20px;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard/filterBarBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\tborder: hidden;\r\n\theight: 42px;\r\n\twidth: 190px;\r\n}\r\n\r\n.wrapperDiv\r\n{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n}\r\n\r\n.tableDiv\r\n{\r\n\tmargin: 15px;\r\n\tleft:0px;\r\n}\r\n.studentTable tr, td\r\n{\r\n\tpadding: 5px;\r\n\tbackground-color: #e9e7e7;\r\n\tborder-color: #FFFFFF;\r\n}\r\n\r\n.oddStudentRows\r\n{\r\n\tbackground-color: #f6f6f6 !important;\r\n}\r\n\r\n.evenStudentRows\r\n{\r\n\tbackground-color: #FFFFFF !important;\r\n}\r\n\r\n.emailIcon\r\n{\r\n\tbackground-image: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard/letter.png") + ");\r\n\tbackground-position:left;\r\n\twidth: 30px;\r\n\theight: 25px;\r\n\tbackground-color: transparent;\r\n\tborder: none;\r\n}\r\n\r\n/*small screens*/\r\n@media screen and (max-width: 800px) {\r\n\t.leftProfile, .leftMenu, .leftHeaderLogo\r\n\t{\r\n\t\t/*min-width: 200px;*/\r\n\t\tvisibility: hidden;\r\n\t}\r\n\t.rightContent\r\n\t{\r\n    \tmin-width: 100px;\r\n\t}\r\n\r\n\t.searchBar\r\n\t{\r\n\t\tvisibility: hidden;\r\n\t\tdisplay:none;\r\n\t}\r\n}\r\n\r\n/*large screens*/\r\n@media screen and (min-width: 800px) {\r\n\t.rightContent\r\n\t{\r\n\t\tleft: 300px;\r\n\t}\r\n\t\t.leftProfile, .leftMenu, .leftHeaderLogo\r\n\t{\r\n\t\tvisibility: visible;\r\n\t}\r\n\t\t.searchBar\r\n\t{\r\n\t\ttop: 0px;\r\n\t\twidth: 100%;\r\n\t\tmin-height: 58px;\r\n\t\tpadding-left: 5px;\r\n\t\tpadding-top: 2px;\r\n\t\tbackground-color: #F4F4F4;\r\n\t\tvisibility: visible;\r\n\t\tdisplay:block;\r\n\t}\r\n\t.leftMenu\r\n\t{\r\n\t\twidth: 300px !important;\r\n\t}\r\n\r\n}", ""]);
 
 // exports
 
@@ -344,6 +557,34 @@ FacilitatorDashboardComponent = __decorate([
 ], FacilitatorDashboardComponent);
 
 //# sourceMappingURL=facilitator-dashboard.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard/filterBarBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL4AAAAqCAYAAAANg+HIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvJJREFUeNrsnVuOqkAQhrmIoj6YmPgmC3Ehzj50IcM+jgtxIfjsiw8iiJ76OWAQ9cQL1/b/EuPIxCFpvqpUQ0+1fj6ftXfxfX9qmubMMIypruuavBy8E1I08FReHt5Pp9MmiqK1bdubd/+e/qr4+/1+alnWDMInki94WUgNuHAXARCG4brf729KER/Cd7vduQjvUHbStCCQAPCCIFg9GwBPiS8RNUeWp/Ck6QGA7C+urj4SH1m+1+vNpYZnlietkV/mAN7hcPhv9n8oPqSXycNS6ngKT9o4GXZ93/99JP9d8Sk9UV3+G/EpPfkG+W/El/poITX9L4eMqII4vRSn3ewxI/sBd2+SiSwhygCn4fZd8dMHUxrv3hD1WMBtOH5T6kRRtDBNkyUOURZxfCmOu5eMj0hInsgSoixwPM36ccY/Ho/zTqfzh0NDyma73WKy+U6dro3H44/PL67/iOurThIJM14SUgW73Q6rel/+nm3bhYifuL4ysLSYS4lJVTiOE0v8qvT4XhHA9dj5IAiwAI1lDqkMlDqe5z2V+VPpUeoURRiGPwb+iYSXglQJJH4m85chfXL+qcEyhzRR/rKkT8sdiM/bmKRR8pcpfSK+w4xPapd/OBxeHcPnsqS/ZHwOPfnKgPukywIhbQTOQ3yPQ0G+THyPGZ98Z8ZHcx4OBakTy7IqPR+cN9CQR352OfykLkajkTaZTKo6HXrwrA20YWO5Q+oGC9CqkB+uw/n4dmaS9QmpXX48uCpiFeYjUtdj8dF9iuUOaQKDwaDMh1du4vo/8dF6Ab0HOexEZeB42mbkElpouMmsTxTGTRyPueqrw+awRFXp881kr4op/AINNzlORCXgdL6D8s0sAl1m0XaNw0VUAC7D6fzxh01jZRKwZMlD2l7iiMvPNY3Nys/msaTNmf7lNuFZ+bkxBGlblv9oY4gsvNtD2iJ9IVsB5bM/N38jTRW+lM3f8gHA7T5JE2SvZLvPe3CDZ1LhZLXQDZ7/CjAAcM/JB5YOuPkAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard/letter.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAZCAYAAAAmNZ4aAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAldJREFUeNpi/Pbtm+HTp8/W3bxxS4GBDsDAUJ9BSEhwB+OJE6fetzR38wHFmBjoBGpqS38ys7Pztnz88ImZgY7g4aPHjEwPHzxmoDcA2ckkryBLd4t1dbUYmGJjI+husX+ANwOTnp4OQ1CQD90sBdkFspMRmJ1+A/ksmzdvY1i8aCVNLY2NC2fw9fUCMf8y7tt34LeFhRkLiHfnzl2Grq6JDB/ef6SqhQKC/AxlZfkMKirKYD4wC/9lfvvma52wsCCTopICMGMLMbi4ODJ8+/aV4e7dB1Sx1M3dEWhpIYO4uBiYv2/vAYbJk2f9Z/TxDgUHNSilJSXHMkhLS4EVXLp0hWHKlFlk+x7ky5ycNHB8ggCwdGSYN3cxw+XL1yBBDbMYpiEjI5HBydkBzH737j3DooXLGI4dO0WSpVZWZgxx8VGgohHuyxkz5iMr+cuspqZdh1xcnjlzAew6NXVVsEYLSzMGYFQw3Ll7n+HHj58ELQU5PDIqjIGTkxPs8Jkz5jGsX78VXdl/DB8jB1VSUgwDMOFhCyqshQJyVAETEMO8eUtwRRWmj2EA5Lvjx08zfPz0kUFTUwPse3t7GwYOTnaGSxevYmST1LREBj4+Xobv338wLFy4hGHJ4lX4Qgi3j/FlB1AQXjh/EbmaYyAxO/4lymLk+LO0sgDGHweKOMiXx4+dQE9A1LMY5ntfXw8GeXk5SE3z8BHD5s07SM12pFtMJfCXiWGAwAi0GFS80RuA7GQKDQtkoGfzB2QXyE5QQ+AIkC8ILBLVv3//TlNLQeU3tEi9BxBgAMZL+Gev6MzRAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard/logOutBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard/searchBarBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhEAAAAqCAYAAAANvAlVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABPRJREFUeNrs3WtK61oYxvE0vaRVRFCkIoozqLPwjGIPo6NwGI7idBZ2BqJfgiCIaNKEJns9IasnvaS79phNWv8/CGnTK82HPH3XrZGmqbOtMAz7zWbzxnXdfqPRcMyW7QEAQP3omm82X/skSfzpdPrQ7Xb9bd+v9dUXBEHQb7fbNyY8DMwH69AdpwUAgPrL//Bnt8113DHX86EChQkT4ziOH3q93pcCRWPTSoTCQ6fTuTUf2ic4AACwd4YmTPhRFI02DRMbhQiTTm5NWhkQHgAA2P8wYa77Y3PdH/3pie66B1V9SJLkFwECAIAf407XfV3/lQPWPbG0EqEXdrvdX41Gg/AAAMAPZDLCMAzD+7LmDZcAAQAAVlEOUB4oq0i4BAgAALBNkFgKEZ7n3RIgAABAMUgoH6wNERqFoYmj+LkAAMBcYDD5QDlhZYjIJ5FiFAYAAFglG7VRbNaYhQhNJEWAAAAA64JEnhf+CxFKFflMlAAAYIckSfJXP095wVYjsrUztBaGQxUCAICd8Pb25ry/vztRFKk/o67jjtazOjo6yraKqVljbPajVp4qBpwSAADqTYHB933n4+Nj6bg2BYvDw0Pn4uJCHSEr+x55bhi5Ws6b5bsBAKi3yWTiPD4+zgUIW4HQ3tLjT09PlTZzKDdk+SGKIi2u9S+nBwCA+lKAMBfu7LaCw8nJyVzThaoQr6+vs+eoInF5eVnZ94nj+B+XeSEAAKi3YjhQgLi6ulrq+6D7Oq7HRRUJBYuqKD+4NGUAAFBvn5+fs9vn5+el/R10XBUKq8oQofygEEElAgCAGitWITzPW/tcVSRsHwn7uopCBJUIAADqTB0kp9Ppl17TbDazvUZsVNXBMqtEcHoAANgvNnSoIlHlUE83TVN+bQAAakohQCMtRM0TGuq5jvpBqAIhnU6nsu+l/KAQ4XOKAACor4ODg9ntl5eX0uep6UIjOVa9roIQ4VOJAACg5jTiojh08/n5eakiofuaZGpxLokKQ4TTMqnFtx0wAABAPWlop0KC+jsoSGizwUIWR2LovqoSVQUJ5QfXfJkHc3vI6QEAoL40tLM4mZQNCnazilNgq+mj2LzxjYbKDy3zZXyVJBjqCQBA/YPE9fV1Fgw0AZVdR0MtCgoX6gOhyoMet30n7P47KxLKDcoP2SqeJk2MW60WZwcAgB2gQKDNzgGxOIzTBoZikFDQOD4+/pbPt7kh+9Q4jmnSAABgxyg8lM0DoSBxdnY2u7+4fPj/MMxzg5OVH3q9nm9SBR0sAQDYI7YioaaP09PTb3lP5QXlhizE2INRFI0cqhEAAOxdkNCS4H9ac2NDwzwvOHMhQqkijuMxQQIAAKwKEMoJtgoxFyKk3W6PNO6T3wkAABQpHygnFI8t9caYTCajNE2pRgAAgIxygfLB4vGlEKEyRRiG9w7NGgAAwOQB5YJiM0ZpiLBBIgiCeyoSAAD8XMoBygOrAoSUzjBlg4Tneb7run1z6I6fEwCAH2GoPhBqwigLENLYZBXPOI5v2+32gCABAMD+BwiNwljsRLnKRnNd642CIHjodDqakIqqBAAAexgeNJGU5oFYV30o2qgSUWTCRN+EihsTJgb5ol0ECgAAdjQ4KAdoLQxNZb1peNg6RBSFYdg3YeJGfSYUKMzWZzVQAADqSdd8s2Wrd6vPg5bz1mqc277fbwEGAAZkUhwHl7ejAAAAAElFTkSuQmCC"
 
 /***/ }),
 
@@ -475,14 +716,14 @@ var LoginComponent = (function () {
                 _this.authService.storeUserData(data.token, data.user);
                 _this.flashMessage.show('You are now logged in', {
                     cssClass: 'alert-success',
-                    timeout: 5000
+                    timeout: 1500
                 });
                 _this.router.navigate(['/dashboard']);
             }
             else {
                 _this.flashMessage.show(data.msg, {
                     cssClass: 'alert-danger',
-                    timeout: 5000
+                    timeout: 1500
                 });
                 _this.router.navigate(['/login']);
             }
@@ -564,7 +805,7 @@ var NavbarComponent = (function () {
         this.authService.logout();
         this.flashMessage.show('You are now logged out', {
             cssClass: 'alert-success',
-            timeout: 3000
+            timeout: 1500
         });
         this.router.navigate(['login']);
         return false;
@@ -734,23 +975,23 @@ var RegisterComponent = (function () {
         //required fields
         if (!this.validateService.validateRegister(user)) {
             //console.log('Please fill in all fields');
-            this.flashMessage.show('Please fill in all fields', { cssClass: 'alert-danger', timeout: 3000 });
+            this.flashMessage.show('Please fill in all fields', { cssClass: 'alert-danger', timeout: 2000 });
             return false;
         }
         //validate email
         if (!this.validateService.validateEmail(user.email)) {
-            this.flashMessage.show('Please use a valid email', { cssClass: 'alert-danger', timeout: 3000 });
+            this.flashMessage.show('Please use a valid email', { cssClass: 'alert-danger', timeout: 2000 });
             //console.log('Please use a valid email');
             return false;
         }
         //Register User
         this.authService.registerUser(user).subscribe(function (data) {
             if (data.success) {
-                _this.flashMessage.show('You are now registered and can log in', { cssClass: 'alert-success', timeout: 3000 });
+                _this.flashMessage.show('You are now registered and can log in', { cssClass: 'alert-success', timeout: 2000 });
                 _this.router.navigate(['/login']);
             }
             else {
-                _this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+                _this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 2000 });
                 _this.router.navigate(['/register']);
             }
         });

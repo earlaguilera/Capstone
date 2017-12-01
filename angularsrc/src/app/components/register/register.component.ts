@@ -35,13 +35,13 @@ export class RegisterComponent implements OnInit {
     //required fields
     if(!this.validateService.validateRegister(user)){
       //console.log('Please fill in all fields');
-      this.flashMessage.show('Please fill in all fields', {cssClass:'alert-danger', timeout:3000});
+      this.flashMessage.show('Please fill in all fields', {cssClass:'alert-danger', timeout:2000});
       return false;
     }
 
     //validate email
     if(!this.validateService.validateEmail(user.email)){
-      this.flashMessage.show('Please use a valid email', {cssClass:'alert-danger', timeout:3000});
+      this.flashMessage.show('Please use a valid email', {cssClass:'alert-danger', timeout:2000});
       //console.log('Please use a valid email');
       return false;
     }
@@ -49,10 +49,10 @@ export class RegisterComponent implements OnInit {
     //Register User
     this.authService.registerUser(user).subscribe(data=>{
       if(data.success){
-        this.flashMessage.show('You are now registered and can log in', {cssClass:'alert-success', timeout:3000});
+        this.flashMessage.show('You are now registered and can log in', {cssClass:'alert-success', timeout:2000});
         this.router.navigate(['/login']);
       }else{
-        this.flashMessage.show('Something went wrong', {cssClass:'alert-danger', timeout:3000});
+        this.flashMessage.show('Something went wrong', {cssClass:'alert-danger', timeout:2000});
         this.router.navigate(['/register']);
       }
     });
