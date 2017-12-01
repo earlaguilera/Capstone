@@ -42,4 +42,36 @@ router.get('/users', (req, res) => {
     });
 });
 
+// Get categories
+router.get('/categories', (req, res) => {
+    connection((db) => {
+        db.collection('categories')
+            .find()
+            .toArray()
+            .then((categories) => {
+                response.data = categories;
+                res.json(response);
+            })
+            .catch((err) => {
+                sendError(err, res);
+            });
+    });
+});
+
+// Get tasks
+router.get('/tasks', (req, res) => {
+    connection((db) => {
+        db.collection('tasks')
+            .find()
+            .toArray()
+            .then((tasks) => {
+                response.data = tasks;
+                res.json(response);
+            })
+            .catch((err) => {
+                sendError(err, res);
+            });
+    });
+});
+
 module.exports = router;
