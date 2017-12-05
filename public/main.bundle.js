@@ -95,11 +95,16 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_facilitator_dashboard_facilitator_dashboard_component__ = __webpack_require__("../../../../../src/app/components/facilitator-dashboard/facilitator-dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_challenges_overview_challenges_overview_component__ = __webpack_require__("../../../../../src/app/components/challenges-overview/challenges-overview.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_challenge1_challenge1_component__ = __webpack_require__("../../../../../src/app/components/challenge1/challenge1.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_challenge2_challenge2_component__ = __webpack_require__("../../../../../src/app/components/challenge2/challenge2.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_challenge3_challenge3_component__ = __webpack_require__("../../../../../src/app/components/challenge3/challenge3.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_allusers_service__ = __webpack_require__("../../../../../src/app/services/allusers.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_facilitator_dashboard_facilitator_dashboard_component__ = __webpack_require__("../../../../../src/app/components/facilitator-dashboard/facilitator-dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_challenges_overview_challenges_overview_component__ = __webpack_require__("../../../../../src/app/components/challenges-overview/challenges-overview.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_challenge1_challenge1_component__ = __webpack_require__("../../../../../src/app/components/challenge1/challenge1.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_challenge2_challenge2_component__ = __webpack_require__("../../../../../src/app/components/challenge2/challenge2.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_challenge3_challenge3_component__ = __webpack_require__("../../../../../src/app/components/challenge3/challenge3.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_facilitator_dashboard_students_facilitator_dashboard_students_component__ = __webpack_require__("../../../../../src/app/components/facilitator-dashboard-students/facilitator-dashboard-students.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_facilitator_dashboard_categories_facilitator_dashboard_categories_component__ = __webpack_require__("../../../../../src/app/components/facilitator-dashboard-categories/facilitator-dashboard-categories.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_facilitator_dashboard_tasks_facilitator_dashboard_tasks_component__ = __webpack_require__("../../../../../src/app/components/facilitator-dashboard-tasks/facilitator-dashboard-tasks.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -127,17 +132,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_10__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_9__components_login_login_component__["a" /* LoginComponent */] },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_12__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'facilitator-dashboard', component: __WEBPACK_IMPORTED_MODULE_16__components_facilitator_dashboard_facilitator_dashboard_component__["a" /* FacilitatorDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'challenges-overview', component: __WEBPACK_IMPORTED_MODULE_17__components_challenges_overview_challenges_overview_component__["a" /* ChallengesOverviewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'challenge1', component: __WEBPACK_IMPORTED_MODULE_18__components_challenge1_challenge1_component__["a" /* Challenge1Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'challenge2', component: __WEBPACK_IMPORTED_MODULE_19__components_challenge2_challenge2_component__["a" /* Challenge2Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'challenge3', component: __WEBPACK_IMPORTED_MODULE_20__components_challenge3_challenge3_component__["a" /* Challenge3Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'facilitator-dashboard', component: __WEBPACK_IMPORTED_MODULE_18__components_facilitator_dashboard_facilitator_dashboard_component__["a" /* FacilitatorDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'challenges-overview', component: __WEBPACK_IMPORTED_MODULE_19__components_challenges_overview_challenges_overview_component__["a" /* ChallengesOverviewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'challenge1', component: __WEBPACK_IMPORTED_MODULE_20__components_challenge1_challenge1_component__["a" /* Challenge1Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'challenge2', component: __WEBPACK_IMPORTED_MODULE_21__components_challenge2_challenge2_component__["a" /* Challenge2Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'challenge3', component: __WEBPACK_IMPORTED_MODULE_22__components_challenge3_challenge3_component__["a" /* Challenge3Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'fac-dash-students', component: __WEBPACK_IMPORTED_MODULE_23__components_facilitator_dashboard_students_facilitator_dashboard_students_component__["a" /* FacilitatorDashboardStudentsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'fac-dash-categories', component: __WEBPACK_IMPORTED_MODULE_24__components_facilitator_dashboard_categories_facilitator_dashboard_categories_component__["a" /* FacilitatorDashboardCategoriesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'fac-dash-tasks', component: __WEBPACK_IMPORTED_MODULE_25__components_facilitator_dashboard_tasks_facilitator_dashboard_tasks_component__["a" /* FacilitatorDashboardTasksComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -154,11 +167,14 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__["a" /* HomeComponent */],
             __WEBPACK_IMPORTED_MODULE_12__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
             __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_facilitator_dashboard_facilitator_dashboard_component__["a" /* FacilitatorDashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_challenges_overview_challenges_overview_component__["a" /* ChallengesOverviewComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_challenge1_challenge1_component__["a" /* Challenge1Component */],
-            __WEBPACK_IMPORTED_MODULE_19__components_challenge2_challenge2_component__["a" /* Challenge2Component */],
-            __WEBPACK_IMPORTED_MODULE_20__components_challenge3_challenge3_component__["a" /* Challenge3Component */],
+            __WEBPACK_IMPORTED_MODULE_18__components_facilitator_dashboard_facilitator_dashboard_component__["a" /* FacilitatorDashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_challenges_overview_challenges_overview_component__["a" /* ChallengesOverviewComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_challenge1_challenge1_component__["a" /* Challenge1Component */],
+            __WEBPACK_IMPORTED_MODULE_21__components_challenge2_challenge2_component__["a" /* Challenge2Component */],
+            __WEBPACK_IMPORTED_MODULE_22__components_challenge3_challenge3_component__["a" /* Challenge3Component */],
+            __WEBPACK_IMPORTED_MODULE_23__components_facilitator_dashboard_students_facilitator_dashboard_students_component__["a" /* FacilitatorDashboardStudentsComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_facilitator_dashboard_categories_facilitator_dashboard_categories_component__["a" /* FacilitatorDashboardCategoriesComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__components_facilitator_dashboard_tasks_facilitator_dashboard_tasks_component__["a" /* FacilitatorDashboardTasksComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -167,7 +183,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
             __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesModule"]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_14__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_15__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_14__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_15__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_16__services_categories_service__["a" /* CategoriesService */], __WEBPACK_IMPORTED_MODULE_17__services_allusers_service__["a" /* AllusersService */], __WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -492,6 +508,333 @@ DashboardComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/facilitator-dashboard-categories/editProfileBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAAzCAYAAADMxHf3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwVJREFUeNrsndtymzAURQ9gfFGcTKf//0Xt9EeaSeJLjGwDOpW4KjjNe8xaMwoyjF/OsLIlZFvJ7z+/xDkVp9oeh+akjo+16/rt0UXnhlZX6lwloq5tnkRUAL4bC+3vW+1ac9C26y8211XHy9q89C2cc1pXF6mrq/hOJwLAHYjR3f/Dja8a3fy9Jr0c2irjY0HL80mq67k5B3CXYgyJ0ekRC6EayyF6PVu5FEeEgHsfSumgwyBCP4TqJAn9ui71ff/mh00lVYOZJMbkv/8w7Wit0Mu5kCAFKQHzSYxobtFPqqU/+sPp/SCnw55KwcwSQ2+zon84ddi9SeHFAJgb6QcThjm46nG/RwqYrxjjUGp8ZlucTnL0cwqAeSdGxLW86tvLM5WBmYuhGs8t9PX5L0+fADHaKUXbwrzierlQFUCMPhucc7p7faEiAPEc47DfNZ+QBYCQGBrSQvWw21ENgDgxitO71HVNNQBiMY4HFvIAPogRvolni4JKAMRinG2hrFsATMSw1lIFgKkYLOgBfCJGWfKNPIAbMeqqogoAUzFY7Qb4RAyeSAF8IkaS8BNpADdieKgCwFSMLFtQBYCpGIs8pwoAUzHy5ZIqAEzFWK03fCYEYCrGcrU2PJkCmIgRpPCpQSUAYjHCn832kUoAxGKEle/1xtg0zagGQJwYiSSG1ACIE0Pa3yE02yebsAoO0CVGtzlGmqbm4fEHFQFoE2PcTmxttnaRs+AHkI4bxzQdY55+WtY1ADGk27O7214syxZ+Is6QChhKTU6p5KuNXW62VAfmPZTq0yLaoNIs1w82XxkqBHNODI3mGUOCmNzLsUAOIDHifvPaZPnGZqsHG5YBAWaUGPK/xOhfmzTLTSNHwgIgzCYx9IvEGHdy9VKYNDdW0iXpAXfP4uvEEBnmIK0oRtJMnCRF4kqvh+Pz6nCfYkiXCnFiRNFx+472lHGSiTovSNAkUUnbEEEUuJ/E0ElifNBhtGVoyZgrxoXLdZDKhfNFWDQPU5HUd/oVdFbS4bvxT4ABAD1r/4Sz4IvzAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-categories/facilitator-dashboard-categories.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n.leftMenu\r\n{\r\n\tposition: absolute;\r\n\tfloat: left !important;\r\n\tbackground-color: #e4e0e0;\r\n\twidth: 23%;\r\n\t/*Keep from being pushed underneath the standard bar.*/\r\n\ttop: 70px;\r\n\tbottom: 0px;\r\n\tleft: 0px;\r\n}\r\n\r\n.leftHeaderLogo\r\n{\r\n\tposition: absolute;\r\n\ttop: 0px;\r\n\tpadding-left: 5px;\r\n\tpadding-right: 5px;\r\n\tpadding-top: 5px;\r\n\twidth: 100%;\r\n\theight: 100px;\r\n\tleft: 0px;\r\n\tbackground-color: #1D4F8E;\r\n\tcolor: #F09616;\r\n\tfont-size: 3em;\r\n\ttext-align: center;\r\n\tvertical-align: bottom;\r\n\tfont-size: 2em;\r\n}\r\n\r\n.standardButton\r\n{\r\n    padding: 10px;\r\n    margin: 10px;\r\n    color:#FFFFFF;\r\n    font-size: 1.5 em;\r\n    background-color: #1D4F8E;\r\n\r\n}\r\n\r\n.divWithPadding\r\n{\r\n    padding:15px;\r\n    margin: 10px;\r\n}\r\n\r\n.leftProfile\r\n{\r\n\tposition: absolute;\r\n\ttop: 100px;\r\n\tleft: 0%;\r\n\tpadding: 5px;\r\n\twidth: 100%;\r\n\tcolor: #6C6867;\r\n\ttext-align: center;\r\n}\r\n\r\n.leftProfile p\r\n{\r\n\tfont-size: 1em;\r\n\tpadding: 5px;\r\n\ttext-align: center;\r\n}\r\n\r\n.leftProfile h3\r\n{\r\n\tpadding-top: 50px;\r\n}\r\n\r\n.leftProfile form\r\n{\r\n\twidth: 269px;\r\n\tmargin: auto;\r\n\tmargin-top: 5px;\r\n}\r\n\r\n\r\n.editProfileButton\r\n{\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-categories/editProfileBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\twidth: 198px;\r\n\theight: 51px;\r\n\tborder: none;\r\n\tcolor: #FFFFFF;\r\n\tfloat:left;\r\n}\r\n\r\n.logOutButton\r\n{\r\n\tfloat: left;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-categories/logOutBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\twidth: 71px;\r\n\theight: 51px;\r\n\tborder: none;\r\n}\r\n\r\n.leftProfile h3\r\n{\r\n\tfont-size: 1.5em;\r\n\ttext-align: center;\r\n\tletter-spacing: 0.1em;\r\n}\r\n\r\n\r\n.rightContent\r\n{\r\n\tposition: absolute;\r\n\tleft: 0px;\r\n\tpadding-top: 0px;\r\n/*Negative margin to fix interference from general styles. Not a good solution, but it works*/\r\n\tmargin-top:16px;\r\n\twidth: 100%;\r\n}\r\n\r\n.searchBox\r\n{\r\n\tfloat: left;\r\n\tmargin-left: 3px;\r\n\tmargin-top: 5px;\r\n\tmargin-right: 10px;\r\n\tpadding-left: 20px;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-categories/searchBarBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\tborder: hidden;\r\n\theight: 42px;\r\n\tmin-width: 529px;\r\n\r\n}\r\n.filterBox\r\n{\r\n\tfloat: left;\r\n\tmargin-left: 3px;\r\n\tmargin-top: 5px;\r\n\tpadding-left: 20px;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-categories/filterBarBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\tborder: hidden;\r\n\theight: 42px;\r\n\twidth: 190px;\r\n}\r\n\r\n.wrapperDiv\r\n{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n}\r\n\r\n.tableDiv\r\n{\r\n\tmargin: 15px;\r\n\tleft:0px;\r\n}\r\n.studentTable tr, td\r\n{\r\n\tpadding: 5px;\r\n\tbackground-color: #e9e7e7;\r\n\tborder-color: #FFFFFF;\r\n}\r\n\r\n.oddStudentRows\r\n{\r\n\tbackground-color: #f6f6f6 !important;\r\n}\r\n\r\n.evenStudentRows\r\n{\r\n\tbackground-color: #FFFFFF !important;\r\n}\r\n\r\n.emailIcon\r\n{\r\n\tbackground-image: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-categories/letter.png") + ");\r\n\tbackground-position:left;\r\n\twidth: 30px;\r\n\theight: 25px;\r\n\tbackground-color: transparent;\r\n\tborder: none;\r\n}\r\n\r\n/*small screens*/\r\n@media screen and (max-width: 800px) {\r\n\t.leftProfile, .leftMenu, .leftHeaderLogo\r\n\t{\r\n\t\t/*min-width: 200px;*/\r\n\t\tvisibility: hidden;\r\n\t}\r\n\t.rightContent\r\n\t{\r\n    \tmin-width: 100px;\r\n\t}\r\n\r\n\t.searchBar\r\n\t{\r\n\t\tvisibility: hidden;\r\n\t\tdisplay:none;\r\n\t}\r\n}\r\n\r\n/*large screens*/\r\n@media screen and (min-width: 800px) {\r\n\t.rightContent\r\n\t{\r\n\t\tleft: 300px;\r\n\t}\r\n\t\t.leftProfile, .leftMenu, .leftHeaderLogo\r\n\t{\r\n\t\tvisibility: visible;\r\n\t}\r\n\t\t.searchBar\r\n\t{\r\n\t\ttop: 0px;\r\n\t\twidth: 100%;\r\n\t\tmin-height: 58px;\r\n\t\tpadding-left: 5px;\r\n\t\tpadding-top: 2px;\r\n\t\tbackground-color: #F4F4F4;\r\n\t\tvisibility: visible;\r\n\t\tdisplay:block;\r\n\t}\r\n\t.leftMenu\r\n\t{\r\n\t\twidth: 300px !important;\r\n\t}\r\n\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-categories/facilitator-dashboard-categories.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class =\"wrapperDiv\">\n\t<div class = \"leftMenu\">\n\t\t<div class = \"leftHeaderLogo\">\n\t\t\tNEVER TOO LATE\n\t\t</div>\n\t\t<div class = \"leftProfile\">\n\t\t\t<p>\n\t\t\t\t<canvas id=\"profileCanvas\" width = \"200\" height = \"200\">\n\t\t\t\t</canvas>\n\t\t\t</p>\n\t\t\t<form>\n\t\t\t\t<input type = \"button\" value =\"Edit Profile\" class = \"editProfileButton\">\n\t\t\t\t<input type = \"button\" value =\"\" class = \"logOutButton\">\n\t\t\t</form>\n\t\t\t<h3>\n\t\t\t\tTEST\n\t\t\t</h3>\n\t\t\t<p>\n\t\t\t\ttest\n\t\t\t</p>\n\t\t</div>\n\t</div>\n\t<div class = \"rightContent\">\n\n\t\t<div class = \"searchBar\">\n\t\t\t<form>\n\t\t\t\t<input type = \"text\" name= \"searchName\" class = \"searchBox\" value =\"Search Categories\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t\t<input type = \"text\" name = \"filterTo\"  class = \"filterBox\" value =\"Filter To\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t</form>\n\t\t</div>\n\n\t\t<div class = \"tableDiv\">\n\t\t\t<div class = \"divWithPadding\">\n\t\t\t<table class = \"studentTable\">\n\t\t\t\t<tr>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tCATEGORY\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tDESCRIPTION\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t# OF TASKS\n\t\t\t\t\t</th>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td><input class=\"form-control\" [(ng-model)]=\"cat.name\"></td>\n\t\t\t\t\t<td><input class=\"form-control\" ng-model=\"cat.description\"></td>\n\t\t\t\t\t<td><input class=\"form-control\" ng-model=\"cat.numtasks\"></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr *ngFor=\"let category of categories\">\n\t\t\t\t\t<td>{{category.name}}</td>\n\t\t\t\t\t<td>{{category.description}}</td>\n\t\t\t\t\t<td>{{category.numtasks}}</td>\n\t\t\t\t\t<td><button (click)=\"editCategory(category._id)\">Edit</button></td>\n\t\t\t\t</tr>\n\t\t\t</table>\n</div>\n\t\t\t<div>\n\t\t\t\t<p>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/facilitator-dashboard']\">Home</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-students']\">Students</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-tasks']\">All Tasks</a>\n\t\t\t\t</p>\n\t\t\t</div>\n\n\t\t</div>\n\t</div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-categories/facilitator-dashboard-categories.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FacilitatorDashboardCategoriesComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var FacilitatorDashboardCategoriesComponent = (function () {
+    function FacilitatorDashboardCategoriesComponent(catService, router) {
+        this.catService = catService;
+        this.router = router;
+    }
+    FacilitatorDashboardCategoriesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.cat = "";
+        this.catService.getCategories().subscribe(function (res) {
+            _this.categories = res;
+        }, function (err) {
+            //console.log(err);
+            return false;
+        });
+    };
+    FacilitatorDashboardCategoriesComponent.prototype.editCategory = function (id) {
+        var _this = this;
+        console.log("inside edit category, the id is: " + id);
+        this.catService.editCategory(id).subscribe(function (res) {
+            _this.cat = res;
+        }, function (err) {
+            //console.log(err);
+            return false;
+        });
+    };
+    return FacilitatorDashboardCategoriesComponent;
+}());
+FacilitatorDashboardCategoriesComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-facilitator-dashboard-categories',
+        template: __webpack_require__("../../../../../src/app/components/facilitator-dashboard-categories/facilitator-dashboard-categories.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/facilitator-dashboard-categories/facilitator-dashboard-categories.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_categories_service__["a" /* CategoriesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_categories_service__["a" /* CategoriesService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+], FacilitatorDashboardCategoriesComponent);
+
+var _a, _b;
+//# sourceMappingURL=facilitator-dashboard-categories.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-categories/filterBarBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL4AAAAqCAYAAAANg+HIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvJJREFUeNrsnVuOqkAQhrmIoj6YmPgmC3Ehzj50IcM+jgtxIfjsiw8iiJ76OWAQ9cQL1/b/EuPIxCFpvqpUQ0+1fj6ftXfxfX9qmubMMIypruuavBy8E1I08FReHt5Pp9MmiqK1bdubd/+e/qr4+/1+alnWDMInki94WUgNuHAXARCG4brf729KER/Cd7vduQjvUHbStCCQAPCCIFg9GwBPiS8RNUeWp/Ck6QGA7C+urj4SH1m+1+vNpYZnlietkV/mAN7hcPhv9n8oPqSXycNS6ngKT9o4GXZ93/99JP9d8Sk9UV3+G/EpPfkG+W/El/poITX9L4eMqII4vRSn3ewxI/sBd2+SiSwhygCn4fZd8dMHUxrv3hD1WMBtOH5T6kRRtDBNkyUOURZxfCmOu5eMj0hInsgSoixwPM36ccY/Ho/zTqfzh0NDyma73WKy+U6dro3H44/PL67/iOurThIJM14SUgW73Q6rel/+nm3bhYifuL4ysLSYS4lJVTiOE0v8qvT4XhHA9dj5IAiwAI1lDqkMlDqe5z2V+VPpUeoURRiGPwb+iYSXglQJJH4m85chfXL+qcEyhzRR/rKkT8sdiM/bmKRR8pcpfSK+w4xPapd/OBxeHcPnsqS/ZHwOPfnKgPukywIhbQTOQ3yPQ0G+THyPGZ98Z8ZHcx4OBakTy7IqPR+cN9CQR352OfykLkajkTaZTKo6HXrwrA20YWO5Q+oGC9CqkB+uw/n4dmaS9QmpXX48uCpiFeYjUtdj8dF9iuUOaQKDwaDMh1du4vo/8dF6Ab0HOexEZeB42mbkElpouMmsTxTGTRyPueqrw+awRFXp881kr4op/AINNzlORCXgdL6D8s0sAl1m0XaNw0VUAC7D6fzxh01jZRKwZMlD2l7iiMvPNY3Nys/msaTNmf7lNuFZ+bkxBGlblv9oY4gsvNtD2iJ9IVsB5bM/N38jTRW+lM3f8gHA7T5JE2SvZLvPe3CDZ1LhZLXQDZ7/CjAAcM/JB5YOuPkAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-categories/letter.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAZCAYAAAAmNZ4aAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAldJREFUeNpi/Pbtm+HTp8/W3bxxS4GBDsDAUJ9BSEhwB+OJE6fetzR38wHFmBjoBGpqS38ys7Pztnz88ImZgY7g4aPHjEwPHzxmoDcA2ckkryBLd4t1dbUYmGJjI+husX+ANwOTnp4OQ1CQD90sBdkFspMRmJ1+A/ksmzdvY1i8aCVNLY2NC2fw9fUCMf8y7tt34LeFhRkLiHfnzl2Grq6JDB/ef6SqhQKC/AxlZfkMKirKYD4wC/9lfvvma52wsCCTopICMGMLMbi4ODJ8+/aV4e7dB1Sx1M3dEWhpIYO4uBiYv2/vAYbJk2f9Z/TxDgUHNSilJSXHMkhLS4EVXLp0hWHKlFlk+x7ky5ycNHB8ggCwdGSYN3cxw+XL1yBBDbMYpiEjI5HBydkBzH737j3DooXLGI4dO0WSpVZWZgxx8VGgohHuyxkz5iMr+cuspqZdh1xcnjlzAew6NXVVsEYLSzMGYFQw3Ll7n+HHj58ELQU5PDIqjIGTkxPs8Jkz5jGsX78VXdl/DB8jB1VSUgwDMOFhCyqshQJyVAETEMO8eUtwRRWmj2EA5Lvjx08zfPz0kUFTUwPse3t7GwYOTnaGSxevYmST1LREBj4+Xobv338wLFy4hGHJ4lX4Qgi3j/FlB1AQXjh/EbmaYyAxO/4lymLk+LO0sgDGHweKOMiXx4+dQE9A1LMY5ntfXw8GeXk5SE3z8BHD5s07SM12pFtMJfCXiWGAwAi0GFS80RuA7GQKDQtkoGfzB2QXyE5QQ+AIkC8ILBLVv3//TlNLQeU3tEi9BxBgAMZL+Gev6MzRAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-categories/logOutBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-categories/searchBarBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhEAAAAqCAYAAAANvAlVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABPRJREFUeNrs3WtK61oYxvE0vaRVRFCkIoozqLPwjGIPo6NwGI7idBZ2BqJfgiCIaNKEJns9IasnvaS79phNWv8/CGnTK82HPH3XrZGmqbOtMAz7zWbzxnXdfqPRcMyW7QEAQP3omm82X/skSfzpdPrQ7Xb9bd+v9dUXBEHQb7fbNyY8DMwH69AdpwUAgPrL//Bnt8113DHX86EChQkT4ziOH3q93pcCRWPTSoTCQ6fTuTUf2ic4AACwd4YmTPhRFI02DRMbhQiTTm5NWhkQHgAA2P8wYa77Y3PdH/3pie66B1V9SJLkFwECAIAf407XfV3/lQPWPbG0EqEXdrvdX41Gg/AAAMAPZDLCMAzD+7LmDZcAAQAAVlEOUB4oq0i4BAgAALBNkFgKEZ7n3RIgAABAMUgoH6wNERqFoYmj+LkAAMBcYDD5QDlhZYjIJ5FiFAYAAFglG7VRbNaYhQhNJEWAAAAA64JEnhf+CxFKFflMlAAAYIckSfJXP095wVYjsrUztBaGQxUCAICd8Pb25ry/vztRFKk/o67jjtazOjo6yraKqVljbPajVp4qBpwSAADqTYHB933n4+Nj6bg2BYvDw0Pn4uJCHSEr+x55bhi5Ws6b5bsBAKi3yWTiPD4+zgUIW4HQ3tLjT09PlTZzKDdk+SGKIi2u9S+nBwCA+lKAMBfu7LaCw8nJyVzThaoQr6+vs+eoInF5eVnZ94nj+B+XeSEAAKi3YjhQgLi6ulrq+6D7Oq7HRRUJBYuqKD+4NGUAAFBvn5+fs9vn5+el/R10XBUKq8oQofygEEElAgCAGitWITzPW/tcVSRsHwn7uopCBJUIAADqTB0kp9Ppl17TbDazvUZsVNXBMqtEcHoAANgvNnSoIlHlUE83TVN+bQAAakohQCMtRM0TGuq5jvpBqAIhnU6nsu+l/KAQ4XOKAACor4ODg9ntl5eX0uep6UIjOVa9roIQ4VOJAACg5jTiojh08/n5eakiofuaZGpxLokKQ4TTMqnFtx0wAABAPWlop0KC+jsoSGizwUIWR2LovqoSVQUJ5QfXfJkHc3vI6QEAoL40tLM4mZQNCnazilNgq+mj2LzxjYbKDy3zZXyVJBjqCQBA/YPE9fV1Fgw0AZVdR0MtCgoX6gOhyoMet30n7P47KxLKDcoP2SqeJk2MW60WZwcAgB2gQKDNzgGxOIzTBoZikFDQOD4+/pbPt7kh+9Q4jmnSAABgxyg8lM0DoSBxdnY2u7+4fPj/MMxzg5OVH3q9nm9SBR0sAQDYI7YioaaP09PTb3lP5QXlhizE2INRFI0cqhEAAOxdkNCS4H9ac2NDwzwvOHMhQqkijuMxQQIAAKwKEMoJtgoxFyKk3W6PNO6T3wkAABQpHygnFI8t9caYTCajNE2pRgAAgIxygfLB4vGlEKEyRRiG9w7NGgAAwOQB5YJiM0ZpiLBBIgiCeyoSAAD8XMoBygOrAoSUzjBlg4Tneb7run1z6I6fEwCAH2GoPhBqwigLENLYZBXPOI5v2+32gCABAMD+BwiNwljsRLnKRnNd642CIHjodDqakIqqBAAAexgeNJGU5oFYV30o2qgSUWTCRN+EihsTJgb5ol0ECgAAdjQ4KAdoLQxNZb1peNg6RBSFYdg3YeJGfSYUKMzWZzVQAADqSdd8s2Wrd6vPg5bz1mqc277fbwEGAAZkUhwHl7ejAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-students/editProfileBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAAzCAYAAADMxHf3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwVJREFUeNrsndtymzAURQ9gfFGcTKf//0Xt9EeaSeJLjGwDOpW4KjjNe8xaMwoyjF/OsLIlZFvJ7z+/xDkVp9oeh+akjo+16/rt0UXnhlZX6lwloq5tnkRUAL4bC+3vW+1ac9C26y8211XHy9q89C2cc1pXF6mrq/hOJwLAHYjR3f/Dja8a3fy9Jr0c2irjY0HL80mq67k5B3CXYgyJ0ekRC6EayyF6PVu5FEeEgHsfSumgwyBCP4TqJAn9ui71ff/mh00lVYOZJMbkv/8w7Wit0Mu5kCAFKQHzSYxobtFPqqU/+sPp/SCnw55KwcwSQ2+zon84ddi9SeHFAJgb6QcThjm46nG/RwqYrxjjUGp8ZlucTnL0cwqAeSdGxLW86tvLM5WBmYuhGs8t9PX5L0+fADHaKUXbwrzierlQFUCMPhucc7p7faEiAPEc47DfNZ+QBYCQGBrSQvWw21ENgDgxitO71HVNNQBiMY4HFvIAPogRvolni4JKAMRinG2hrFsATMSw1lIFgKkYLOgBfCJGWfKNPIAbMeqqogoAUzFY7Qb4RAyeSAF8IkaS8BNpADdieKgCwFSMLFtQBYCpGIs8pwoAUzHy5ZIqAEzFWK03fCYEYCrGcrU2PJkCmIgRpPCpQSUAYjHCn832kUoAxGKEle/1xtg0zagGQJwYiSSG1ACIE0Pa3yE02yebsAoO0CVGtzlGmqbm4fEHFQFoE2PcTmxttnaRs+AHkI4bxzQdY55+WtY1ADGk27O7214syxZ+Is6QChhKTU6p5KuNXW62VAfmPZTq0yLaoNIs1w82XxkqBHNODI3mGUOCmNzLsUAOIDHifvPaZPnGZqsHG5YBAWaUGPK/xOhfmzTLTSNHwgIgzCYx9IvEGHdy9VKYNDdW0iXpAXfP4uvEEBnmIK0oRtJMnCRF4kqvh+Pz6nCfYkiXCnFiRNFx+472lHGSiTovSNAkUUnbEEEUuJ/E0ElifNBhtGVoyZgrxoXLdZDKhfNFWDQPU5HUd/oVdFbS4bvxT4ABAD1r/4Sz4IvzAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-students/facilitator-dashboard-students.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n.leftMenu\r\n{\r\n\tposition: absolute;\r\n\tfloat: left !important;\r\n\tbackground-color: #e4e0e0;\r\n\twidth: 23%;\r\n\t/*Keep from being pushed underneath the standard bar.*/\r\n\ttop: 70px;\r\n\tbottom: 0px;\r\n\tleft: 0px;\r\n}\r\n\r\n.leftHeaderLogo\r\n{\r\n\tposition: absolute;\r\n\ttop: 0px;\r\n\tpadding-left: 5px;\r\n\tpadding-right: 5px;\r\n\tpadding-top: 5px;\r\n\twidth: 100%;\r\n\theight: 100px;\r\n\tleft: 0px;\r\n\tbackground-color: #1D4F8E;\r\n\tcolor: #F09616;\r\n\tfont-size: 3em;\r\n\ttext-align: center;\r\n\tvertical-align: bottom;\r\n\tfont-size: 2em;\r\n}\r\n\r\n.leftProfile\r\n{\r\n\tposition: absolute;\r\n\ttop: 100px;\r\n\tleft: 0%;\r\n\tpadding: 5px;\r\n\twidth: 100%;\r\n\tcolor: #6C6867;\r\n\ttext-align: center;\r\n}\r\n\r\n.leftProfile p\r\n{\r\n\tfont-size: 1em;\r\n\tpadding: 5px;\r\n\ttext-align: center;\r\n}\r\n\r\n.leftProfile h3\r\n{\r\n\tpadding-top: 50px;\r\n}\r\n\r\n.leftProfile form\r\n{\r\n\twidth: 269px;\r\n\tmargin: auto;\r\n\tmargin-top: 5px;\r\n}\r\n\r\n\r\n.editProfileButton\r\n{\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-students/editProfileBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\twidth: 198px;\r\n\theight: 51px;\r\n\tborder: none;\r\n\tcolor: #FFFFFF;\r\n\tfloat:left;\r\n}\r\n\r\n.logOutButton\r\n{\r\n\tfloat: left;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-students/logOutBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\twidth: 71px;\r\n\theight: 51px;\r\n\tborder: none;\r\n}\r\n\r\n.leftProfile h3\r\n{\r\n\tfont-size: 1.5em;\r\n\ttext-align: center;\r\n\tletter-spacing: 0.1em;\r\n}\r\n\r\n\r\n.rightContent\r\n{\r\n\tposition: absolute;\r\n\tleft: 0px;\r\n\tpadding-top: 0px;\r\n/*Negative margin to fix interference from general styles. Not a good solution, but it works*/\r\n\tmargin-top: 16px;\r\n\twidth: 100%;\r\n}\r\n\r\n.searchBox\r\n{\r\n\tfloat: left;\r\n\tmargin-left: 3px;\r\n\tmargin-top: 5px;\r\n\tmargin-right: 10px;\r\n\tpadding-left: 20px;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-students/searchBarBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\tborder: hidden;\r\n\theight: 42px;\r\n\tmin-width: 529px;\r\n\r\n}\r\n.filterBox\r\n{\r\n\tfloat: left;\r\n\tmargin-left: 3px;\r\n\tmargin-top: 5px;\r\n\tpadding-left: 20px;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-students/filterBarBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\tborder: hidden;\r\n\theight: 42px;\r\n\twidth: 190px;\r\n}\r\n\r\n.wrapperDiv\r\n{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n}\r\n\r\n.tableDiv\r\n{\r\n\tmargin: 15px;\r\n\tleft:0px;\r\n}\r\n.studentTable tr, td\r\n{\r\n\tpadding: 5px;\r\n\tbackground-color: #e9e7e7;\r\n\tborder-color: #FFFFFF;\r\n}\r\n\r\n.oddStudentRows\r\n{\r\n\tbackground-color: #f6f6f6 !important;\r\n}\r\n\r\n.standardButton\r\n{\r\n    padding: 10px;\r\n    margin: 10px;\r\n    color:#FFFFFF;\r\n    font-size: 1.5 em;\r\n    background-color: #1D4F8E;\r\n\r\n}\r\n\r\n.evenStudentRows\r\n{\r\n\tbackground-color: #FFFFFF !important;\r\n}\r\n\r\n.emailIcon\r\n{\r\n\tbackground-image: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-students/letter.png") + ");\r\n\tbackground-position:left;\r\n\twidth: 30px;\r\n\theight: 25px;\r\n\tbackground-color: transparent;\r\n\tborder: none;\r\n}\r\n\r\n/*small screens*/\r\n@media screen and (max-width: 800px) {\r\n\t.leftProfile, .leftMenu, .leftHeaderLogo\r\n\t{\r\n\t\t/*min-width: 200px;*/\r\n\t\tvisibility: hidden;\r\n\t}\r\n\t.rightContent\r\n\t{\r\n    \tmin-width: 100px;\r\n\t}\r\n\r\n\t.searchBar\r\n\t{\r\n\t\tvisibility: hidden;\r\n\t\tdisplay:none;\r\n\t}\r\n}\r\n\r\n/*large screens*/\r\n@media screen and (min-width: 800px) {\r\n\t.rightContent\r\n\t{\r\n\t\tleft: 300px;\r\n\t}\r\n\t\t.leftProfile, .leftMenu, .leftHeaderLogo\r\n\t{\r\n\t\tvisibility: visible;\r\n\t}\r\n\t\t.searchBar\r\n\t{\r\n\t\ttop: 0px;\r\n\t\twidth: 100%;\r\n\t\tmin-height: 58px;\r\n\t\tpadding-left: 5px;\r\n\t\tpadding-top: 2px;\r\n\t\tbackground-color: #F4F4F4;\r\n\t\tvisibility: visible;\r\n\t\tdisplay:block;\r\n\t}\r\n\t.leftMenu\r\n\t{\r\n\t\twidth: 300px !important;\r\n\t}\r\n\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-students/facilitator-dashboard-students.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class =\"wrapperDiv\">\n\n\t<div class = \"leftMenu\">\n\t\t<div class = \"leftHeaderLogo\">\n\t\t\tNEVER TOO LATE\n\t\t</div>\n\t\t<div class = \"leftProfile\">\n\t\t\t<p>\n\t\t\t\t<canvas id=\"profileCanvas\" width = \"200\" height = \"200\">\n\t\t\t\t</canvas>\n\t\t\t</p>\n\t\t\t<form>\n\t\t\t\t<input type = \"button\" value =\"Edit Profile\" class = \"editProfileButton\">\n\t\t\t\t<input type = \"button\" value =\"\" class = \"logOutButton\">\n\t\t\t</form>\n\t\t\t<h3>\n\t\t\t\tTEST\n\t\t\t</h3>\n\t\t\t<p>\n\t\t\t\ttest\n\t\t\t</p>\n\t\t</div>\n\t</div>\n\t<div class = \"rightContent\">\n\n\t\t<div class = \"searchBar\">\n\t\t\t<form>\n\t\t\t\t<input type = \"text\" name= \"searchName\" class = \"searchBox\" value =\"Search Student\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t\t<input type = \"text\" name = \"filterTo\"  class = \"filterBox\" value =\"Filter To\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t</form>\n\t\t</div>\n\n\t\t<div class = \"tableDiv\">\n\t\t\t<div class = \"divWithPadding\">\n\t\t\t<table class = \"studentTable\">\n\t\t\t\t<thead>\n\t\t\t\t<tr>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tSTUDENT\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tGOALS\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tCHALLENGES\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tBADGES\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tOVERALL PROGRESS\n\t\t\t\t\t</th>\n\t\t\t\t</tr>\n\t\t\t\t</thead>\n\t\t\t\t<tbody>\n\t\t\t\t<tr *ngFor=\"let user of users\">\n\t\t\t\t\t<td>{{user.name}}</td>\n\t\t\t\t\t<td>{{user.email}}</td>\n\t\t\t\t\t<td>{{user.username}}</td>\n\t\t\t\t</tr>\n\t\t\t\t</tbody>\n\t\t\t</table>\n\t\t\t</div>\n<div>\n\t\t\t<p>\n\t\t\t\t<a class = \"standardButton\" [routerLink]=\"['/facilitator-dashboard']\">Home</a>\n\t\t\t\t<a class = \"standardButton\" [routerLink]=\"['/fac-dash-categories']\">Learning Categories</a>\n\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-tasks']\">All Tasks</a>\n\t\t\t</p>\n</div>\n\t\t</div>\n\t</div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-students/facilitator-dashboard-students.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FacilitatorDashboardStudentsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_allusers_service__ = __webpack_require__("../../../../../src/app/services/allusers.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var FacilitatorDashboardStudentsComponent = (function () {
+    function FacilitatorDashboardStudentsComponent(userService, router) {
+        this.userService = userService;
+        this.router = router;
+    }
+    FacilitatorDashboardStudentsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userService.getUsers().subscribe(function (res) {
+            _this.users = res;
+        }, function (err) {
+            //console.log(err);
+            return false;
+        });
+    };
+    return FacilitatorDashboardStudentsComponent;
+}());
+FacilitatorDashboardStudentsComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-facilitator-dashboard-students',
+        template: __webpack_require__("../../../../../src/app/components/facilitator-dashboard-students/facilitator-dashboard-students.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/facilitator-dashboard-students/facilitator-dashboard-students.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_allusers_service__["a" /* AllusersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_allusers_service__["a" /* AllusersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+], FacilitatorDashboardStudentsComponent);
+
+var _a, _b;
+//# sourceMappingURL=facilitator-dashboard-students.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-students/filterBarBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL4AAAAqCAYAAAANg+HIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvJJREFUeNrsnVuOqkAQhrmIoj6YmPgmC3Ehzj50IcM+jgtxIfjsiw8iiJ76OWAQ9cQL1/b/EuPIxCFpvqpUQ0+1fj6ftXfxfX9qmubMMIypruuavBy8E1I08FReHt5Pp9MmiqK1bdubd/+e/qr4+/1+alnWDMInki94WUgNuHAXARCG4brf729KER/Cd7vduQjvUHbStCCQAPCCIFg9GwBPiS8RNUeWp/Ck6QGA7C+urj4SH1m+1+vNpYZnlietkV/mAN7hcPhv9n8oPqSXycNS6ngKT9o4GXZ93/99JP9d8Sk9UV3+G/EpPfkG+W/El/poITX9L4eMqII4vRSn3ewxI/sBd2+SiSwhygCn4fZd8dMHUxrv3hD1WMBtOH5T6kRRtDBNkyUOURZxfCmOu5eMj0hInsgSoixwPM36ccY/Ho/zTqfzh0NDyma73WKy+U6dro3H44/PL67/iOurThIJM14SUgW73Q6rel/+nm3bhYifuL4ysLSYS4lJVTiOE0v8qvT4XhHA9dj5IAiwAI1lDqkMlDqe5z2V+VPpUeoURRiGPwb+iYSXglQJJH4m85chfXL+qcEyhzRR/rKkT8sdiM/bmKRR8pcpfSK+w4xPapd/OBxeHcPnsqS/ZHwOPfnKgPukywIhbQTOQ3yPQ0G+THyPGZ98Z8ZHcx4OBakTy7IqPR+cN9CQR352OfykLkajkTaZTKo6HXrwrA20YWO5Q+oGC9CqkB+uw/n4dmaS9QmpXX48uCpiFeYjUtdj8dF9iuUOaQKDwaDMh1du4vo/8dF6Ab0HOexEZeB42mbkElpouMmsTxTGTRyPueqrw+awRFXp881kr4op/AINNzlORCXgdL6D8s0sAl1m0XaNw0VUAC7D6fzxh01jZRKwZMlD2l7iiMvPNY3Nys/msaTNmf7lNuFZ+bkxBGlblv9oY4gsvNtD2iJ9IVsB5bM/N38jTRW+lM3f8gHA7T5JE2SvZLvPe3CDZ1LhZLXQDZ7/CjAAcM/JB5YOuPkAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-students/letter.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAZCAYAAAAmNZ4aAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAldJREFUeNpi/Pbtm+HTp8/W3bxxS4GBDsDAUJ9BSEhwB+OJE6fetzR38wHFmBjoBGpqS38ys7Pztnz88ImZgY7g4aPHjEwPHzxmoDcA2ckkryBLd4t1dbUYmGJjI+husX+ANwOTnp4OQ1CQD90sBdkFspMRmJ1+A/ksmzdvY1i8aCVNLY2NC2fw9fUCMf8y7tt34LeFhRkLiHfnzl2Grq6JDB/ef6SqhQKC/AxlZfkMKirKYD4wC/9lfvvma52wsCCTopICMGMLMbi4ODJ8+/aV4e7dB1Sx1M3dEWhpIYO4uBiYv2/vAYbJk2f9Z/TxDgUHNSilJSXHMkhLS4EVXLp0hWHKlFlk+x7ky5ycNHB8ggCwdGSYN3cxw+XL1yBBDbMYpiEjI5HBydkBzH737j3DooXLGI4dO0WSpVZWZgxx8VGgohHuyxkz5iMr+cuspqZdh1xcnjlzAew6NXVVsEYLSzMGYFQw3Ll7n+HHj58ELQU5PDIqjIGTkxPs8Jkz5jGsX78VXdl/DB8jB1VSUgwDMOFhCyqshQJyVAETEMO8eUtwRRWmj2EA5Lvjx08zfPz0kUFTUwPse3t7GwYOTnaGSxevYmST1LREBj4+Xobv338wLFy4hGHJ4lX4Qgi3j/FlB1AQXjh/EbmaYyAxO/4lymLk+LO0sgDGHweKOMiXx4+dQE9A1LMY5ntfXw8GeXk5SE3z8BHD5s07SM12pFtMJfCXiWGAwAi0GFS80RuA7GQKDQtkoGfzB2QXyE5QQ+AIkC8ILBLVv3//TlNLQeU3tEi9BxBgAMZL+Gev6MzRAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-students/logOutBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-students/searchBarBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhEAAAAqCAYAAAANvAlVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABPRJREFUeNrs3WtK61oYxvE0vaRVRFCkIoozqLPwjGIPo6NwGI7idBZ2BqJfgiCIaNKEJns9IasnvaS79phNWv8/CGnTK82HPH3XrZGmqbOtMAz7zWbzxnXdfqPRcMyW7QEAQP3omm82X/skSfzpdPrQ7Xb9bd+v9dUXBEHQb7fbNyY8DMwH69AdpwUAgPrL//Bnt8113DHX86EChQkT4ziOH3q93pcCRWPTSoTCQ6fTuTUf2ic4AACwd4YmTPhRFI02DRMbhQiTTm5NWhkQHgAA2P8wYa77Y3PdH/3pie66B1V9SJLkFwECAIAf407XfV3/lQPWPbG0EqEXdrvdX41Gg/AAAMAPZDLCMAzD+7LmDZcAAQAAVlEOUB4oq0i4BAgAALBNkFgKEZ7n3RIgAABAMUgoH6wNERqFoYmj+LkAAMBcYDD5QDlhZYjIJ5FiFAYAAFglG7VRbNaYhQhNJEWAAAAA64JEnhf+CxFKFflMlAAAYIckSfJXP095wVYjsrUztBaGQxUCAICd8Pb25ry/vztRFKk/o67jjtazOjo6yraKqVljbPajVp4qBpwSAADqTYHB933n4+Nj6bg2BYvDw0Pn4uJCHSEr+x55bhi5Ws6b5bsBAKi3yWTiPD4+zgUIW4HQ3tLjT09PlTZzKDdk+SGKIi2u9S+nBwCA+lKAMBfu7LaCw8nJyVzThaoQr6+vs+eoInF5eVnZ94nj+B+XeSEAAKi3YjhQgLi6ulrq+6D7Oq7HRRUJBYuqKD+4NGUAAFBvn5+fs9vn5+el/R10XBUKq8oQofygEEElAgCAGitWITzPW/tcVSRsHwn7uopCBJUIAADqTB0kp9Ppl17TbDazvUZsVNXBMqtEcHoAANgvNnSoIlHlUE83TVN+bQAAakohQCMtRM0TGuq5jvpBqAIhnU6nsu+l/KAQ4XOKAACor4ODg9ntl5eX0uep6UIjOVa9roIQ4VOJAACg5jTiojh08/n5eakiofuaZGpxLokKQ4TTMqnFtx0wAABAPWlop0KC+jsoSGizwUIWR2LovqoSVQUJ5QfXfJkHc3vI6QEAoL40tLM4mZQNCnazilNgq+mj2LzxjYbKDy3zZXyVJBjqCQBA/YPE9fV1Fgw0AZVdR0MtCgoX6gOhyoMet30n7P47KxLKDcoP2SqeJk2MW60WZwcAgB2gQKDNzgGxOIzTBoZikFDQOD4+/pbPt7kh+9Q4jmnSAABgxyg8lM0DoSBxdnY2u7+4fPj/MMxzg5OVH3q9nm9SBR0sAQDYI7YioaaP09PTb3lP5QXlhizE2INRFI0cqhEAAOxdkNCS4H9ac2NDwzwvOHMhQqkijuMxQQIAAKwKEMoJtgoxFyKk3W6PNO6T3wkAABQpHygnFI8t9caYTCajNE2pRgAAgIxygfLB4vGlEKEyRRiG9w7NGgAAwOQB5YJiM0ZpiLBBIgiCeyoSAAD8XMoBygOrAoSUzjBlg4Tneb7run1z6I6fEwCAH2GoPhBqwigLENLYZBXPOI5v2+32gCABAMD+BwiNwljsRLnKRnNd642CIHjodDqakIqqBAAAexgeNJGU5oFYV30o2qgSUWTCRN+EihsTJgb5ol0ECgAAdjQ4KAdoLQxNZb1peNg6RBSFYdg3YeJGfSYUKMzWZzVQAADqSdd8s2Wrd6vPg5bz1mqc277fbwEGAAZkUhwHl7ejAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-tasks/editProfileBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAAzCAYAAADMxHf3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwVJREFUeNrsndtymzAURQ9gfFGcTKf//0Xt9EeaSeJLjGwDOpW4KjjNe8xaMwoyjF/OsLIlZFvJ7z+/xDkVp9oeh+akjo+16/rt0UXnhlZX6lwloq5tnkRUAL4bC+3vW+1ac9C26y8211XHy9q89C2cc1pXF6mrq/hOJwLAHYjR3f/Dja8a3fy9Jr0c2irjY0HL80mq67k5B3CXYgyJ0ekRC6EayyF6PVu5FEeEgHsfSumgwyBCP4TqJAn9ui71ff/mh00lVYOZJMbkv/8w7Wit0Mu5kCAFKQHzSYxobtFPqqU/+sPp/SCnw55KwcwSQ2+zon84ddi9SeHFAJgb6QcThjm46nG/RwqYrxjjUGp8ZlucTnL0cwqAeSdGxLW86tvLM5WBmYuhGs8t9PX5L0+fADHaKUXbwrzierlQFUCMPhucc7p7faEiAPEc47DfNZ+QBYCQGBrSQvWw21ENgDgxitO71HVNNQBiMY4HFvIAPogRvolni4JKAMRinG2hrFsATMSw1lIFgKkYLOgBfCJGWfKNPIAbMeqqogoAUzFY7Qb4RAyeSAF8IkaS8BNpADdieKgCwFSMLFtQBYCpGIs8pwoAUzHy5ZIqAEzFWK03fCYEYCrGcrU2PJkCmIgRpPCpQSUAYjHCn832kUoAxGKEle/1xtg0zagGQJwYiSSG1ACIE0Pa3yE02yebsAoO0CVGtzlGmqbm4fEHFQFoE2PcTmxttnaRs+AHkI4bxzQdY55+WtY1ADGk27O7214syxZ+Is6QChhKTU6p5KuNXW62VAfmPZTq0yLaoNIs1w82XxkqBHNODI3mGUOCmNzLsUAOIDHifvPaZPnGZqsHG5YBAWaUGPK/xOhfmzTLTSNHwgIgzCYx9IvEGHdy9VKYNDdW0iXpAXfP4uvEEBnmIK0oRtJMnCRF4kqvh+Pz6nCfYkiXCnFiRNFx+472lHGSiTovSNAkUUnbEEEUuJ/E0ElifNBhtGVoyZgrxoXLdZDKhfNFWDQPU5HUd/oVdFbS4bvxT4ABAD1r/4Sz4IvzAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-tasks/facilitator-dashboard-tasks.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n.leftMenu\r\n{\r\n\tposition: absolute;\r\n\tfloat: left !important;\r\n\tbackground-color: #e4e0e0;\r\n\twidth: 23%;\r\n\t/*Keep from being pushed underneath the standard bar.*/\r\n\ttop: 70px;\r\n\tbottom: 0px;\r\n\tleft: 0px;\r\n}\r\n\r\n.leftHeaderLogo\r\n{\r\n\tposition: absolute;\r\n\ttop: 0px;\r\n\tpadding-left: 5px;\r\n\tpadding-right: 5px;\r\n\tpadding-top: 5px;\r\n\twidth: 100%;\r\n\theight: 100px;\r\n\tleft: 0px;\r\n\tbackground-color: #1D4F8E;\r\n\tcolor: #F09616;\r\n\tfont-size: 3em;\r\n\ttext-align: center;\r\n\tvertical-align: bottom;\r\n\tfont-size: 2em;\r\n}\r\n\r\n.standardButton\r\n{\r\n    padding: 10px;\r\n    margin: 10px;\r\n    color:#FFFFFF;\r\n    font-size: 1.5 em;\r\n    background-color: #1D4F8E;\r\n\r\n}\r\n\r\n.divWithPadding\r\n{\r\n    padding:15px;\r\n    margin: 10px;\r\n}\r\n\r\n.leftProfile\r\n{\r\n\tposition: absolute;\r\n\ttop: 100px;\r\n\tleft: 0%;\r\n\tpadding: 5px;\r\n\twidth: 100%;\r\n\tcolor: #6C6867;\r\n\ttext-align: center;\r\n}\r\n\r\n.leftProfile p\r\n{\r\n\tfont-size: 1em;\r\n\tpadding: 5px;\r\n\ttext-align: center;\r\n}\r\n\r\n.leftProfile h3\r\n{\r\n\tpadding-top: 50px;\r\n}\r\n\r\n.leftProfile form\r\n{\r\n\twidth: 269px;\r\n\tmargin: auto;\r\n\tmargin-top: 5px;\r\n}\r\n\r\n\r\n.editProfileButton\r\n{\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-tasks/editProfileBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\twidth: 198px;\r\n\theight: 51px;\r\n\tborder: none;\r\n\tcolor: #FFFFFF;\r\n\tfloat:left;\r\n}\r\n\r\n.logOutButton\r\n{\r\n\tfloat: left;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-tasks/logOutBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\twidth: 71px;\r\n\theight: 51px;\r\n\tborder: none;\r\n}\r\n\r\n.leftProfile h3\r\n{\r\n\tfont-size: 1.5em;\r\n\ttext-align: center;\r\n\tletter-spacing: 0.1em;\r\n}\r\n\r\n\r\n.rightContent\r\n{\r\n\tposition: absolute;\r\n\tleft: 0px;\r\n\tpadding-top: 0px;\r\n/*Negative margin to fix interference from general styles. Not a good solution, but it works*/\r\n\tmargin-top:16px;\r\n\twidth: 100%;\r\n}\r\n\r\n.searchBox\r\n{\r\n\tfloat: left;\r\n\tmargin-left: 3px;\r\n\tmargin-top: 5px;\r\n\tmargin-right: 10px;\r\n\tpadding-left: 20px;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-tasks/searchBarBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\tborder: hidden;\r\n\theight: 42px;\r\n\tmin-width: 529px;\r\n\r\n}\r\n.filterBox\r\n{\r\n\tfloat: left;\r\n\tmargin-left: 3px;\r\n\tmargin-top: 5px;\r\n\tpadding-left: 20px;\r\n\tbackground: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-tasks/filterBarBg.png") + ") no-repeat;\r\n\tbackground-size: cover;\r\n\tborder: hidden;\r\n\theight: 42px;\r\n\twidth: 190px;\r\n}\r\n\r\n.wrapperDiv\r\n{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n}\r\n\r\n.tableDiv\r\n{\r\n\tmargin: 15px;\r\n\tleft:0px;\r\n}\r\n.studentTable tr, td\r\n{\r\n\tpadding: 5px;\r\n\tbackground-color: #e9e7e7;\r\n\tborder-color: #FFFFFF;\r\n}\r\n\r\n.oddStudentRows\r\n{\r\n\tbackground-color: #f6f6f6 !important;\r\n}\r\n\r\n.evenStudentRows\r\n{\r\n\tbackground-color: #FFFFFF !important;\r\n}\r\n\r\n.emailIcon\r\n{\r\n\tbackground-image: url(" + __webpack_require__("../../../../../src/app/components/facilitator-dashboard-tasks/letter.png") + ");\r\n\tbackground-position:left;\r\n\twidth: 30px;\r\n\theight: 25px;\r\n\tbackground-color: transparent;\r\n\tborder: none;\r\n}\r\n\r\n/*small screens*/\r\n@media screen and (max-width: 800px) {\r\n\t.leftProfile, .leftMenu, .leftHeaderLogo\r\n\t{\r\n\t\t/*min-width: 200px;*/\r\n\t\tvisibility: hidden;\r\n\t}\r\n\t.rightContent\r\n\t{\r\n    \tmin-width: 100px;\r\n\t}\r\n\r\n\t.searchBar\r\n\t{\r\n\t\tvisibility: hidden;\r\n\t\tdisplay:none;\r\n\t}\r\n}\r\n\r\n/*large screens*/\r\n@media screen and (min-width: 800px) {\r\n\t.rightContent\r\n\t{\r\n\t\tleft: 300px;\r\n\t}\r\n\t\t.leftProfile, .leftMenu, .leftHeaderLogo\r\n\t{\r\n\t\tvisibility: visible;\r\n\t}\r\n\t\t.searchBar\r\n\t{\r\n\t\ttop: 0px;\r\n\t\twidth: 100%;\r\n\t\tmin-height: 58px;\r\n\t\tpadding-left: 5px;\r\n\t\tpadding-top: 2px;\r\n\t\tbackground-color: #F4F4F4;\r\n\t\tvisibility: visible;\r\n\t\tdisplay:block;\r\n\t}\r\n\t.leftMenu\r\n\t{\r\n\t\twidth: 300px !important;\r\n\t}\r\n\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-tasks/facilitator-dashboard-tasks.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class =\"wrapperDiv\">\n\n\t<div class = \"leftMenu\">\n\t\t<div class = \"leftHeaderLogo\">\n\t\t\tNEVER TOO LATE\n\t\t</div>\n\t\t<div class = \"leftProfile\">\n\t\t\t<p>\n\t\t\t\t<canvas id=\"profileCanvas\" width = \"200\" height = \"200\">\n\t\t\t\t</canvas>\n\t\t\t</p>\n\t\t\t<form>\n\t\t\t\t<input type = \"button\" value =\"Edit Profile\" class = \"editProfileButton\">\n\t\t\t\t<input type = \"button\" value =\"\" class = \"logOutButton\">\n\t\t\t</form>\n\t\t\t<h3>\n\t\t\t\tTEST\n\t\t\t</h3>\n\t\t\t<p>\n\t\t\t\ttest\n\t\t\t</p>\n\t\t</div>\n\t</div>\n\t<div class = \"rightContent\">\n\n\t\t<div class = \"searchBar\">\n\t\t\t<form>\n\t\t\t\t<input type = \"text\" name= \"searchName\" class = \"searchBox\" value =\"Search Tasks\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t\t<input type = \"text\" name = \"filterTo\"  class = \"filterBox\" value =\"Filter To\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t</form>\n\t\t</div>\n\n\t\t<div class = \"tableDiv\">\n\t\t\t<div class=\"divWithPadding\">\n\t\t\t<table class = \"studentTable\">\n\t\t\t</table>\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<p>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/facilitator-dashboard']\">Home</a>\n\t\t\t\t\t<a class = \"standardButton\" [routerLink]=\"['/fac-dash-categories']\">Learning Categories</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-students']\">Students</a>\n\t\t\t\t</p>\n\t\t\t</div>\n\n\t\t</div>\n\t</div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-tasks/facilitator-dashboard-tasks.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FacilitatorDashboardTasksComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FacilitatorDashboardTasksComponent = (function () {
+    function FacilitatorDashboardTasksComponent() {
+    }
+    FacilitatorDashboardTasksComponent.prototype.ngOnInit = function () {
+    };
+    return FacilitatorDashboardTasksComponent;
+}());
+FacilitatorDashboardTasksComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-facilitator-dashboard-tasks',
+        template: __webpack_require__("../../../../../src/app/components/facilitator-dashboard-tasks/facilitator-dashboard-tasks.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/facilitator-dashboard-tasks/facilitator-dashboard-tasks.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], FacilitatorDashboardTasksComponent);
+
+//# sourceMappingURL=facilitator-dashboard-tasks.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-tasks/filterBarBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL4AAAAqCAYAAAANg+HIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvJJREFUeNrsnVuOqkAQhrmIoj6YmPgmC3Ehzj50IcM+jgtxIfjsiw8iiJ76OWAQ9cQL1/b/EuPIxCFpvqpUQ0+1fj6ftXfxfX9qmubMMIypruuavBy8E1I08FReHt5Pp9MmiqK1bdubd/+e/qr4+/1+alnWDMInki94WUgNuHAXARCG4brf729KER/Cd7vduQjvUHbStCCQAPCCIFg9GwBPiS8RNUeWp/Ck6QGA7C+urj4SH1m+1+vNpYZnlietkV/mAN7hcPhv9n8oPqSXycNS6ngKT9o4GXZ93/99JP9d8Sk9UV3+G/EpPfkG+W/El/poITX9L4eMqII4vRSn3ewxI/sBd2+SiSwhygCn4fZd8dMHUxrv3hD1WMBtOH5T6kRRtDBNkyUOURZxfCmOu5eMj0hInsgSoixwPM36ccY/Ho/zTqfzh0NDyma73WKy+U6dro3H44/PL67/iOurThIJM14SUgW73Q6rel/+nm3bhYifuL4ysLSYS4lJVTiOE0v8qvT4XhHA9dj5IAiwAI1lDqkMlDqe5z2V+VPpUeoURRiGPwb+iYSXglQJJH4m85chfXL+qcEyhzRR/rKkT8sdiM/bmKRR8pcpfSK+w4xPapd/OBxeHcPnsqS/ZHwOPfnKgPukywIhbQTOQ3yPQ0G+THyPGZ98Z8ZHcx4OBakTy7IqPR+cN9CQR352OfykLkajkTaZTKo6HXrwrA20YWO5Q+oGC9CqkB+uw/n4dmaS9QmpXX48uCpiFeYjUtdj8dF9iuUOaQKDwaDMh1du4vo/8dF6Ab0HOexEZeB42mbkElpouMmsTxTGTRyPueqrw+awRFXp881kr4op/AINNzlORCXgdL6D8s0sAl1m0XaNw0VUAC7D6fzxh01jZRKwZMlD2l7iiMvPNY3Nys/msaTNmf7lNuFZ+bkxBGlblv9oY4gsvNtD2iJ9IVsB5bM/N38jTRW+lM3f8gHA7T5JE2SvZLvPe3CDZ1LhZLXQDZ7/CjAAcM/JB5YOuPkAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-tasks/letter.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAZCAYAAAAmNZ4aAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAldJREFUeNpi/Pbtm+HTp8/W3bxxS4GBDsDAUJ9BSEhwB+OJE6fetzR38wHFmBjoBGpqS38ys7Pztnz88ImZgY7g4aPHjEwPHzxmoDcA2ckkryBLd4t1dbUYmGJjI+husX+ANwOTnp4OQ1CQD90sBdkFspMRmJ1+A/ksmzdvY1i8aCVNLY2NC2fw9fUCMf8y7tt34LeFhRkLiHfnzl2Grq6JDB/ef6SqhQKC/AxlZfkMKirKYD4wC/9lfvvma52wsCCTopICMGMLMbi4ODJ8+/aV4e7dB1Sx1M3dEWhpIYO4uBiYv2/vAYbJk2f9Z/TxDgUHNSilJSXHMkhLS4EVXLp0hWHKlFlk+x7ky5ycNHB8ggCwdGSYN3cxw+XL1yBBDbMYpiEjI5HBydkBzH737j3DooXLGI4dO0WSpVZWZgxx8VGgohHuyxkz5iMr+cuspqZdh1xcnjlzAew6NXVVsEYLSzMGYFQw3Ll7n+HHj58ELQU5PDIqjIGTkxPs8Jkz5jGsX78VXdl/DB8jB1VSUgwDMOFhCyqshQJyVAETEMO8eUtwRRWmj2EA5Lvjx08zfPz0kUFTUwPse3t7GwYOTnaGSxevYmST1LREBj4+Xobv338wLFy4hGHJ4lX4Qgi3j/FlB1AQXjh/EbmaYyAxO/4lymLk+LO0sgDGHweKOMiXx4+dQE9A1LMY5ntfXw8GeXk5SE3z8BHD5s07SM12pFtMJfCXiWGAwAi0GFS80RuA7GQKDQtkoGfzB2QXyE5QQ+AIkC8ILBLVv3//TlNLQeU3tEi9BxBgAMZL+Gev6MzRAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-tasks/logOutBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/facilitator-dashboard-tasks/searchBarBg.png":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhEAAAAqCAYAAAANvAlVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABPRJREFUeNrs3WtK61oYxvE0vaRVRFCkIoozqLPwjGIPo6NwGI7idBZ2BqJfgiCIaNKEJns9IasnvaS79phNWv8/CGnTK82HPH3XrZGmqbOtMAz7zWbzxnXdfqPRcMyW7QEAQP3omm82X/skSfzpdPrQ7Xb9bd+v9dUXBEHQb7fbNyY8DMwH69AdpwUAgPrL//Bnt8113DHX86EChQkT4ziOH3q93pcCRWPTSoTCQ6fTuTUf2ic4AACwd4YmTPhRFI02DRMbhQiTTm5NWhkQHgAA2P8wYa77Y3PdH/3pie66B1V9SJLkFwECAIAf407XfV3/lQPWPbG0EqEXdrvdX41Gg/AAAMAPZDLCMAzD+7LmDZcAAQAAVlEOUB4oq0i4BAgAALBNkFgKEZ7n3RIgAABAMUgoH6wNERqFoYmj+LkAAMBcYDD5QDlhZYjIJ5FiFAYAAFglG7VRbNaYhQhNJEWAAAAA64JEnhf+CxFKFflMlAAAYIckSfJXP095wVYjsrUztBaGQxUCAICd8Pb25ry/vztRFKk/o67jjtazOjo6yraKqVljbPajVp4qBpwSAADqTYHB933n4+Nj6bg2BYvDw0Pn4uJCHSEr+x55bhi5Ws6b5bsBAKi3yWTiPD4+zgUIW4HQ3tLjT09PlTZzKDdk+SGKIi2u9S+nBwCA+lKAMBfu7LaCw8nJyVzThaoQr6+vs+eoInF5eVnZ94nj+B+XeSEAAKi3YjhQgLi6ulrq+6D7Oq7HRRUJBYuqKD+4NGUAAFBvn5+fs9vn5+el/R10XBUKq8oQofygEEElAgCAGitWITzPW/tcVSRsHwn7uopCBJUIAADqTB0kp9Ppl17TbDazvUZsVNXBMqtEcHoAANgvNnSoIlHlUE83TVN+bQAAakohQCMtRM0TGuq5jvpBqAIhnU6nsu+l/KAQ4XOKAACor4ODg9ntl5eX0uep6UIjOVa9roIQ4VOJAACg5jTiojh08/n5eakiofuaZGpxLokKQ4TTMqnFtx0wAABAPWlop0KC+jsoSGizwUIWR2LovqoSVQUJ5QfXfJkHc3vI6QEAoL40tLM4mZQNCnazilNgq+mj2LzxjYbKDy3zZXyVJBjqCQBA/YPE9fV1Fgw0AZVdR0MtCgoX6gOhyoMet30n7P47KxLKDcoP2SqeJk2MW60WZwcAgB2gQKDNzgGxOIzTBoZikFDQOD4+/pbPt7kh+9Q4jmnSAABgxyg8lM0DoSBxdnY2u7+4fPj/MMxzg5OVH3q9nm9SBR0sAQDYI7YioaaP09PTb3lP5QXlhizE2INRFI0cqhEAAOxdkNCS4H9ac2NDwzwvOHMhQqkijuMxQQIAAKwKEMoJtgoxFyKk3W6PNO6T3wkAABQpHygnFI8t9caYTCajNE2pRgAAgIxygfLB4vGlEKEyRRiG9w7NGgAAwOQB5YJiM0ZpiLBBIgiCeyoSAAD8XMoBygOrAoSUzjBlg4Tneb7run1z6I6fEwCAH2GoPhBqwigLENLYZBXPOI5v2+32gCABAMD+BwiNwljsRLnKRnNd642CIHjodDqakIqqBAAAexgeNJGU5oFYV30o2qgSUWTCRN+EihsTJgb5ol0ECgAAdjQ4KAdoLQxNZb1peNg6RBSFYdg3YeJGfSYUKMzWZzVQAADqSdd8s2Wrd6vPg5bz1mqc277fbwEGAAZkUhwHl7ejAAAAAElFTkSuQmCC"
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/facilitator-dashboard/editProfileBg.png":
 /***/ (function(module, exports) {
 
@@ -520,7 +863,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/facilitator-dashboard/facilitator-dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class =\"wrapperDiv\">\n\n\t<div class = \"leftMenu\">\n\t\t<div class = \"leftHeaderLogo\">\n\t\t\tNEVER TOO LATE\n\t\t</div>\n\t\t<div class = \"leftProfile\">\n\t\t\t<p>\n\t\t\t\t<canvas id=\"profileCanvas\" width = \"200\" height = \"200\">\n\t\t\t\t</canvas>\n\t\t\t</p>\n\t\t\t<form>\n\t\t\t\t<input type = \"button\" value =\"Edit Profile\" class = \"editProfileButton\">\n\t\t\t\t<input type = \"button\" value =\"\" class = \"logOutButton\">\n\t\t\t</form>\n\t\t\t<h3>\n\t\t\t\tTEST\n\t\t\t</h3>\n\t\t\t<p>\n\t\t\t\ttest\n\t\t\t</p>\n\t\t</div>\n\t</div>\n\t<div class = \"rightContent\">\n\n\t\t<div class = \"searchBar\">\n\t\t\t<form>\n\t\t\t\t<input type = \"text\" name= \"searchName\" class = \"searchBox\" value =\"Search Student\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t\t<input type = \"text\" name = \"filterTo\"  class = \"filterBox\" value =\"Filter To\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t</form>\n\t\t</div>\n\n\t\t<div class = \"tableDiv\">\n\t\t\t<p>\n\t\t\t<a class = \"standardButton\" href = \"#/facilitator-dashboard/Categories\">Learning Categories</a>\n\t\t\t<a  class = \"standardButton\" href = \"#/facilitator-dashboard/Students\">Students</a>\n\t\t\t<a  class = \"standardButton\" href = \"#/facilitator-dashboard/Tasks\">All Tasks</a>\n\t\t\t</p>\n\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "<div class =\"wrapperDiv\">\n\n\t<div class = \"leftMenu\">\n\t\t<div class = \"leftHeaderLogo\">\n\t\t\tNEVER TOO LATE\n\t\t</div>\n\t\t<div class = \"leftProfile\">\n\t\t\t<p>\n\t\t\t\t<canvas id=\"profileCanvas\" width = \"200\" height = \"200\">\n\t\t\t\t</canvas>\n\t\t\t</p>\n\t\t\t<form>\n\t\t\t\t<input type = \"button\" value =\"Edit Profile\" class = \"editProfileButton\">\n\t\t\t\t<input type = \"button\" value =\"\" class = \"logOutButton\">\n\t\t\t</form>\n\t\t\t<h3>\n\t\t\t\tTEST\n\t\t\t</h3>\n\t\t\t<p>\n\t\t\t\ttest\n\t\t\t</p>\n\t\t</div>\n\t</div>\n\t<div class = \"rightContent\">\n\n\t\t<div class = \"searchBar\">\n\t\t\t<form>\n\t\t\t\t<input type = \"text\" name= \"searchName\" class = \"searchBox\" value =\"Search Student\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t\t<input type = \"text\" name = \"filterTo\"  class = \"filterBox\" value =\"Filter To\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t</form>\n\t\t</div>\n\n\t\t<div class = \"tableDiv\">\n\t\t\t<p>\n\t\t\t<a class = \"standardButton\" [routerLink]=\"['/fac-dash-categories']\">Learning Categories</a>\n\t\t\t<a class = \"standardButton\"  [routerLink]=\"['/fac-dash-students']\">Students</a>\n\t\t\t<a class = \"standardButton\" [routerLink]=\"['/fac-dash-tasks']\">All Tasks</a>\n\t\t\t</p>\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -1058,6 +1401,48 @@ var _a, _b;
 
 /***/ }),
 
+/***/ "../../../../../src/app/services/allusers.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllusersService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AllusersService = (function () {
+    function AllusersService(http) {
+        this.http = http;
+    }
+    AllusersService.prototype.getUsers = function () {
+        var _this = this;
+        return this.http.get("/allusers/allusers")
+            .map(function (result) { return _this.result = result.json(); });
+    };
+    return AllusersService;
+}());
+AllusersService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+], AllusersService);
+
+var _a;
+//# sourceMappingURL=allusers.service.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/auth.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1132,6 +1517,53 @@ AuthService = __decorate([
 
 var _a;
 //# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/categories.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CategoriesService = (function () {
+    function CategoriesService(http) {
+        this.http = http;
+    }
+    CategoriesService.prototype.getCategories = function () {
+        var _this = this;
+        return this.http.get("/categories/categories")
+            .map(function (result) { return _this.result = result.json(); });
+    };
+    CategoriesService.prototype.editCategory = function (id) {
+        var _this = this;
+        return this.http.get('categories/categories/' + id)
+            .map(function (result) { return _this.result = result.json(); });
+    };
+    return CategoriesService;
+}());
+CategoriesService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+], CategoriesService);
+
+var _a;
+//# sourceMappingURL=categories.service.js.map
 
 /***/ }),
 

@@ -1,0 +1,69 @@
+<div class ="wrapperDiv">
+	<div class = "leftMenu">
+		<div class = "leftHeaderLogo">
+			NEVER TOO LATE
+		</div>
+		<div class = "leftProfile">
+			<p>
+				<canvas id="profileCanvas" width = "200" height = "200">
+				</canvas>
+			</p>
+			<form>
+				<input type = "button" value ="Edit Profile" class = "editProfileButton">
+				<input type = "button" value ="" class = "logOutButton">
+			</form>
+			<h3>
+				TEST
+			</h3>
+			<p>
+				test
+			</p>
+		</div>
+	</div>
+	<div class = "rightContent">
+
+		<div class = "searchBar">
+			<form>
+				<input type = "text" name= "searchName" class = "searchBox" value ="Search Categories" onfocus="this.value==this.defaultValue?this.value='':null">
+				<input type = "text" name = "filterTo"  class = "filterBox" value ="Filter To" onfocus="this.value==this.defaultValue?this.value='':null">
+			</form>
+		</div>
+
+		<div class = "tableDiv">
+			<div class = "divWithPadding">
+			<table class = "studentTable">
+				<tr>
+					<th>
+						CATEGORY
+					</th>
+					<th>
+						DESCRIPTION
+					</th>
+					<th>
+						# OF TASKS
+					</th>
+				</tr>
+				<tr>
+					<td><input class="form-control" ng-model="cat.name"></td>
+					<td><input class="form-control" ng-model="cat.description"></td>
+					<td><input class="form-control" ng-model="cat.numtasks"></td>
+				</tr>
+				<tr *ngFor="let category of categories">
+					<td>{{category.name}}</td>
+					<td>{{category.description}}</td>
+					<td>{{category.numtasks}}</td>
+					<td><button (click)="editCategory(category._id)">Edit</button></td>
+				</tr>
+			</table>
+</div>
+			<div>
+				<p>
+					<a  class = "standardButton" [routerLink]="['/facilitator-dashboard']">Home</a>
+					<a  class = "standardButton" [routerLink]="['/fac-dash-students']">Students</a>
+					<a  class = "standardButton" [routerLink]="['/fac-dash-tasks']">All Tasks</a>
+				</p>
+			</div>
+
+		</div>
+	</div>
+</div>

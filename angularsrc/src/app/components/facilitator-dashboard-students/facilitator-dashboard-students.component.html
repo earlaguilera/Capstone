@@ -31,11 +31,43 @@
 		</div>
 
 		<div class = "tableDiv">
+			<div class = "divWithPadding">
+			<table class = "studentTable">
+				<thead>
+				<tr>
+					<th>
+						STUDENT
+					</th>
+					<th>
+						GOALS
+					</th>
+					<th>
+						CHALLENGES
+					</th>
+					<th>
+						BADGES
+					</th>
+					<th>
+						OVERALL PROGRESS
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr *ngFor="let user of users">
+					<td>{{user.name}}</td>
+					<td>{{user.email}}</td>
+					<td>{{user.username}}</td>
+				</tr>
+				</tbody>
+			</table>
+			</div>
+<div>
 			<p>
-			<a class = "standardButton" [routerLink]="['/fac-dash-categories']">Learning Categories</a>
-			<a class = "standardButton"  [routerLink]="['/fac-dash-students']">Students</a>
-			<a class = "standardButton" [routerLink]="['/fac-dash-tasks']">All Tasks</a>
+				<a class = "standardButton" [routerLink]="['/facilitator-dashboard']">Home</a>
+				<a class = "standardButton" [routerLink]="['/fac-dash-categories']">Learning Categories</a>
+				<a  class = "standardButton" [routerLink]="['/fac-dash-tasks']">All Tasks</a>
 			</p>
+</div>
 		</div>
 	</div>
 </div>

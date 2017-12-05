@@ -25,17 +25,24 @@
 
 		<div class = "searchBar">
 			<form>
-				<input type = "text" name= "searchName" class = "searchBox" value ="Search Student" onfocus="this.value==this.defaultValue?this.value='':null">
+				<input type = "text" name= "searchName" class = "searchBox" value ="Search Tasks" onfocus="this.value==this.defaultValue?this.value='':null">
 				<input type = "text" name = "filterTo"  class = "filterBox" value ="Filter To" onfocus="this.value==this.defaultValue?this.value='':null">
 			</form>
 		</div>
 
 		<div class = "tableDiv">
-			<p>
-			<a class = "standardButton" [routerLink]="['/fac-dash-categories']">Learning Categories</a>
-			<a class = "standardButton"  [routerLink]="['/fac-dash-students']">Students</a>
-			<a class = "standardButton" [routerLink]="['/fac-dash-tasks']">All Tasks</a>
-			</p>
+			<div class="divWithPadding">
+			<table class = "studentTable">
+			</table>
+			</div>
+			<div>
+				<p>
+					<a  class = "standardButton" [routerLink]="['/facilitator-dashboard']">Home</a>
+					<a class = "standardButton" [routerLink]="['/fac-dash-categories']">Learning Categories</a>
+					<a  class = "standardButton" [routerLink]="['/fac-dash-students']">Students</a>
+				</p>
+			</div>
+
 		</div>
 	</div>
 </div>

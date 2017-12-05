@@ -18,7 +18,24 @@ const userSchema=mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    goals:{
+        type:String,
+        required:false
+    },
+    challenges:{
+        type:String,
+        required:false
+    },
+    badges:{
+        type:String,
+        required:false
+    },
+    progress:{
+        type:String,
+        required:false
     }
+    
 });
 
 const User=module.exports=mongoose.model('User', userSchema);
