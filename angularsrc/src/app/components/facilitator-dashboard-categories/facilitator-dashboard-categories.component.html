@@ -56,7 +56,7 @@
 					<td>{{category.name}}</td>
 					<td>{{category.description}}</td>
 					<td>{{category.numtasks}}</td>
-					<td><button (click)="editCategory(category._id)">Edit</button><button (click)="deleteCategory(category._id)">Delete</button><button [routerLink]="['/fac-dash-tasks']">Add Task</button></td>
+					<td><button (click)="editCategory(category._id)">Edit</button><button (click)="deleteCategory(category._id)">Delete</button><button (click)="addTask(category._id)">Add Task</button></td>
 				</tr>
 			</table>
 </div>

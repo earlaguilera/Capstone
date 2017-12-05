@@ -105,12 +105,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_facilitator_dashboard_students_facilitator_dashboard_students_component__ = __webpack_require__("../../../../../src/app/components/facilitator-dashboard-students/facilitator-dashboard-students.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_facilitator_dashboard_categories_facilitator_dashboard_categories_component__ = __webpack_require__("../../../../../src/app/components/facilitator-dashboard-categories/facilitator-dashboard-categories.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_facilitator_dashboard_tasks_facilitator_dashboard_tasks_component__ = __webpack_require__("../../../../../src/app/components/facilitator-dashboard-tasks/facilitator-dashboard-tasks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_taskcreator_taskcreator_component__ = __webpack_require__("../../../../../src/app/components/taskcreator/taskcreator.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -150,7 +152,8 @@ var appRoutes = [
     { path: 'challenge3', component: __WEBPACK_IMPORTED_MODULE_22__components_challenge3_challenge3_component__["a" /* Challenge3Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'fac-dash-students', component: __WEBPACK_IMPORTED_MODULE_23__components_facilitator_dashboard_students_facilitator_dashboard_students_component__["a" /* FacilitatorDashboardStudentsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'fac-dash-categories', component: __WEBPACK_IMPORTED_MODULE_24__components_facilitator_dashboard_categories_facilitator_dashboard_categories_component__["a" /* FacilitatorDashboardCategoriesComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'fac-dash-tasks', component: __WEBPACK_IMPORTED_MODULE_25__components_facilitator_dashboard_tasks_facilitator_dashboard_tasks_component__["a" /* FacilitatorDashboardTasksComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'fac-dash-tasks', component: __WEBPACK_IMPORTED_MODULE_25__components_facilitator_dashboard_tasks_facilitator_dashboard_tasks_component__["a" /* FacilitatorDashboardTasksComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'task-creator', component: __WEBPACK_IMPORTED_MODULE_26__components_taskcreator_taskcreator_component__["a" /* TaskcreatorComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -175,6 +178,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_23__components_facilitator_dashboard_students_facilitator_dashboard_students_component__["a" /* FacilitatorDashboardStudentsComponent */],
             __WEBPACK_IMPORTED_MODULE_24__components_facilitator_dashboard_categories_facilitator_dashboard_categories_component__["a" /* FacilitatorDashboardCategoriesComponent */],
             __WEBPACK_IMPORTED_MODULE_25__components_facilitator_dashboard_tasks_facilitator_dashboard_tasks_component__["a" /* FacilitatorDashboardTasksComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__components_taskcreator_taskcreator_component__["a" /* TaskcreatorComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -536,7 +540,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/facilitator-dashboard-categories/facilitator-dashboard-categories.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class =\"wrapperDiv\">\n\t<div class = \"leftMenu\">\n\t\t<div class = \"leftHeaderLogo\">\n\t\t\tNEVER TOO LATE\n\t\t</div>\n\t\t<div class = \"leftProfile\">\n\t\t\t<p>\n\t\t\t\t<canvas id=\"profileCanvas\" width = \"200\" height = \"200\">\n\t\t\t\t</canvas>\n\t\t\t</p>\n\t\t\t<form>\n\t\t\t\t<input type = \"button\" value =\"Edit Profile\" class = \"editProfileButton\">\n\t\t\t\t<input type = \"button\" value =\"\" class = \"logOutButton\">\n\t\t\t</form>\n\t\t\t<h3>\n\t\t\t\tTEST\n\t\t\t</h3>\n\t\t\t<p>\n\t\t\t\ttest\n\t\t\t</p>\n\t\t</div>\n\t</div>\n\t<div class = \"rightContent\">\n\n\t\t<div class = \"searchBar\">\n\t\t\t<form>\n\t\t\t\t<input type = \"text\" name= \"searchName\" class = \"searchBox\" value =\"Search Categories\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t\t<input type = \"text\" name = \"filterTo\"  class = \"filterBox\" value =\"Filter To\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t</form>\n\t\t</div>\n\n\t\t<div class = \"tableDiv\">\n\t\t\t<div class = \"divWithPadding\">\n\t\t\t<table class = \"studentTable\">\n\t\t\t\t<tr>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tCATEGORY\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tDESCRIPTION\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t# OF TASKS\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tACTION\n\t\t\t\t\t</th>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td><input class=\"form-control\" id=\"name\" [(ngModel)]=\"cat.name\"></td>\n\t\t\t\t\t<td><input class=\"form-control\" id=\"desc\" [(ngModel)]=\"cat.description\"></td>\n\t\t\t\t\t<td><input class=\"form-control\" id=\"tasks\" [(ngModel)]=\"cat.numtasks\"></td>\n\t\t\t\t\t<td><button (click)=\"updateCategory(cat)\">Update</button><button (click)=\"addCategory()\">Add</button><button (click)=\"cancel()\">Cancel</button></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr *ngFor=\"let category of categories\">\n\t\t\t\t\t<td>{{category.name}}</td>\n\t\t\t\t\t<td>{{category.description}}</td>\n\t\t\t\t\t<td>{{category.numtasks}}</td>\n\t\t\t\t\t<td><button (click)=\"editCategory(category._id)\">Edit</button><button (click)=\"deleteCategory(category._id)\">Delete</button><button [routerLink]=\"['/fac-dash-tasks']\">Add Task</button></td>\n\t\t\t\t</tr>\n\t\t\t</table>\n</div>\n\t\t\t<div>\n\t\t\t\t<p>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/facilitator-dashboard']\">Home</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-students']\">Students</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-tasks']\">All Tasks</a>\n\t\t\t\t</p>\n\t\t\t</div>\n\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "<div class =\"wrapperDiv\">\n\t<div class = \"leftMenu\">\n\t\t<div class = \"leftHeaderLogo\">\n\t\t\tNEVER TOO LATE\n\t\t</div>\n\t\t<div class = \"leftProfile\">\n\t\t\t<p>\n\t\t\t\t<canvas id=\"profileCanvas\" width = \"200\" height = \"200\">\n\t\t\t\t</canvas>\n\t\t\t</p>\n\t\t\t<form>\n\t\t\t\t<input type = \"button\" value =\"Edit Profile\" class = \"editProfileButton\">\n\t\t\t\t<input type = \"button\" value =\"\" class = \"logOutButton\">\n\t\t\t</form>\n\t\t\t<h3>\n\t\t\t\tTEST\n\t\t\t</h3>\n\t\t\t<p>\n\t\t\t\ttest\n\t\t\t</p>\n\t\t</div>\n\t</div>\n\t<div class = \"rightContent\">\n\n\t\t<div class = \"searchBar\">\n\t\t\t<form>\n\t\t\t\t<input type = \"text\" name= \"searchName\" class = \"searchBox\" value =\"Search Categories\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t\t<input type = \"text\" name = \"filterTo\"  class = \"filterBox\" value =\"Filter To\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t</form>\n\t\t</div>\n\n\t\t<div class = \"tableDiv\">\n\t\t\t<div class = \"divWithPadding\">\n\t\t\t<table class = \"studentTable\">\n\t\t\t\t<tr>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tCATEGORY\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tDESCRIPTION\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t# OF TASKS\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tACTION\n\t\t\t\t\t</th>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td><input class=\"form-control\" id=\"name\" [(ngModel)]=\"cat.name\"></td>\n\t\t\t\t\t<td><input class=\"form-control\" id=\"desc\" [(ngModel)]=\"cat.description\"></td>\n\t\t\t\t\t<td><input class=\"form-control\" id=\"tasks\" [(ngModel)]=\"cat.numtasks\"></td>\n\t\t\t\t\t<td><button (click)=\"updateCategory(cat)\">Update</button><button (click)=\"addCategory()\">Add</button><button (click)=\"cancel()\">Cancel</button></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr *ngFor=\"let category of categories\">\n\t\t\t\t\t<td>{{category.name}}</td>\n\t\t\t\t\t<td>{{category.description}}</td>\n\t\t\t\t\t<td>{{category.numtasks}}</td>\n\t\t\t\t\t<td><button (click)=\"editCategory(category._id)\">Edit</button><button (click)=\"deleteCategory(category._id)\">Delete</button><button (click)=\"addTask(category._id)\">Add Task</button></td>\n\t\t\t\t</tr>\n\t\t\t</table>\n</div>\n\t\t\t<div>\n\t\t\t\t<p>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/facilitator-dashboard']\">Home</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-students']\">Students</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-tasks']\">All Tasks</a>\n\t\t\t\t</p>\n\t\t\t</div>\n\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -630,6 +634,10 @@ var FacilitatorDashboardCategoriesComponent = (function () {
             //console.log(err);
             return false;
         });
+    };
+    FacilitatorDashboardCategoriesComponent.prototype.addTask = function (id) {
+        this.catService.categorytotransfer = id;
+        this.router.navigate(['/task-creator']);
     };
     return FacilitatorDashboardCategoriesComponent;
 }());
@@ -1398,6 +1406,83 @@ RegisterComponent = __decorate([
 
 var _a, _b, _c, _d;
 //# sourceMappingURL=register.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/taskcreator/taskcreator.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/taskcreator/taskcreator.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2>Task Creator</h2>\r\nYou will be adding a task to the <h2>{{cat.name}}</h2> category.<br><br>\r\nTask Name: <input type=\"text\" id=\"task name\"><br>\r\nInstructions:<br><textarea rows=15 columns=60></textarea>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/taskcreator/taskcreator.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TaskcreatorComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TaskcreatorComponent = (function () {
+    function TaskcreatorComponent(catService) {
+        this.catService = catService;
+        this.cat = '';
+        this.editCategory();
+    }
+    TaskcreatorComponent.prototype.ngOnInit = function () {
+    };
+    TaskcreatorComponent.prototype.editCategory = function () {
+        var _this = this;
+        //console.log("inside edit category, the id is: "+id);
+        this.catService.editCategory(this.catService.categorytotransfer).subscribe(function (res) {
+            _this.cat = res;
+        }, function (err) {
+            //console.log(err);
+            return false;
+        });
+    };
+    return TaskcreatorComponent;
+}());
+TaskcreatorComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-taskcreator',
+        template: __webpack_require__("../../../../../src/app/components/taskcreator/taskcreator.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/taskcreator/taskcreator.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_categories_service__["a" /* CategoriesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_categories_service__["a" /* CategoriesService */]) === "function" && _a || Object])
+], TaskcreatorComponent);
+
+var _a;
+//# sourceMappingURL=taskcreator.component.js.map
 
 /***/ }),
 

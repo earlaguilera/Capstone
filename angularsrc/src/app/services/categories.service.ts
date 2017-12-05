@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CategoriesService {
+  categorytotransfer;
 
   result:any;
 

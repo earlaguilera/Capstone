@@ -26,6 +26,7 @@ import { Challenge3Component } from './components/challenge3/challenge3.componen
 import { FacilitatorDashboardStudentsComponent } from './components/facilitator-dashboard-students/facilitator-dashboard-students.component';
 import { FacilitatorDashboardCategoriesComponent } from './components/facilitator-dashboard-categories/facilitator-dashboard-categories.component';
 import { FacilitatorDashboardTasksComponent } from './components/facilitator-dashboard-tasks/facilitator-dashboard-tasks.component';
+import { TaskcreatorComponent } from './components/taskcreator/taskcreator.component';
 
 const appRoutes:Routes=[
 {path:'', component:HomeComponent},
@@ -40,7 +41,8 @@ const appRoutes:Routes=[
 {path:'challenge3', component:Challenge3Component, canActivate:[AuthGuard]},
 {path:'fac-dash-students', component:FacilitatorDashboardStudentsComponent, canActivate:[AuthGuard]},
 {path:'fac-dash-categories', component:FacilitatorDashboardCategoriesComponent, canActivate:[AuthGuard]},
-{path:'fac-dash-tasks', component:FacilitatorDashboardTasksComponent, canActivate:[AuthGuard]}
+{path:'fac-dash-tasks', component:FacilitatorDashboardTasksComponent, canActivate:[AuthGuard]},
+{path:'task-creator', component:TaskcreatorComponent, canActivate:[AuthGuard]}
 ]
 
 @NgModule({
@@ -60,6 +62,7 @@ const appRoutes:Routes=[
     FacilitatorDashboardStudentsComponent,
     FacilitatorDashboardCategoriesComponent,
     FacilitatorDashboardTasksComponent,
+    TaskcreatorComponent,
   ],
   imports: [
     BrowserModule,

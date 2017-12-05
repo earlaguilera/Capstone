@@ -88,4 +88,9 @@ export class FacilitatorDashboardCategoriesComponent implements OnInit {
       return false;
     });
   }
+
+  addTask(id){
+    this.catService.categorytotransfer=id;
+    this.router.navigate(['/task-creator']);
+  }
 }
