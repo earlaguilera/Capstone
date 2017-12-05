@@ -42,17 +42,21 @@
 					<th>
 						# OF TASKS
 					</th>
+					<th>
+						ACTION
+					</th>
 				</tr>
 				<tr>
-					<td><input class="form-control" ng-model="cat.name"></td>
-					<td><input class="form-control" ng-model="cat.description"></td>
-					<td><input class="form-control" ng-model="cat.numtasks"></td>
+					<td><input class="form-control" id="name" [(ngModel)]="cat.name"></td>
+					<td><input class="form-control" id="desc" [(ngModel)]="cat.description"></td>
+					<td><input class="form-control" id="tasks" [(ngModel)]="cat.numtasks"></td>
+					<td><button (click)="updateCategory(cat)">Update</button><button (click)="addCategory()">Add</button><button (click)="cancel()">Cancel</button></td>
 				</tr>
 				<tr *ngFor="let category of categories">
 					<td>{{category.name}}</td>
 					<td>{{category.description}}</td>
 					<td>{{category.numtasks}}</td>
-					<td><button (click)="editCategory(category._id)">Edit</button></td>
+					<td><button (click)="editCategory(category._id)">Edit</button><button (click)="deleteCategory(category._id)">Delete</button><button [routerLink]="['/fac-dash-tasks']">Add Task</button></td>
 				</tr>
 			</table>
 </div>

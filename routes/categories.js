@@ -11,7 +11,6 @@ router.get('/categories', function (req, res) {
     });
 
     router.post('/categories', function (req, res) {
-        var id=req.params.
         db.categories.insert(req.body, function(err, doc) {
           res.json(doc);
         });
@@ -35,7 +34,7 @@ router.get('/categories', function (req, res) {
         var id = req.params.id;
         db.categories.findAndModify({
           query: {_id: mongojs.ObjectId(id)},
-          update: {$set: {platform: req.body.platform, status: req.body.status, email_address: req.body.email_address, issue_description:req.body.issue_description, merchant_id:req.body.merchant_id, phone_number:req.body.phone_number, date:req.body.date, owner:req.body.owner, notes:req.body.notes}},
+          update: {$set: {name: req.body.name, description: req.body.description, numtasks: req.body.numtasks}},
           new: true}, function (err, doc) {
             res.json(doc);
           }

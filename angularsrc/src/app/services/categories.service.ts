@@ -16,7 +16,22 @@ export class CategoriesService {
   }
 
   editCategory(id){
-    return this.http.get('categories/categories/'+id)
+    return this.http.get('/categories/categories/'+id)
+    .map(result=>this.result=result.json());
+  }
+
+  updateCategory(cat){
+    return this.http.put('/categories/categories/'+cat._id,cat)
+    .map(result=>this.result=result.json());
+  }
+
+  addCategory(cat){
+    return this.http.post('/categories/categories', cat)
+    .map(result=>this.result=result.json());
+  }
+
+  deleteCategory(id){
+    return this.http.delete('/categories/categories/'+id)
     .map(result=>this.result=result.json());
   }
 

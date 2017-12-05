@@ -536,7 +536,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/facilitator-dashboard-categories/facilitator-dashboard-categories.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class =\"wrapperDiv\">\n\t<div class = \"leftMenu\">\n\t\t<div class = \"leftHeaderLogo\">\n\t\t\tNEVER TOO LATE\n\t\t</div>\n\t\t<div class = \"leftProfile\">\n\t\t\t<p>\n\t\t\t\t<canvas id=\"profileCanvas\" width = \"200\" height = \"200\">\n\t\t\t\t</canvas>\n\t\t\t</p>\n\t\t\t<form>\n\t\t\t\t<input type = \"button\" value =\"Edit Profile\" class = \"editProfileButton\">\n\t\t\t\t<input type = \"button\" value =\"\" class = \"logOutButton\">\n\t\t\t</form>\n\t\t\t<h3>\n\t\t\t\tTEST\n\t\t\t</h3>\n\t\t\t<p>\n\t\t\t\ttest\n\t\t\t</p>\n\t\t</div>\n\t</div>\n\t<div class = \"rightContent\">\n\n\t\t<div class = \"searchBar\">\n\t\t\t<form>\n\t\t\t\t<input type = \"text\" name= \"searchName\" class = \"searchBox\" value =\"Search Categories\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t\t<input type = \"text\" name = \"filterTo\"  class = \"filterBox\" value =\"Filter To\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t</form>\n\t\t</div>\n\n\t\t<div class = \"tableDiv\">\n\t\t\t<div class = \"divWithPadding\">\n\t\t\t<table class = \"studentTable\">\n\t\t\t\t<tr>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tCATEGORY\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tDESCRIPTION\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t# OF TASKS\n\t\t\t\t\t</th>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td><input class=\"form-control\" [(ng-model)]=\"cat.name\"></td>\n\t\t\t\t\t<td><input class=\"form-control\" ng-model=\"cat.description\"></td>\n\t\t\t\t\t<td><input class=\"form-control\" ng-model=\"cat.numtasks\"></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr *ngFor=\"let category of categories\">\n\t\t\t\t\t<td>{{category.name}}</td>\n\t\t\t\t\t<td>{{category.description}}</td>\n\t\t\t\t\t<td>{{category.numtasks}}</td>\n\t\t\t\t\t<td><button (click)=\"editCategory(category._id)\">Edit</button></td>\n\t\t\t\t</tr>\n\t\t\t</table>\n</div>\n\t\t\t<div>\n\t\t\t\t<p>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/facilitator-dashboard']\">Home</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-students']\">Students</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-tasks']\">All Tasks</a>\n\t\t\t\t</p>\n\t\t\t</div>\n\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "<div class =\"wrapperDiv\">\n\t<div class = \"leftMenu\">\n\t\t<div class = \"leftHeaderLogo\">\n\t\t\tNEVER TOO LATE\n\t\t</div>\n\t\t<div class = \"leftProfile\">\n\t\t\t<p>\n\t\t\t\t<canvas id=\"profileCanvas\" width = \"200\" height = \"200\">\n\t\t\t\t</canvas>\n\t\t\t</p>\n\t\t\t<form>\n\t\t\t\t<input type = \"button\" value =\"Edit Profile\" class = \"editProfileButton\">\n\t\t\t\t<input type = \"button\" value =\"\" class = \"logOutButton\">\n\t\t\t</form>\n\t\t\t<h3>\n\t\t\t\tTEST\n\t\t\t</h3>\n\t\t\t<p>\n\t\t\t\ttest\n\t\t\t</p>\n\t\t</div>\n\t</div>\n\t<div class = \"rightContent\">\n\n\t\t<div class = \"searchBar\">\n\t\t\t<form>\n\t\t\t\t<input type = \"text\" name= \"searchName\" class = \"searchBox\" value =\"Search Categories\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t\t<input type = \"text\" name = \"filterTo\"  class = \"filterBox\" value =\"Filter To\" onfocus=\"this.value==this.defaultValue?this.value='':null\">\n\t\t\t</form>\n\t\t</div>\n\n\t\t<div class = \"tableDiv\">\n\t\t\t<div class = \"divWithPadding\">\n\t\t\t<table class = \"studentTable\">\n\t\t\t\t<tr>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tCATEGORY\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tDESCRIPTION\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t# OF TASKS\n\t\t\t\t\t</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\tACTION\n\t\t\t\t\t</th>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td><input class=\"form-control\" id=\"name\" [(ngModel)]=\"cat.name\"></td>\n\t\t\t\t\t<td><input class=\"form-control\" id=\"desc\" [(ngModel)]=\"cat.description\"></td>\n\t\t\t\t\t<td><input class=\"form-control\" id=\"tasks\" [(ngModel)]=\"cat.numtasks\"></td>\n\t\t\t\t\t<td><button (click)=\"updateCategory(cat)\">Update</button><button (click)=\"addCategory()\">Add</button><button (click)=\"cancel()\">Cancel</button></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr *ngFor=\"let category of categories\">\n\t\t\t\t\t<td>{{category.name}}</td>\n\t\t\t\t\t<td>{{category.description}}</td>\n\t\t\t\t\t<td>{{category.numtasks}}</td>\n\t\t\t\t\t<td><button (click)=\"editCategory(category._id)\">Edit</button><button (click)=\"deleteCategory(category._id)\">Delete</button><button [routerLink]=\"['/fac-dash-tasks']\">Add Task</button></td>\n\t\t\t\t</tr>\n\t\t\t</table>\n</div>\n\t\t\t<div>\n\t\t\t\t<p>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/facilitator-dashboard']\">Home</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-students']\">Students</a>\n\t\t\t\t\t<a  class = \"standardButton\" [routerLink]=\"['/fac-dash-tasks']\">All Tasks</a>\n\t\t\t\t</p>\n\t\t\t</div>\n\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -564,10 +564,10 @@ var FacilitatorDashboardCategoriesComponent = (function () {
     function FacilitatorDashboardCategoriesComponent(catService, router) {
         this.catService = catService;
         this.router = router;
+        this.cat = '';
     }
     FacilitatorDashboardCategoriesComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.cat = "";
         this.catService.getCategories().subscribe(function (res) {
             _this.categories = res;
         }, function (err) {
@@ -577,9 +577,55 @@ var FacilitatorDashboardCategoriesComponent = (function () {
     };
     FacilitatorDashboardCategoriesComponent.prototype.editCategory = function (id) {
         var _this = this;
-        console.log("inside edit category, the id is: " + id);
+        //console.log("inside edit category, the id is: "+id);
         this.catService.editCategory(id).subscribe(function (res) {
             _this.cat = res;
+        }, function (err) {
+            //console.log(err);
+            return false;
+        });
+    };
+    FacilitatorDashboardCategoriesComponent.prototype.updateCategory = function (cat) {
+        var _this = this;
+        this.catService.updateCategory(cat).subscribe(function (res) {
+            _this.cat = '';
+            _this.ngOnInit();
+        }, function (err) {
+            //console.log(err);
+            return false;
+        });
+    };
+    //add category is ghetto rigged, could not figure out a way to pull values directly from ngModel
+    FacilitatorDashboardCategoriesComponent.prototype.addCategory = function () {
+        var _this = this;
+        var namer = document.getElementById('name').value;
+        var desc = document.getElementById('desc').value;
+        var tasks = document.getElementById('tasks').value;
+        var caty = {
+            name: namer,
+            description: desc,
+            numtasks: tasks
+        };
+        this.catService.addCategory(caty).subscribe(function (res) {
+            document.getElementById('name').value = "";
+            document.getElementById('desc').value = "";
+            document.getElementById('tasks').value = "";
+            _this.cat = res;
+            _this.ngOnInit();
+        }, function (err) {
+            //console.log(err);
+            return false;
+        });
+    };
+    FacilitatorDashboardCategoriesComponent.prototype.cancel = function () {
+        this.cat = '';
+        this.ngOnInit();
+    };
+    FacilitatorDashboardCategoriesComponent.prototype.deleteCategory = function (id) {
+        var _this = this;
+        this.catService.deleteCategory(id).subscribe(function (res) {
+            _this.cat = '';
+            _this.ngOnInit();
         }, function (err) {
             //console.log(err);
             return false;
@@ -1552,7 +1598,22 @@ var CategoriesService = (function () {
     };
     CategoriesService.prototype.editCategory = function (id) {
         var _this = this;
-        return this.http.get('categories/categories/' + id)
+        return this.http.get('/categories/categories/' + id)
+            .map(function (result) { return _this.result = result.json(); });
+    };
+    CategoriesService.prototype.updateCategory = function (cat) {
+        var _this = this;
+        return this.http.put('/categories/categories/' + cat._id, cat)
+            .map(function (result) { return _this.result = result.json(); });
+    };
+    CategoriesService.prototype.addCategory = function (cat) {
+        var _this = this;
+        return this.http.post('/categories/categories', cat)
+            .map(function (result) { return _this.result = result.json(); });
+    };
+    CategoriesService.prototype.deleteCategory = function (id) {
+        var _this = this;
+        return this.http.delete('/categories/categories/' + id)
             .map(function (result) { return _this.result = result.json(); });
     };
     return CategoriesService;
